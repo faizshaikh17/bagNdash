@@ -81,7 +81,7 @@ export default function HeroSection() {
         </h1>
 
         {/* Subtitle */}
-        <p className="max-w-2xl text-center lg:text-lg tracking-wide text-white/90">
+        <p className="max-w-2xl text-center tracking-wide text-white/90">
           AI-powered tools for video & transaction analytics, online order
           management,<br className="hidden sm:block" />
           and automated invoice processing.
@@ -91,11 +91,7 @@ export default function HeroSection() {
         <div className="flex flex-col items-center justify-center gap-4 w-full max-w-md md:max-w-none md:flex-row">
           {/* Primary CTA */}
           <button
-            className="w-full md:w-auto rounded-full px-5 py-2.5 tracking-wide text-sm font-semibold text-white transition-opacity hover:opacity-90"
-            style={{
-              background:
-                'linear-gradient(95.49deg, #F462F3 52.87%, #7B50FE 106.28%)',
-            }}
+            className="w-full md:w-auto rounded-full px-5 py-2.5 tracking-wide text-sm font-semibold text-white transition-opacity hover:opacity-90 bg-gradient-to-r from-[#F462F3] via-[#F462F3] to-[#7B50FE]"
           >
             Book a Demo
           </button>

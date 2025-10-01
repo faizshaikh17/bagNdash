@@ -4,88 +4,75 @@ import Link from "next/link";
 export default function Footer() {
     return (
         <footer className="w-full text-sm px-4  md:px-20 bg-[#020D2D]">
-            <div className="relative max-w-[1200px] mb-20 mx-auto w-full h-auto lg:min-h-[400px] min-h-[600px] border border-[#434343] rounded-[40px] flex flex-col md:flex-row items-cente overflow-clip justify-start gap-8 md:gap-16 px-4 md:px-12 py-8 md:py-0">
+            <div className="relative max-w-[1200px] mb-20 mx-auto w-full min-h-[600px] lg:min-h-[400px] border border-[#434343] rounded-[40px] flex flex-col md:flex-row items-center overflow-clip justify-start gap-8 md:gap-16 px-4 md:px-12 py-8">
+                {/* Background Gradient Blur */}
                 <div className="absolute inset-0 overflow-hidden rounded-[40px]">
                     <div className="absolute inset-0 bg-gradient-to-r from-[#ED61F3] via-[#ED61F3] to-[#7C3AED] blur-[100px]" />
                 </div>
 
+                {/* Image Column */}
                 <div className="relative w-full md:w-[280px] h-auto md:h-[500px] flex-shrink-0 flex justify-center">
-                    <Image
-                        src="/images/iphoneBg1.png"
-                        alt="App Preview"
-                        width={244}
-                        height={527}
-                        className="absolute top-74 md:top-10 left-1/2 md:left-[19px] -translate-x-1/2 md:translate-x-0 w-[200px] md:w-[244px] h-[431px] md:h-[527px] object-cover rounded-[35px]"
-                    />
-
-                    <Image
-                        src="/images/preFooter.png"
-                        alt="iPhone Background"
-                        width={280}
-                        height={560}
-                        className="absolute sm:top-26 top-80 left-1/2 md:left-5 -translate-x-1/2 md:translate-x-0 border-4 w-[12rem] md:w-[15rem] h-[14rem] md:h-[18rem] border-orange-400 rounded-2xl object-cover"
-                    />
-
-                    <Image
-                        src="/images/iphoneframe.png"
-                        alt="iPhone Frame"
-                        width={280}
-                        height={560}
-                        className="absolute top-70 md:top-8 left-1/2 md:left-0 -translate-x-1/2 md:translate-x-0 w-[230px] md:w-[280px] h-[470px] md:h-[560px] object-contain"
-                    />
+                    <Image src="/images/iphoneBg1.png" alt="App Preview" width={244} height={527} className="absolute top-68 md:top-10 left-1/2 md:left-[19px] -translate-x-1/2 md:translate-x-0 w-[200px] md:w-[244px] h-[431px] md:h-[527px] object-cover rounded-[35px]" />
+                    <Image src="/images/preFooter.png" alt="iPhone Background" width={280} height={560} className="absolute sm:top-26 top-74 left-1/2 md:left-5 -translate-x-1/2 md:translate-x-0 border-4 w-[12rem] md:w-[15rem] h-[14rem] md:h-[18rem] border-orange-400 rounded-2xl object-cover" />
+                    <Image src="/images/iphoneframe.png" alt="iPhone Frame" width={280} height={560} className="absolute top-64 md:top-8 left-1/2 md:left-0 -translate-x-1/2 md:translate-x-0 w-[230px] md:w-[280px] h-[470px] md:h-[560px] object-contain" />
+                    <Image src="/images/logo.png" alt="iPhone Frame" width={280} height={560} className="absolute scale-[0.6] md:scale-[0.8] top-78 md:top-40 left-1/2 md:left-0 -translate-x-1/2 md:translate-x-0 w-[230px] md:w-[280px] h-[470px] md:h-[560px] object-contain" />
                 </div>
 
-                <div className="relative flex flex-col z-50 items-start justify-center text-left max-w-[500px] w-full">
-                    <h2 className="font-bold text-3xl md:text-[42px] leading-[1.4] text-white text-left md:text-left">
+                {/* Text Column */}
+                <div className="relative flex flex-col z-50 items-start justify-start text-left max-w-[500px] w-full md:mt-0">
+                    <h2 className="font-bold text-2xl md:text-[42px] leading-[1.4] text-white">
                         Ready to secure your business and simplify operations?
                     </h2>
 
-                    <div className="flex gap-6 mt-8 w-full justify-center md:justify-start">
-                        <button className="px-6 h-[38px] rounded-md bg-[#333333] text-white font-semibold flex-1 md:flex-none">
+                    <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 mt-6 w-full">
+                        <button className="px-6 py-2 rounded-md bg-[#333333] text-white font-semibold flex-1 sm:flex-none">
                             Book a Demo
                         </button>
-                        <button className="px-6 h-[38px] rounded-md border border-white text-white font-semibold flex-1 md:flex-none">
+                        <button className="px-6 py-2 rounded-md border border-white text-white font-semibold flex-1 sm:flex-none">
                             Contact Sales
                         </button>
                     </div>
                 </div>
             </div>
 
+
             <div className="w-full border-t border-[#434343]">
                 <div className="max-w-[1600px] mx-auto px-4 md:px-12 py-16 flex flex-col gap-12">
                     <div className="grid grid-cols-2 gap-8 md:flex md:flex-wrap md:justify-between md:gap-12">
                         <div className="col-span-2 md:max-w-[300px] flex flex-col gap-4">
                             <Image
-                                src="/logo.png"
-                                alt="Banndash Logo"
-                                width={206}
-                                height={38}
-                                className="w-full max-w-[206px] h-auto object-contain"
+                                src="/images/logo.png"
+                                alt="Logo"
+                                width={100}
+                                height={40}
+                                priority
+                                className="w-auto scale-[0.8] h-auto"
                             />
-                            <p className="text-white text-xs font-poppins">
+                            <p className="text-white text-xs">
                                 📞 913-208-3535  📍 Kansas City, MO
                             </p>
-                            <div className="flex gap-4 mt-2">
-                                <Link href="https://twitter.com/banndash">
+                            <div className="flex gap-3">
+                                <Link href="https://twitter.com/bagndash" target="_blank">
                                     <Image
-                                        src="/twitter-icon.png"
-                                        alt="Twitter"
-                                        width={36}
-                                        height={36}
-                                        className="rounded-full"
+                                        src="/images/facebook.png"
+                                        alt="Facebook"
+                                        width={24}
+                                        height={24}
+                                        unoptimized
                                     />
                                 </Link>
-                                <Link href="https://linkedin.com/company/banndash">
+                                <Link href="https://linkedin.com/company/bagndash" target="_blank">
                                     <Image
-                                        src="/linkedin-icon.png"
+                                        src="/images/linkedIn.png"
                                         alt="LinkedIn"
-                                        width={36}
-                                        height={36}
-                                        className="rounded-full"
+                                        width={24}
+                                        height={24}
+                                        unoptimized
                                     />
                                 </Link>
                             </div>
                         </div>
+
 
                         <div className="flex flex-col gap-6">
                             <h3 className="text-white font-poppins font-semibold">Our Services</h3>
@@ -126,18 +113,18 @@ export default function Footer() {
 
                         <div className="flex flex-col gap-4">
                             <Image
-                                src="/apple-store.png"
+                                src="/images/appStore.png"
                                 alt="Download on the Apple Store"
                                 width={170}
                                 height={51}
-                                className="w-full max-w-[170px] h-auto rounded-[6px] border border-[#434343] bg-black object-contain"
+                                className="scale-[0.85]"
                             />
                             <Image
-                                src="/google-play.png"
+                                src="/images/googlePlay.png"
                                 alt="Get it on Google Play"
                                 width={170}
                                 height={51}
-                                className="w-full max-w-[170px] h-auto rounded-[6px] border border-[#434343] bg-black object-contain"
+                                className="scale-[0.85]"
                             />
                         </div>
                     </div>
