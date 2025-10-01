@@ -14,7 +14,7 @@ export default function Footer() {
                 <div className="relative w-full md:w-[280px] h-auto md:h-[500px] flex-shrink-0 flex justify-center">
                     <Image src="/images/iphoneBg1.png" alt="App Preview" width={244} height={527} className="absolute top-68 md:top-10 left-1/2 md:left-[19px] -translate-x-1/2 md:translate-x-0 w-[200px] md:w-[244px] h-[431px] md:h-[527px] object-cover rounded-[35px]" />
                     <Image src="/images/preFooter.png" alt="iPhone Background" width={280} height={560} className="absolute sm:top-26 top-74 left-1/2 md:left-5 -translate-x-1/2 md:translate-x-0 border-4 w-[12rem] md:w-[15rem] h-[14rem] md:h-[18rem] border-orange-400 rounded-2xl object-cover" />
-                    <Image src="/images/iphoneframe.png" alt="iPhone Frame" width={280} height={560} className="absolute top-64 md:top-8 left-1/2 md:left-0 -translate-x-1/2 md:translate-x-0 w-[230px] md:w-[280px] h-[470px] md:h-[560px] object-contain" />
+                    <Image src="/images/iphoneframe.png" unoptimized alt="iPhone Frame" width={280} height={560} className="absolute top-64 md:top-8 left-1/2 md:left-0 -translate-x-1/2 md:translate-x-0 w-[230px] md:w-[280px] h-[470px] md:h-[560px] object-contain" />
                     <Image src="/images/logo.png" alt="iPhone Frame" width={280} height={560} className="absolute scale-[0.6] md:scale-[0.8] top-78 md:top-40 left-1/2 md:left-0 -translate-x-1/2 md:translate-x-0 w-[230px] md:w-[280px] h-[470px] md:h-[560px] object-contain" />
                 </div>
 
