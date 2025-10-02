@@ -3,23 +3,54 @@ import Link from "next/link";
 
 export default function Footer() {
     return (
-        <footer className="w-full text-sm px-4  md:px-20 bg-[#020D2D]">
-            <div className="relative max-w-[1200px] mb-20 mx-auto w-full min-h-[600px] lg:min-h-[400px] border border-[#434343] rounded-[40px] flex flex-col md:flex-row items-center overflow-clip justify-start gap-8 md:gap-16 px-4 md:px-12 py-8">
+        <footer className="w-full relative text-sm px-4 pt-20  md:px-20 bg-gradient-to-b from-[#0F5F4F]/40 via-black/50 to-[#0F5F4F]/40 
+  md:bg-none md:bg-[#020D2D]">
+            <div
+                className="absolute lg:flex hidden w-[50%] h-80 opacity-60  pointer-events-none 
+             right-0 bottom-80 
+             bg-gradient-to-r from-green-400 via-teal-500 to-green-600 blur-[220px]"
+            />
+            <div className="relative max-w-[1200px] overflow-clip md:overflow-visible mb-20 mx-auto w-full border border-[#434343] rounded-3xl md:rounded-[40px] flex flex-col md:flex-row items-center justify-start gap-8 md:gap-16 px-4 md:px-12 py-8">
                 {/* Background Gradient Blur */}
-                <div className="absolute inset-0 overflow-hidden rounded-[40px]">
-                    <div className="absolute inset-0 bg-gradient-to-r from-[#ED61F3] via-[#ED61F3] to-[#7C3AED] blur-[100px]" />
+                <div className="absolute inset-0 overflow-hidden rounded-3xl md:rounded-[40px]">
+                    <div className="absolute inset-0 bg-gradient-to-r from-[#ED61F3] via-[#ED61F3] to-[#7C3AED] blur-[80px]" />
                 </div>
 
                 {/* Image Column */}
-                <div className="relative w-full md:w-[280px] h-auto md:h-[500px] flex-shrink-0 flex justify-center">
-                    <Image src="/images/iphoneBg1.png" alt="App Preview" width={244} height={527} className="absolute top-68 md:top-10 left-1/2 md:left-[19px] -translate-x-1/2 md:translate-x-0 w-[200px] md:w-[244px] h-[431px] md:h-[527px] object-cover rounded-[35px]" />
-                    <Image src="/images/preFooter.png" alt="iPhone Background" width={280} height={560} className="absolute sm:top-26 top-74 left-1/2 md:left-5 -translate-x-1/2 md:translate-x-0 border-4 w-[12rem] md:w-[15rem] h-[14rem] md:h-[18rem] border-orange-400 rounded-2xl object-cover" />
-                    <Image src="/images/iphoneframe.png" unoptimized alt="iPhone Frame" width={280} height={560} className="absolute top-64 md:top-8 left-1/2 md:left-0 -translate-x-1/2 md:translate-x-0 w-[230px] md:w-[280px] h-[470px] md:h-[560px] object-contain" />
-                    <Image src="/images/logo.png" alt="iPhone Frame" width={280} height={560} className="absolute scale-[0.6] md:scale-[0.8] top-78 md:top-40 left-1/2 md:left-0 -translate-x-1/2 md:translate-x-0 w-[230px] md:w-[280px] h-[470px] md:h-[560px] object-contain" />
+                <div className="relative w-full md:scale-[1.1] md:w-[280px] h-[300px] md:h-[400px] flex-shrink-0 flex justify-center order-2 md:order-1">
+                    <Image
+                        src="/images/iphoneBg1.png"
+                        alt="App Preview"
+                        width={244}
+                        height={527}
+                        className="absolute top-18 md:-top-26 left-1/2 md:left-[19px] -translate-x-1/2 md:translate-x-0 w-[200px] md:w-[244px] h-[431px] md:h-[527px] object-cover rounded-[35px]"
+                    />
+                    <Image
+                        src="/images/preFooter.png"
+                        alt="iPhone Background"
+                        width={280}
+                        height={560}
+                        className="absolute sm:-top-12 top-24 left-1/2 md:left-5 -translate-x-1/2 md:translate-x-0 border-4 w-[12rem] md:w-[15rem] h-[14rem] md:h-[18rem] border-orange-400 rounded-2xl object-cover"
+                    />
+                    <Image
+                        src="/images/iphoneframe.png"
+                        unoptimized
+                        alt="iPhone Frame"
+                        width={280}
+                        height={560}
+                        className="absolute top-14 md:-top-30 left-1/2 md:left-0 -translate-x-1/2 md:translate-x-0 w-[230px] md:w-[280px] h-[470px] md:h-[560px] object-contain"
+                    />
+                    <Image
+                        src="/images/logo.png"
+                        alt="iPhone Frame"
+                        width={280}
+                        height={560}
+                        className="absolute scale-[0.6] md:scale-[0.8] top-78 md:top-6 left-1/2 md:left-0 -translate-x-1/2 md:translate-x-0 w-[230px] md:w-[280px] h-[470px] md:h-[560px] object-contain"
+                    />
                 </div>
 
                 {/* Text Column */}
-                <div className="relative flex flex-col z-50 items-start justify-start text-left max-w-[500px] w-full md:mt-0">
+                <div className="relative flex flex-col z-50 items-start justify-start text-left max-w-[500px] w-full md:mt-0 order-1 md:order-2">
                     <h2 className="font-bold text-2xl md:text-[42px] leading-[1.4] text-white">
                         Ready to secure your business and simplify operations?
                     </h2>
@@ -33,7 +64,16 @@ export default function Footer() {
                         </button>
                     </div>
                 </div>
+
+                <Image
+                    src="/images/logoN.png"
+                    alt="Decoration 5"
+                    width={180}
+                    height={80}
+                    className="-bottom-4 right-3 mb-4 absolute scale-[0.6] md:scale-[1] object-contain"
+                />
             </div>
+
 
 
             <div className="w-full border-t border-[#434343]">

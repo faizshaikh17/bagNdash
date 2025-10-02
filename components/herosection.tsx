@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function HeroSection() {
   return (
-    <section className="relative w-full h-screen lg:h-[1300px] overflow-hidden bg-[#020D2D]">
+    <section className="relative w-full h-screen lg:h-[1300px] overflow-hidden md:bg-[#020D2D] bg-gradient-to-b from-[#020D2D] to-transparent ">
       {/* Grid Background - Vertical Lines (Hidden on mobile) */}
       <div className="hidden md:flex absolute inset-0 pointer-events-none opacity-20">
         {[...Array(24)].map((_, index) => (
@@ -25,58 +25,26 @@ export default function HeroSection() {
         ))}
       </div>
 
-      {/* Gradient Overlay Top (Hidden on mobile) */}
-      <div
-        className="hidden md:block absolute inset-x-0 top-0 h-[screen] max-h-[1174px] opacity-50 pointer-events-none"
-        style={{
-          background:
-            'linear-gradient(180deg, #010314 40.24%, rgba(1, 3, 20, 0) 100%), radial-gradient(85.05% 65.08% at 50% 50%, #7B50FE 37.41%, #F462F3 69.27%, #FFFFFF 100%)',
-          filter: 'blur(250px)',
-          transform: 'rotate(-180deg)',
-        }}
-      />
+      {/* Gradient Overlay Top */}
+      <div className="hidden md:block absolute inset-x-0 top-0 h-screen max-h-[1174px] opacity-65 pointer-events-none bg-[linear-gradient(180deg,#010314_40.24%,rgba(1,3,20,0)_100%),radial-gradient(85.05%_65.08%_at_50%_50%,#7B50FE_37.41%,#F462F3_69.27%,#FFFFFF_100%)] blur-[200px] rotate-180" />
 
-      {/* Radial Gradient Center (Hidden on mobile) */}
-      <div
-        className="hidden md:block absolute inset-0 pointer-events-none"
-        style={{
-          background:
-            'radial-gradient(54.1% 56.99% at 49.11% 40.56%, rgba(2, 13, 45, 0) 1.5%, #020D2D 100%)',
-        }}
-      />
+      {/* Radial Gradient Center */}
+      <div className="hidden md:block absolute inset-0 pointer-events-none bg-[radial-gradient(54.1%_56.99%_at_49.11%_40.56%,rgba(2,13,45,0)_1.5%,#020D2D_100%)]" />
 
-      {/* Blue Ellipse (Hidden on mobile) */}
-      <div
-        className="hidden md:block absolute w-full max-w-6xl h-full max-h-6xl left-0 top-5 opacity-20 pointer-events-none"
-        style={{
-          background: '#295CFA',
-          filter: 'blur(300px)',
-        }}
-      />
+      {/* Blue Ellipse (smaller radius) */}
+      <div className="block absolute w-[400px] h-[400px] md:left-60 md:top-30 opacity-25 pointer-events-none md:bg-blue-500 bg-blue-500/50 blur-[150px]" />
 
-      {/* Green Ellipse (Hidden on mobile) */}
-      <div
-        className="hidden md:block absolute w-full max-w-6xl h-full max-h-6xl left-[40%] top-8 opacity-25 pointer-events-none"
-        style={{
-          background: '#04FE9A',
-          filter: 'blur(300px)',
-        }}
-      />
+      {/* Green Ellipse (smaller radius) */}
+      <div className="hidden md:block absolute w-[400px] h-[400px] right-40 top-50 opacity-40 pointer-events-none bg-green-400 blur-[180px]" />
 
-      {/* Pink-Purple Glare (Hidden on mobile) */}
-      <div
-        className="hidden md:block absolute w-full max-w-5xl h-full max-h-5xl left-20 -top-180 opacity-25 pointer-events-none"
-        style={{
-          background:
-            'radial-gradient(circle at center, #F462F3 0%, #7B50FE 50%, transparent 100%)',
-          filter: 'blur(200px)',
-        }}
-      />
+      {/* Pink-Purple Glare */}
+      <div className="hidden md:block absolute w-[500px] h-[500px] left-20 -top-20 opacity-25 pointer-events-none bg-[radial-gradient(circle_at_center,#F462F3_0%,#7B50FE_50%,transparent_100%)] blur-[180px]" />
+
 
       {/* Content */}
       <div className="relative z-10 flex h-full flex-col items-center justify-center lg:px-6 px-3 space-y-10">
         {/* Hero Title */}
-        <h1 className="max-w-6xl text-center lg:mt-0 mt-20  text-4xl font-bold leading-[1.4] text-white md:text-4xl lg:text-[4.3rem]">
+        <h1 className="max-w-6xl text-center lg:mt-0 mt-20  text-[2rem] font-bold leading-[1.4] text-white md:text-4xl lg:text-[4.3rem]">
           One Platform. Three Powerful Solutions for Retailers.
         </h1>
 

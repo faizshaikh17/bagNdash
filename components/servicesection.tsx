@@ -45,44 +45,27 @@ export default function ServicesSection() {
     const currentActive = isDesktop ? active : 0;
 
     return (
-        <section className="relative w-full py-12 md:py-16 bg-[#020D2D] overflow-hidden">
-            {/* Shared Radial Gradient Overlay */}
+        <section
+            className="relative w-full py-12 md:py-16 
+  bg-gradient-to-b from-transparent via-[#020D2D] to-black/50 
+  md:bg-none md:bg-[#020D2D]"
+        >
+            
+
             <div
-                className="absolute inset-0 pointer-events-none opacity-25"
-                style={{
-                    background:
-                        "radial-gradient(circle at 50% 50%, rgba(41,92,250,0.18) 5%, rgba(2,13,45,0.5) 70%, #020D2D 100%)",
-                }}
+                className="absolute lg:flex hidden w-88 h-60  top-0 pointer-events-none 
+             left-[calc(35%-1075px/2+600px)]
+             bg-gradient-to-r from-purple-400 via-purple-500 to-purple-600 blur-[220px]"
             />
 
-            {/* Glow Effects */}
             <div
-                className="absolute lg:flex hidden w-[1075px] h-[914px] opacity-15 pointer-events-none"
-                style={{
-                    left: "calc(20% - 1075px/2 + 100px)",
-                    top: "-50px",
-                    background: "#F462F3",
-                    filter: "blur(300px)",
-                }}
+                className="absolute lg:flex hidden z-50 w-88 h-40 pointer-events-none 
+             left-20 bottom-100 
+             bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 blur-[220px]"
             />
-                <div
-                    className="absolute w-[1075px] h-[914px] opacity-25 pointer-events-none"
-                    style={{
-                        left: "calc(50% - 1075px/2 + 600px)",
-                        top: "200px",
-                        background: "#7C50FD",
-                        filter: "blur(300px)",
-                    }}
-                />
-            {/* <div
-                className="absolute w-[1075px] h-[914px] opacity-15 pointer-events-none"
-                style={{
-                    left: "calc(50% - 1075px/2 - 400px)",
-                    top: "300px",
-                    background: "#50FDDA",
-                    filter: "blur(300px)",
-                }}
-            /> */}
+
+            <div
+                className="absolute lg:hidden block  w-full h-[50%] opacity-70 pointer-events-none left-0 bottom-80 bg-gradient-to-r from-green-900 to-green-950 blur-[220px]" />
 
             {/* Title */}
             <h1 className="text-center font-bold text-2xl md:text-3xl lg:text-[2.2rem] tracking-wide text-white mb-8 md:mb-12 px-4">
