@@ -1,11 +1,12 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { Plus, Minus } from 'lucide-react';
 
 const HeroAndHowItWorks = () => {
     const [openIndex, setOpenIndex] = useState<number | null>(null);
     const [activeBenefitIndex, setActiveBenefitIndex] = useState(0);
+    const [currentFaqImage, setCurrentFaqImage] = useState("/images/preFooter.png");
 
     const faqs = [
         { question: "What is your service?", answer: "We provide comprehensive solutions tailored to your needs." },
@@ -14,6 +15,22 @@ const HeroAndHowItWorks = () => {
         { question: "How do I get started?", answer: "Simply sign up and follow our onboarding process to get started in minutes." },
         { question: "What support do you offer?", answer: "We provide 24/7 customer support via chat, email, and phone." }
     ];
+
+    const faqImages = [
+        "/images/faqImage1.png",
+        "/images/faqImage2.png",
+        "/images/faqImage3.png",
+        "/images/faqImage4.png",
+        "/images/faqImage5.png"
+    ];
+
+    useEffect(() => {
+        if (openIndex !== null) {
+            setCurrentFaqImage(faqImages[openIndex]);
+        } else {
+            setCurrentFaqImage("/images/preFooter.png");
+        }
+    }, [openIndex]);
 
     const toggleFAQ = (index: number) => {
         setOpenIndex(openIndex === index ? null : index);
@@ -125,7 +142,7 @@ const HeroAndHowItWorks = () => {
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-5xl w-full">
                             <div className="w-full aspect-square max-w-md mx-auto lg:max-w-none lg:hidden">
                                 <Image
-                                    src="/images/preFooter.png"
+                                    src={currentFaqImage}
                                     alt="How it works illustration"
                                     width={400}
                                     height={300}
@@ -163,7 +180,7 @@ const HeroAndHowItWorks = () => {
                             </div>
                             <div className="aspect-square hidden lg:block">
                                 <Image
-                                    src="/images/preFooter.png"
+                                    src={currentFaqImage}
                                     alt="How it works illustration"
                                     width={400}
                                     height={300}

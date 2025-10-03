@@ -23,7 +23,7 @@ export default function AboutUs() {
     },
     {
       name: 'Order Management',
-      offer: '',
+      offer: '*$99 to sign up (includes 3 months of service).',
       price: 59,
       label: 'Standard',
       features: ['Order Management', 'Item Management', 'Reports', 'Insights', 'Dedicated Account Manager']
@@ -150,6 +150,9 @@ export default function AboutUs() {
                   </div>
                 ))}
               </div>
+              <p className="text-gray-300 text-xs text-left mt-4">
+                *One-time device cost of $150 (fully refundable in free trial period).
+              </p>
             </div>
           ) : (
             <div className="w-full max-w-2xl mt-8">
@@ -176,9 +179,11 @@ export default function AboutUs() {
                       <div className="text-2xl font-semibold text-white">
                         ${plans[activeTab].price}/ Month
                       </div>
-                      <p className="text-gray-300 text-xs">
-                        {plans[activeTab].offer}
-                      </p>
+                      {activeTab !== 1 && (
+                        <p className="text-gray-300 text-xs">
+                          {plans[activeTab].offer}
+                        </p>
+                      )}
                     </div>
                     <div className="flex flex-col gap-4 pt-2">
                       {plans[activeTab].features?.map((feature, index) => (
@@ -203,6 +208,11 @@ export default function AboutUs() {
                   </button>
                 </div>
               </div>
+              {activeTab === 1 && (
+                <p className="text-gray-300 text-xs text-left mt-4">
+                  {plans[activeTab].offer}
+                </p>
+              )}
             </div>
           )}
         </div>
