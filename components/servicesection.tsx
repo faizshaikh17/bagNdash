@@ -46,7 +46,7 @@ export default function ServicesSection() {
 
     return (
         <section
-            className="relative w-full py-12 md:py-16 
+            className="relative overflow-hidden w-full py-12 md:py-16 
   bg-gradient-to-b from-transparent via-[#020D2D] to-black/50 
   md:bg-none md:bg-[#020D2D]"
         >

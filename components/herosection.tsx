@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function HeroSection() {
   return (
-    <section className="relative w-full h-screen lg:h-[1300px] overflow-hidden md:bg-[#020D2D] bg-gradient-to-b from-[#020D2D] to-transparent ">
+    <section className="relative w-full h-screen lg:h-[1300px] overflow-hidden md:bg-[#020D2D] bg-gradient-to-b from-[#020D2D] to-transparent">
       {/* Grid Background - Vertical Lines (Hidden on mobile) */}
       <div className="hidden md:flex absolute inset-0 pointer-events-none opacity-20">
         {[...Array(24)].map((_, index) => (
