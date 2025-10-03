@@ -168,7 +168,7 @@ export default function Navbar() {
           />
         </Link>
         <nav className="flex gap-8 lg:gap-16 items-center relative">
-          <div className="flex gap-6 lg:gap-16 items-center text-white text-sm font-semibold tracking-wider">
+          <div className="flex gap-6 lg:gap-10 items-center text-white text-sm font-semibold tracking-wider">
             <div className="relative group">
               <button className="flex items-center gap-2 cursor-pointer text-sm px-3 py-2">
                 <span>Services</span>
