@@ -104,7 +104,7 @@ export default function AboutUs() {
           <h1 className="text-center font-bold text-2xl md:text-3xl lg:text-[2.2rem] tracking-wide text-white mb-4 md:mb-8 px-4">
             Our Story
           </h1>
-          <div className='text-center text-sm md:text-base md:px-0 px-12  flex flex-col gap-8 items-center max-w-2xl'>
+          <div className='text-center text-white text-sm md:text-base md:px-0 px-12  flex flex-col gap-8 items-center max-w-2xl'>
 
             <p>
               Bag n Dash was born inside real liquor and convenience stores. As independent retailers, we saw firsthand the challenges of shoplifting, manual invoices, and scattered online orders. Large chains had advanced technology, but smaller retailers were left without affordable solutions.

@@ -250,8 +250,6 @@ export default function Navbar() {
       {/* Contact Modal - Now outside header */}
       {isContactOpen && (
         <>
-
-
           {/* Centered modal */}
           <div className="fixed inset-0 flex items-center justify-center z-[102] pointer-events-none">
             <div className="bg-[#1b2542] border border-white/50 text-white rounded-2xl p-8 max-w-xl w-full shadow-2xl mx-4 pointer-events-auto">

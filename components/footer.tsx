@@ -117,14 +117,17 @@ export default function Footer() {
                         <div className="flex flex-col gap-6">
                             <h3 className="text-white font-poppins font-semibold">Our Services</h3>
                             <div className="flex flex-col gap-4">
-                                <Link href="/services/online-order-management" className="text-[#E0E0E0] hover:text-white">
+                                <Link href="/online-order-management" className="text-[#E0E0E0] hover:text-white">
                                     Online Order Management
                                 </Link>
-                                <Link href="/services/video-transaction-analytics" className="text-[#E0E0E0] hover:text-white">
+                                <Link href="/video-transaction-analytics" className="text-[#E0E0E0] hover:text-white">
                                     Video + Transaction Analytics
                                 </Link>
-                                <Link href="/services/ai-invoice-processing" className="text-[#E0E0E0] hover:text-white">
+                                <Link href="/aibased-invoice-processing" className="text-[#E0E0E0] hover:text-white">
                                     AI-Based Invoice Processing
+                                </Link>
+                                <Link href="/surveillance-monitoring" className="text-[#E0E0E0] hover:text-white">
+                                    Surveillance Monitoring
                                 </Link>
                             </div>
                         </div>
@@ -132,10 +135,10 @@ export default function Footer() {
                         <div className="flex flex-col gap-6">
                             <h3 className="text-white font-poppins font-semibold">Quick Links</h3>
                             <div className="flex flex-col gap-4">
-                                <Link href="/about" className="text-[#E0E0E0] hover:text-white">About</Link>
-                                <Link href="/industries" className="text-[#E0E0E0] hover:text-white">Industries</Link>
-                                <Link href="/contact" className="text-[#E0E0E0] hover:text-white">Contact</Link>
+                                <Link href="/about-us" className="text-[#E0E0E0] hover:text-white">About</Link>
                                 <Link href="/pricing" className="text-[#E0E0E0] hover:text-white">Pricing</Link>
+                                <Link href="/contact" className="text-[#E0E0E0] hover:text-white">Contact</Link>
+                                <Link href="/video-transaction-analytics" className="text-[#E0E0E0] hover:text-white">Services</Link>
                             </div>
                         </div>
 

@@ -1,24 +1,14 @@
 @import "tailwindcss";
 
+/* Always dark mode */
 :root {
-  --background: #171717;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --background: #171717;  /* main dark background */
+  --foreground: #ffffff;  /* main text color */
   --font-sans: var(--font-poppins), sans-serif;
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #0a0a0a;
-  }
-}
-
+/* Body styling */
 body {
   background: var(--background);
   color: var(--foreground);
@@ -27,12 +17,22 @@ body {
   padding: 0;
 }
 
-
+/* Main container */
 main {
   min-height: 100vh;
 }
 
-
+/* Example: colorful buttons */
 .demo-button {
   background: linear-gradient(95.49deg, #F462F3 52.87%, #7B50FE 106.28%);
+  color: #ffffff; /* text stays white */
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+/* Tailwind dark mode disabled */
+html {
+  color-scheme: dark; /* forces dark mode for browser forms, scrollbars, etc. */
 }
