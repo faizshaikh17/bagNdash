@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Image from "next/image";
-import { X } from "lucide-react";
+import { X, CircleAlert } from "lucide-react";
 
 export default function AboutUs() {
   const [activeTab, setActiveTab] = useState(0);
@@ -132,8 +132,8 @@ export default function AboutUs() {
                                     className="w-4 h-4 flex-shrink-0 mt-0.5"
                                   />
                                 )}
-                                <span className={`text-white text-xs leading-relaxed ${isIncludes ? 'ml-2' : ''}`}>
-                                  {feature}
+                                <span className={`text-white flex justify-center items-center gap-2 text-xs leading-relaxed ${isIncludes ? 'ml-2' : ''}`}>
+                                  {feature} <CircleAlert size={14}/>
                                 </span>
                               </div>
                             );
@@ -195,7 +195,7 @@ export default function AboutUs() {
                             height={20}
                             className="w-4 h-4 flex-shrink-0 mt-0.5"
                           />
-                          <span className="text-gray-300 text-xs leading-relaxed">{feature}</span>
+                          <span className="text-white flex justify-center items-center gap-2 text-xs leading-relaxed">{feature} <CircleAlert size={14}/></span>
                         </div>
                       ))}
                     </div>
