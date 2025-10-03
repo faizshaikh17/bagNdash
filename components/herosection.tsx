@@ -1,6 +1,5 @@
 import React from 'react';
 import { ChevronRight } from 'lucide-react';
-import Image from "next/image";
 
 export default function HeroSection() {
   return (
@@ -32,7 +31,14 @@ export default function HeroSection() {
       <div className="hidden md:block absolute inset-0 pointer-events-none bg-[radial-gradient(54.1%_56.99%_at_49.11%_40.56%,rgba(2,13,45,0)_1.5%,#020D2D_100%)]" />
 
       {/* Blue Ellipse (smaller radius) */}
-      <div className="block absolute w-[400px] h-[400px] md:left-60 md:top-30 opacity-25 pointer-events-none md:bg-blue-500 bg-blue-500/50 blur-[150px]" />
+      <div className="md:block hidden absolute w-[400px] h-[400px] md:left-60 md:top-30 opacity-25 pointer-events-none md:bg-blue-500 bg-blue-500/50 blur-[150px]" />
+
+      <div className="block md:hidden absolute w-[400px] h-[400px] 
+  md:left-60 md:top-30 
+  opacity-60 pointer-events-none 
+  rounded-full blur-[120px]
+  bg-[radial-gradient(circle_at_center,_#2563eb,_#1e3a8a)]" />
+
 
       {/* Green Ellipse (smaller radius) */}
       <div className="hidden md:block absolute w-[400px] h-[400px] right-40 top-50 opacity-40 pointer-events-none bg-green-400 blur-[180px]" />
@@ -44,12 +50,12 @@ export default function HeroSection() {
       {/* Content */}
       <div className="relative z-10 flex h-full flex-col items-center justify-center lg:px-6 px-3 space-y-10">
         {/* Hero Title */}
-        <h1 className="max-w-6xl text-center lg:mt-0 mt-20  text-[2rem] font-bold leading-[1.4] text-white md:text-4xl lg:text-[4.3rem]">
+        <h1 className="max-w-6xl text-center lg:mt-0 mt-34  text-[2rem] font-bold leading-[1.4] text-white md:text-4xl lg:text-[4.3rem]">
           One Platform. Three Powerful Solutions for Retailers.
         </h1>
 
         {/* Subtitle */}
-        <p className="max-w-2xl text-center tracking-wide text-white/90">
+        <p className="max-w-2xl text-center text-sm md:text-base tracking-wide text-white/90">
           AI-powered tools for video & transaction analytics, online order
           management,<br className="hidden sm:block" />
           and automated invoice processing.
@@ -77,8 +83,15 @@ export default function HeroSection() {
           </button>
         </div>
 
-        <div className="relative mx-auto my-6 z-50 aspect-[2/1] w-full max-w-5xl rounded-[20px] border border-white/20 overflow-hidden">
-          <Image src="/images/heroSection.png" alt="Hero" fill className="object-cover" />
+        <div className="relative mx-auto z-50 w-full h-[500px] sm:aspect-[2/1] sm:h-auto md:max-w-5xl rounded-[20px] border border-white/20 overflow-hidden">
+          <video
+            src="/images/heroSection.mp4"
+            className="w-full h-full object-cover"
+            autoPlay
+            muted
+            loop
+            playsInline
+          />
         </div>
       </div>
     </section>

@@ -50,8 +50,7 @@ export default function IndustriesSection() {
     const [activeTestimonial, setActiveTestimonial] = useState(1);
 
     return (
-        <section className="relative flex flex-col items-center gap-12 sm:gap-16 md:gap-20 lg:gap-32 w-full py-8 sm:py-12 md:py-16 bg-gradient-to-b from-transparent via-transparent to-[#0F5F4F]/40 
-  md:bg-none md:bg-[#020D2D] overflow-hidden">
+        <section className="relative flex flex-col items-center gap-12 sm:gap-16 md:gap-20 lg:gap-32 w-full py-8 sm:py-12 md:py-16 bg-gradient-to-b from-transparent via-transparent to-[#0F5F4F]/40 md:bg-none md:bg-[#020D2D] overflow-hidden">
             <div
                 className="absolute lg:flex hidden inset-0 pointer-events-none opacity-15"
                 style={{
@@ -59,8 +58,16 @@ export default function IndustriesSection() {
                 }}
             />
 
-            <div className="w-full z-50">
-                <h1 className="text-center font-bold text-2xl md:text-3xl lg:text-[2.2rem] tracking-wide text-white mb-4 md:mb-8 px-4">
+            <div className="absolute top-10 md:hidden inset-0 flex items-center justify-center pointer-events-none">
+                <div className="h-[20%] min-w-5xl rounded-full bg-[radial-gradient(circle_at_top,_#4B2FFF_0%,_#7B50FE_35%,_transparent_70%)] blur-[200px]" />
+            </div>
+
+            <div className="absolute bottom-10 opacity-40 md:hidden inset-0 flex items-center justify-center pointer-events-none">
+                <div className="h-[60%] min-w-5xl rounded-full bg-[radial-gradient(circle_at_top,_#260E26_0%,_#5C1D4B_35%,_transparent_70%)] blur-[200px]" />
+            </div>
+
+            <div className="w-full z-10">
+                <h1 className="text-center font-bold text-2xl sm:text-3xl md:text-3xl lg:text-[2.2rem] tracking-wide text-white mb-6 sm:mb-8 md:mb-8 px-4">
                     Industries We Serve
                 </h1>
 
@@ -95,7 +102,7 @@ export default function IndustriesSection() {
                     <div className="lg:hidden relative flex justify-center overflow-hidden">
                         <div className="flex transition-transform duration-500 ease-in-out w-full max-w-[600px]" style={{ transform: `translateX(-${activeIndustry * 100}%)` }}>
                             {industries.map((industry, index) => (
-                                <div key={index} className="min-w-full mb-6 z-50 flex justify-center px-4">
+                                <div key={index} className="min-w-full flex justify-center px-4">
                                     <div className="relative bg-gradient-to-br from-black/10 via-[#14b8a62e]/50 to-[#14b8a62e]/80 backdrop-blur-[20px] border border-[#434343] rounded-[24px] bg-black/30 p-6 sm:p-8 w-full max-w-[340px]">
                                         <Image
                                             src={industry.image}
@@ -132,116 +139,116 @@ export default function IndustriesSection() {
                 </div>
             </div>
 
-            <div className="w-full z-50">
-                <h1 className="text-center font-bold text-2xl md:text-3xl lg:text-[2.2rem] tracking-wide text-white mb-4 md:mb-8 px-4">
+            <div className="w-full z-10">
+                <h1 className="text-center font-bold text-2xl sm:text-3xl md:text-3xl lg:text-[2.2rem] tracking-wide text-white mb-6 sm:mb-8 md:mb-8 px-4">
                     Why Choose Bag N Dash?
                 </h1>
 
-                <div className="mx-auto z-50 px-4 sm:px-6 lg:px-8 max-w-6xl w-full">
-                    <div className="block lg:hidden px-4">
+                <div className="mx-auto z-10 px-4 sm:px-6 lg:px-8 max-w-6xl w-full">
+                    <div className="block lg:hidden">
                         <div className="relative w-full mb-6 overflow-hidden">
                             <div
                                 className="flex transition-transform duration-500 ease-out"
                                 style={{ transform: `translateX(-${activeWhy * 100}%)` }}
                             >
                                 <div className="w-full flex-shrink-0 px-2">
-                                    <div className="relative border border-[#434343] rounded-3xl p-4 flex flex-col items-start justify-start shadow-2xl bg-[radial-gradient(circle_at_80%_70%,rgba(20,184,166,0.18)_5%,rgba(15,15,15,0.5)_70%,#0f0f0f_100%)] h-[30rem]">
+                                    <div className="relative border border-[#434343] rounded-3xl p-4 flex flex-col items-start justify-start shadow-2xl bg-[radial-gradient(circle_at_80%_70%,rgba(20,184,166,0.18)_5%,rgba(15,15,15,0.5)_70%,#0f0f0f_100%)] h-[28rem] sm:h-[30rem]">
                                         <Image
                                             src="/images/cctv.svg"
                                             alt="Decoration 1"
                                             width={120}
                                             height={120}
-                                            className="object-contain absolute top-30 w-16 h-16 scale-[3] left-16 mb-4"
+                                            className="object-contain absolute top-28 sm:top-30 w-16 h-16 scale-[2.5] sm:scale-[3] left-12 sm:left-16 mb-4"
                                         />
-                                        <h2 className="text-xl font-semibold leading-[1.7] tracking-wider text-white text-left mt-auto px-2">
+                                        <h2 className="text-lg sm:text-xl font-semibold leading-[1.7] tracking-wider text-white text-left mt-auto px-2">
                                             Works with your existing POS & cameras
                                         </h2>
                                     </div>
                                 </div>
 
                                 <div className="w-full flex-shrink-0 px-2">
-                                    <div className="relative border border-[#434343] rounded-3xl p-4 flex flex-col items-start justify-start shadow-2xl bg-[radial-gradient(circle_at_70%_50%,rgba(168,85,247,0.08)_0%,rgba(15,15,15,0.95)_70%,#0f0f0f_100%)] h-[30rem]">
+                                    <div className="relative border border-[#434343] rounded-3xl p-4 flex flex-col items-start justify-start shadow-2xl bg-[radial-gradient(circle_at_70%_50%,rgba(168,85,247,0.08)_0%,rgba(15,15,15,0.95)_70%,#0f0f0f_100%)] h-[28rem] sm:h-[30rem]">
                                         <Image
                                             src="/images/atm1.svg"
                                             alt="Decoration 2"
                                             width={180}
                                             height={80}
-                                            className="object-contain top-38 right-5 absolute mb-4"
+                                            className="object-contain top-32 sm:top-38 right-5 absolute mb-4 scale-90 sm:scale-100"
                                         />
                                         <Image
                                             src="/images/atm2.svg"
                                             alt="Decoration 2"
                                             width={180}
                                             height={80}
-                                            className="object-contain top-74 right-24 absolute mb-4"
+                                            className="object-contain top-64 sm:top-74 right-20 sm:right-24 absolute mb-4 scale-90 sm:scale-100"
                                         />
-                                        <h2 className="text-xl font-semibold leading-[1.7] tracking-wider text-white text-left px-2">
+                                        <h2 className="text-lg sm:text-xl font-semibold leading-[1.7] tracking-wider text-white text-left px-2">
                                             Centralized online <br /> order dashboard
                                         </h2>
                                     </div>
                                 </div>
 
                                 <div className="w-full flex-shrink-0 px-2">
-                                    <div className="relative border border-[#434343] rounded-3xl p-4 flex flex-col items-start justify-end shadow-2xl bg-[radial-gradient(circle_at_80%_80%,rgba(22,101,52,0.52)_0%,rgba(15,15,15,0.95)_75%,#0f0f0f_100%)] h-[30rem]">
+                                    <div className="relative border border-[#434343] rounded-3xl p-4 flex flex-col items-start justify-end shadow-2xl bg-[radial-gradient(circle_at_80%_80%,rgba(22,101,52,0.52)_0%,rgba(15,15,15,0.95)_75%,#0f0f0f_100%)] h-[28rem] sm:h-[30rem]">
                                         <Image
                                             src="/images/shield.svg"
                                             alt="Decoration 3"
                                             width={100}
                                             height={100}
-                                            className="object-contain scale-[2] top-36 left-14 w-16 h-16 mb-3 absolute"
+                                            className="object-contain scale-[1.8] sm:scale-[2] top-32 sm:top-36 left-12 sm:left-14 w-16 h-16 mb-3 absolute"
                                         />
-                                        <h2 className="text-xl font-semibold leading-[1.7] tracking-wider text-white text-left mt-auto px-2">
+                                        <h2 className="text-lg sm:text-xl font-semibold leading-[1.7] tracking-wider text-white text-left mt-auto px-2">
                                             Trusted by retailers & associations
                                         </h2>
                                     </div>
                                 </div>
 
                                 <div className="w-full flex-shrink-0 px-2">
-                                    <div className="relative border border-[#434343] rounded-3xl p-4 flex flex-col items-start justify-end shadow-2xl bg-[radial-gradient(circle_at_80%_50%,rgba(100,181,246,0.25)_0%,rgba(15,15,15,0.95)_70%,#0f0f0f_100%)] h-[30rem]">
+                                    <div className="relative border border-[#434343] rounded-3xl p-4 flex flex-col items-start justify-end shadow-2xl bg-[radial-gradient(circle_at_80%_50%,rgba(100,181,246,0.25)_0%,rgba(15,15,15,0.95)_70%,#0f0f0f_100%)] h-[28rem] sm:h-[30rem]">
                                         <Image
                                             src="/images/human.svg"
                                             alt="Decoration 4"
                                             width={140}
                                             height={140}
-                                            className="object-contain right-9 top-30 w-20 h-20 scale-[3.5] absolute mb-4"
+                                            className="object-contain right-8 sm:right-9 top-28 sm:top-30 w-20 h-20 scale-[3] sm:scale-[3.5] absolute mb-4"
                                         />
-                                        <h2 className="text-xl font-semibold leading-[1.7] tracking-wider text-white text-left mt-auto px-2">
+                                        <h2 className="text-lg sm:text-xl font-semibold leading-[1.7] tracking-wider text-white text-left mt-auto px-2">
                                             AI-powered automation → less manual work
                                         </h2>
                                     </div>
                                 </div>
 
                                 <div className="w-full flex-shrink-0 px-2">
-                                    <div className="relative overflow-hidden border border-[#434343] rounded-3xl p-4 flex flex-col items-start justify-start shadow-2xl bg-[radial-gradient(circle_at_50%_90%,rgba(190,30,90,0.32)_0%,rgba(255,94,58,0.08)_50%,rgba(15,15,15,0.96)_70%,#0f0f0f_100%)] h-[30rem]">
+                                    <div className="relative overflow-hidden border border-[#434343] rounded-3xl p-4 flex flex-col items-start justify-start shadow-2xl bg-[radial-gradient(circle_at_50%_90%,rgba(190,30,90,0.32)_0%,rgba(255,94,58,0.08)_50%,rgba(15,15,15,0.96)_70%,#0f0f0f_100%)] h-[28rem] sm:h-[30rem]">
                                         <Image
                                             src="/images/lock.svg"
                                             alt="Decoration 5"
                                             width={180}
                                             height={80}
-                                            className="object-contain z-20 scale-[1.5] -bottom-8 left-4 absolute mb-4 w-24 h-12"
+                                            className="object-contain z-20 scale-[1.3] sm:scale-[1.5] -bottom-8 left-4 absolute mb-4 w-24 h-12"
                                         />
                                         <Image
                                             src="/images/lockShield.svg"
                                             alt="Decoration 5"
                                             width={180}
                                             height={80}
-                                            className="object-contain -bottom-4 scale-[1.5] z-10 left-4 absolute mb-4 w-24 h-12"
+                                            className="object-contain -bottom-4 scale-[1.3] sm:scale-[1.5] z-10 left-4 absolute mb-4 w-24 h-12"
                                         />
                                         <Image
                                             src="/images/cloud.svg"
                                             alt="Decoration 5"
                                             width={180}
                                             height={80}
-                                            className="object-contain bottom-4 left-12 scale-[1.8] absolute mb-4 w-24 h-12"
+                                            className="object-contain bottom-4 left-10 sm:left-12 scale-[1.6] sm:scale-[1.8] absolute mb-4 w-24 h-12"
                                         />
                                         <Image
                                             src="/images/logoN.png"
                                             alt="Decoration 5"
                                             width={180}
                                             height={80}
-                                            className="object-contain bottom-0 right-0 scale-[2] opacity-20 absolute mb-4 w-24 h-12"
+                                            className="object-contain bottom-0 right-0 scale-[1.8] sm:scale-[2] opacity-20 absolute mb-4 w-24 h-12"
                                         />
-                                        <h2 className="text-xl font-semibold leading-[1.7] tracking-wider text-white text-left px-2">
+                                        <h2 className="text-lg sm:text-xl font-semibold leading-[1.7] tracking-wider text-white text-left px-2">
                                             3 years secure cloud video/audio storage
                                         </h2>
                                     </div>
@@ -250,26 +257,13 @@ export default function IndustriesSection() {
                         </div>
 
                         <div className="my-6 flex justify-center gap-2.5">
-                            <button
-                                onClick={() => setActiveWhy(0)}
-                                className={`w-2.5 h-2.5 rounded-full transition-all ${activeWhy === 0 ? "bg-gradient-to-r from-[#F462F3] to-[#7B50FE]" : "bg-[#4F4F4F]"}`}
-                            />
-                            <button
-                                onClick={() => setActiveWhy(1)}
-                                className={`w-2.5 h-2.5 rounded-full transition-all ${activeWhy === 1 ? "bg-gradient-to-r from-[#F462F3] to-[#7B50FE]" : "bg-[#4F4F4F]"}`}
-                            />
-                            <button
-                                onClick={() => setActiveWhy(2)}
-                                className={`w-2.5 h-2.5 rounded-full transition-all ${activeWhy === 2 ? "bg-gradient-to-r from-[#F462F3] to-[#7B50FE]" : "bg-[#4F4F4F]"}`}
-                            />
-                            <button
-                                onClick={() => setActiveWhy(3)}
-                                className={`w-2.5 h-2.5 rounded-full transition-all ${activeWhy === 3 ? "bg-gradient-to-r from-[#F462F3] to-[#7B50FE]" : "bg-[#4F4F4F]"}`}
-                            />
-                            <button
-                                onClick={() => setActiveWhy(4)}
-                                className={`w-2.5 h-2.5 rounded-full transition-all ${activeWhy === 4 ? "bg-gradient-to-r from-[#F462F3] to-[#7B50FE]" : "bg-[#4F4F4F]"}`}
-                            />
+                            {[0, 1, 2, 3, 4].map((index) => (
+                                <button
+                                    key={index}
+                                    onClick={() => setActiveWhy(index)}
+                                    className={`w-2.5 h-2.5 rounded-full transition-all ${activeWhy === index ? "bg-gradient-to-r from-[#F462F3] to-[#7B50FE]" : "bg-[#4F4F4F]"}`}
+                                />
+                            ))}
                         </div>
                     </div>
 
@@ -370,23 +364,23 @@ export default function IndustriesSection() {
                 </div>
             </div>
 
-            <div className="w-full z-50">
-                <h1 className="text-center font-bold text-2xl md:text-3xl lg:text-[2.2rem] tracking-wide text-white mb-4 md:mb-8 px-4">
+            <div className="w-full z-10">
+                <h1 className="text-center font-bold text-2xl sm:text-3xl md:text-3xl lg:text-[2.2rem] tracking-wide text-white mb-6 sm:mb-8 md:mb-8 px-4">
                     Partners & Integration
                 </h1>
 
-                <div className="mx-auto z-50 mb-30 px-4 sm:px-6 lg:px-8 w-full">
+                <div className="mx-auto z-10 mb-16 sm:mb-20 md:mb-30 px-4 sm:px-6 lg:px-8 w-full">
                     <div className="hidden lg:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10 max-w-7xl mx-auto">
                         {logos.map((logo, index) => (
                             <div
                                 key={index}
-                                className="relative border h-28 border-[#434343] rounded-[30px] bg-gradient-to-br from-black/20 to-[#14b8a62e]/50 backdrop-blur-[20px] py-6 px-20 flex items-center justify-center"
+                                className="relative border h-36 border-[#434343] rounded-[30px] bg-gradient-to-br from-black/20 to-[#14b8a62e]/50 backdrop-blur-[20px] py-8 px-24 flex items-center justify-center"
                             >
                                 <Image
                                     src={logo.image}
                                     alt={logo.title}
-                                    height={240}
-                                    width={240}
+                                    height={280}
+                                    width={280}
                                     className="object-contain text-white"
                                 />
                             </div>
@@ -398,13 +392,13 @@ export default function IndustriesSection() {
                             {[...logos, ...logos].map((logo, index) => (
                                 <div
                                     key={index}
-                                    className="inline-flex items-center justify-center flex-shrink-0 w-[120px] h-[80px]"
+                                    className="inline-flex items-center justify-center flex-shrink-0 w-[140px] sm:w-[160px] h-[90px] sm:h-[100px]"
                                 >
                                     <Image
                                         src={logo.image}
                                         alt={logo.title}
-                                        height={80}
-                                        width={120}
+                                        height={100}
+                                        width={160}
                                         className="object-contain"
                                     />
                                 </div>
@@ -436,41 +430,39 @@ export default function IndustriesSection() {
                 }}
             />
 
-            <div
-                className="absolute lg:flex z-50 hidden w-88 h-60 pointer-events-none left-20 bottom-70 bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 blur-[220px]"
-            />
+            <div className="absolute lg:flex z-50 hidden w-88 h-60 pointer-events-none left-20 bottom-70 bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 blur-[220px]" />
 
-            <div className="w-full z-50">
-                <h1 className="text-center font-bold text-2xl md:text-3xl lg:text-[2.2rem] tracking-wide text-white mb-4 md:mb-8 px-4">
+            <div className="w-full z-10">
+                <h1 className="text-center font-bold text-2xl sm:text-3xl md:text-3xl lg:text-[2.2rem] tracking-wide text-white mb-6 sm:mb-8 md:mb-8 px-4">
                     Testimonials
                 </h1>
 
                 <div className="relative flex justify-center px-4 sm:px-6 lg:px-8 w-full">
                     <div
-                        className="flex transition-transform duration-500 ease-in-out w-full max-w-[700px]"
+                        className="flex transition-transform duration-500 ease-in-out w-full max-w-[800px]"
                         style={{ transform: `translateX(-${activeTestimonial * 100}%)` }}
                     >
                         {testimonials.map((testimonial, index) => (
                             <div key={index} className="min-w-full flex justify-center px-2">
-                                <div className="relative w-full max-w-[320px] lg:max-w-[650px] min-h-[420px] sm:min-h-[500px] lg:min-h-[240px] lg:h-[240px] border border-[#434343]/70 rounded-[24px] lg:rounded-[30px] overflow-hidden bg-black/40 backdrop-blur-[20px] flex flex-col lg:flex-row">
-                                    <div className="w-full lg:w-[260px] h-[200px] sm:h-[240px] lg:h-full flex-shrink-0 p-3 sm:p-4 lg:p-4">
+                                <div className="relative w-full max-w-[260px] sm:max-w-[400px] lg:max-w-[750px] min-h-[440px] sm:min-h-[480px] lg:min-h-[280px] lg:h-[280px] border border-[#434343]/70 rounded-[24px] lg:rounded-[30px] overflow-hidden bg-black/40 backdrop-blur-[20px] flex flex-col lg:flex-row">
+                                    <div className="w-full lg:w-[280px] h-[220px] sm:h-[240px] lg:h-full flex-shrink-0 p-4 sm:p-4 lg:p-4">
                                         <div className="w-full h-full rounded-[12px] overflow-hidden">
                                             <Image
                                                 src={testimonial.image}
                                                 alt={testimonial.name}
-                                                width={260}
-                                                height={240}
+                                                width={280}
+                                                height={280}
                                                 className="w-full h-full object-cover"
                                             />
                                         </div>
                                     </div>
-                                    <div className="hidden lg:block w-[4px] h-[228px] my-auto rounded-full bg-gradient-to-b from-[#F462F3] to-[#7B50FE]" />
-                                    <div className="lg:hidden w-[280px] h-[3px] mx-auto rounded-full bg-gradient-to-r from-[#F462F3] to-[#7B50FE]" />
-                                    <div className="flex-1 flex flex-col justify-start lg:justify-center px-5 sm:px-6 lg:px-8 pt-4 sm:pt-6 pb-5 sm:pb-6 lg:pb-0">
-                                        <h2 className="font-semibold text-lg sm:text-xl lg:text-[28px] leading-[140%] lg:leading-[160%] text-white mb-2 sm:mb-3 lg:mb-3">
+                                    <div className="hidden lg:block w-[4px] h-[268px] my-auto rounded-full bg-gradient-to-b from-[#F462F3] to-[#7B50FE]" />
+                                    <div className="lg:hidden w-[300px] sm:w-[340px] h-[3px] mx-auto rounded-full bg-gradient-to-r from-[#F462F3] to-[#7B50FE]" />
+                                    <div className="flex-1 flex flex-col justify-start lg:justify-center px-6 sm:px-7 lg:px-10 pt-5 sm:pt-6 pb-6 sm:pb-7 lg:pb-0">
+                                        <h2 className="font-semibold text-xl sm:text-2xl lg:text-[32px] leading-[140%] lg:leading-[160%] text-white mb-3 sm:mb-4 lg:mb-4">
                                             {testimonial.name}
                                         </h2>
-                                        <p className="font-normal lg:font-medium text-sm lg:text-[16px] leading-[160%] lg:leading-[180%] text-[#E0E0E0]">
+                                        <p className="font-normal lg:font-medium text-sm sm:text-base lg:text-[18px] leading-[160%] lg:leading-[180%] text-[#E0E0E0]">
                                             {testimonial.review}
                                         </p>
                                     </div>
