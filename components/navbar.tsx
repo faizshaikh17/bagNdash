@@ -7,225 +7,51 @@ import Image from 'next/image'
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isServicesOpen, setIsServicesOpen] = useState(false)
+  const [isContactOpen, setIsContactOpen] = useState(false)
+
+  const handleContactClick = () => {
+    // e.preventDefault()
+    setIsContactOpen(true)
+  }
+
+  const closeContact = () => {
+    setIsContactOpen(false)
+  }
 
   return (
-    <header
-      className="fixed top-0 left-0 w-full md:bg-black/30 md:backdrop-blur-xs z-[100]"
-    >
-      {/* Background Glow */}
-      <div
-        className="absolute w-full md:w-[1075px] h-[600px] md:h-[914px] top-[-100px] left-0 md:left-[calc(50%_-_537.5px_+_300px)] opacity-15 pointer-events-none"
-        style={{ background: '#F462F3', filter: 'blur(300px)' }}
-      />
+    <>
+      <header
+        className="fixed top-0 left-0 w-full md:bg-black/30 md:backdrop-blur-xs z-[100]"
+      >
+        {/* Background Glow */}
+        <div
+          className="absolute w-full md:w-[1075px] h-[600px] md:h-[914px] top-[-100px] left-0 md:left-[calc(50%_-_537.5px_+_300px)] opacity-15 pointer-events-none"
+          style={{ background: '#F462F3', filter: 'blur(300px)' }}
+        />
 
-      {/* Mobile Navbar */}
-      <div className="flex md:hidden items-center justify-between px-4 py-4 relative z-10 h-[70px]">
-        <div className="flex items-center gap-4">
-          <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="text-white hover:opacity-80 transition-opacity"
-            aria-label="Toggle menu"
-          >
-            <Menu size={22} />
-          </button>
-          <Link href="/" className="flex items-center">
-            <Image
-              src="/images/logo.png"
-              alt="Logo"
-              width={120}
-              height={40}
-              priority
-              className="h-auto scale-[1.15] w-auto"
-            />
-          </Link>
-        </div>
-        <button
-          className="rounded-full px-4 py-1.5 tracking-wide text-sm font-semibold text-white transition-opacity hover:opacity-90"
-          style={{
-            background:
-              'linear-gradient(95.49deg, #F462F3 52.87%, #7B50FE 106.28%)',
-          }}
-        >
-          Book a Demo
-        </button>
-      </div>
-
-      {/* Mobile Menu Overlay */}
-      {isMenuOpen && (
-        <>
-          <div
-            className="fixed inset-0 bg-black/50 backdrop-blur-sm z-[99]"
-            onClick={() => setIsMenuOpen(false)}
-          />
-          <div className="md:hidden fixed inset-x-0 top-0 bg-[#1b2542] py-6 px-4 z-[100] max-h-screen overflow-y-auto">
-            <div className="flex flex-col h-full">
-              <div className="flex justify-between items-center mb-6">
-                <Link href="/" className="flex items-center">
-                  <Image
-                    src="/images/logo.png"
-                    alt="Logo"
-                    width={120}
-                    height={40}
-                    priority
-                    className="h-auto w-auto"
-                  />
-                </Link>
-                <button
-                  onClick={() => setIsMenuOpen(false)}
-                  className="text-white p-2 hover:opacity-80 transition-opacity"
-                  aria-label="Close menu"
-                >
-                  <X size={24} />
-                </button>
-              </div>
-              <nav className="flex flex-col gap-4 text-white text-sm font-semibold tracking-wider flex-1">
-                <div className="relative">
-                  <button
-                    onClick={() => setIsServicesOpen(!isServicesOpen)}
-                    className="flex items-center gap-2 w-full text-left px-3 py-2 rounded-md hover:bg-[#2b3655] transition"
-                  >
-                    <span>Services</span>
-                    <ChevronDown
-                      size={18}
-                      className={`transition-transform duration-300 ${
-                        isServicesOpen ? 'rotate-180' : ''
-                      }`}
-                      style={{ strokeWidth: 2 }}
-                    />
-                  </button>
-                  {isServicesOpen && (
-                    <div className="flex flex-col mt-2 space-y-1.5 bg-[#1b2542] border border-white/20 rounded-2xl shadow-xl p-2">
-                      <Link
-                        href="/online-order-management"
-                        className="block px-4 py-2 rounded-lg hover:bg-[#2b3655] transition"
-                      >
-                        Online Order Management
-                      </Link>
-                      <Link
-                        href="/video-transaction-analytics"
-                        className="block px-4 py-2 rounded-lg hover:bg-[#2b3655] transition"
-                      >
-                        Video + Transaction Analytics
-                      </Link>
-                      <Link
-                        href="/aibased-invoice-processing"
-                        className="block px-4 py-2 rounded-lg hover:bg-[#2b3655] transition"
-                      >
-                        AI-Based Invoice Processing
-                      </Link>
-                      <Link
-                        href="/surveillance-monitoring"
-                        className="block px-4 py-2 rounded-lg hover:bg-[#2b3655] transition"
-                      >
-                        Surveillance Monitoring
-                      </Link>
-                    </div>
-                  )}
-                </div>
-                <Link
-                  href="/pricing"
-                  className="hover:opacity-80 px-3 py-2 rounded-md transition-opacity"
-                >
-                  Pricing
-                </Link>
-                <Link
-                  href="/about-us"
-                  className="hover:opacity-80 px-3 py-2 rounded-md transition-opacity"
-                >
-                  About
-                </Link>
-                <Link
-                  href="/"
-                  className="hover:opacity-80 px-3 py-2 rounded-md transition-opacity"
-                >
-                  Contact
-                </Link>
-              </nav>
-              <button
-                className="mt-6 w-full rounded-full py-2.5 tracking-wide text-sm font-semibold text-white transition-opacity hover:opacity-90"
-                style={{
-                  background:
-                    'linear-gradient(95.49deg, #F462F3 52.87%, #7B50FE 106.28%)',
-                }}
-              >
-                Book a Demo
-              </button>
-            </div>
-          </div>
-        </>
-      )}
-
-      {/* Desktop Navbar */}
-      <div className="hidden md:flex items-center justify-between px-6 lg:px-12 py-4 relative z-10">
-        <Link href="/" className="flex items-center">
-          <Image
-            src="/images/logo.png"
-            alt="Logo"
-            width={160}
-            height={45}
-            priority
-            className="scale-[1.05]"
-          />
-        </Link>
-        <nav className="flex gap-8 lg:gap-16 items-center relative">
-          <div className="flex gap-6 lg:gap-10 items-center text-white text-sm font-semibold tracking-wider">
-            <div className="relative group">
-              <button className="flex items-center gap-2 cursor-pointer text-sm px-3 py-2">
-                <span>Services</span>
-                <ChevronDown
-                  size={18}
-                  className="transition-transform duration-300 group-hover:rotate-180"
-                  style={{ strokeWidth: 2 }}
-                />
-              </button>
-              <div className="absolute top-full py-3 px-2 left-0 mt-2 w-72 bg-[#1b2542] border border-white/20 rounded-2xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible space-y-1.5 transition-all duration-300 z-20">
-                <Link
-                  href="/online-order-management"
-                  className="block px-4 py-2 rounded-lg hover:bg-[#2b3655] transition"
-                >
-                  Online Order Management
-                </Link>
-                <Link
-                  href="/video-transaction-analytics"
-                  className="block px-4 py-2 rounded-lg hover:bg-[#2b3655] transition"
-                >
-                  Video + Transaction Analytics
-                </Link>
-                <Link
-                  href="/aibased-invoice-processing"
-                  className="block px-4 py-2 rounded-lg hover:bg-[#2b3655] transition"
-                >
-                  AI-Based Invoice Processing
-                </Link>
-                <Link
-                  href="/surveillance-monitoring"
-                  className="block px-4 py-2 rounded-lg hover:bg-[#2b3655] transition"
-                >
-                  Surveillance Monitoring
-                </Link>
-              </div>
-            </div>
-            <Link
-              href="/pricing"
-              className="hover:opacity-80 px-3 transition-opacity"
+        {/* Mobile Navbar */}
+        <div className="flex md:hidden items-center justify-between px-4 py-4 relative z-10 h-[70px]">
+          <div className="flex items-center gap-4">
+            <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="text-white hover:opacity-80 transition-opacity"
+              aria-label="Toggle menu"
             >
-              Pricing
-            </Link>
-            <Link
-              href="/about-us"
-              className="hover:opacity-80 px-3 transition-opacity"
-            >
-              About
-            </Link>
-            <Link
-              href="/"
-              className="hover:opacity-80 px-3 transition-opacity"
-            >
-              Contact
+              <Menu size={22} />
+            </button>
+            <Link href="/" className="flex items-center">
+              <Image
+                src="/images/logo.png"
+                alt="Logo"
+                width={120}
+                height={40}
+                priority
+                className="h-auto scale-[1.15] w-auto"
+              />
             </Link>
           </div>
           <button
-            className="rounded-full px-5 py-2.5 tracking-wide text-sm font-semibold text-white transition-opacity hover:opacity-90"
+            className="rounded-full px-4 py-1.5 tracking-wide text-sm font-semibold text-white transition-opacity hover:opacity-90"
             style={{
               background:
                 'linear-gradient(95.49deg, #F462F3 52.87%, #7B50FE 106.28%)',
@@ -233,8 +59,256 @@ export default function Navbar() {
           >
             Book a Demo
           </button>
-        </nav>
-      </div>
-    </header>
+        </div>
+
+        {/* Mobile Menu Overlay */}
+        {isMenuOpen && (
+          <>
+            <div
+              className="fixed inset-0 bg-black/50 backdrop-blur-sm z-[99]"
+              onClick={() => setIsMenuOpen(false)}
+            />
+            <div className="md:hidden fixed inset-x-0 top-0 bg-[#1b2542] py-6 px-4 z-[100] max-h-screen overflow-y-auto">
+              <div className="flex flex-col h-full">
+                <div className="flex justify-between items-center mb-6">
+                  <Link href="/" className="flex items-center">
+                    <Image
+                      src="/images/logo.png"
+                      alt="Logo"
+                      width={120}
+                      height={40}
+                      priority
+                      className="h-auto w-auto"
+                    />
+                  </Link>
+                  <button
+                    onClick={() => setIsMenuOpen(false)}
+                    className="text-white p-2 hover:opacity-80 transition-opacity"
+                    aria-label="Close menu"
+                  >
+                    <X size={24} />
+                  </button>
+                </div>
+                <nav className="flex flex-col gap-4 text-white text-sm font-semibold tracking-wider flex-1">
+                  <div className="relative">
+                    <button
+                      onClick={() => setIsServicesOpen(!isServicesOpen)}
+                      className="flex items-center gap-2 w-full text-left px-3 py-2 rounded-md hover:bg-[#2b3655] transition"
+                    >
+                      <span>Services</span>
+                      <ChevronDown
+                        size={18}
+                        className={`transition-transform duration-300 ${isServicesOpen ? 'rotate-180' : ''
+                          }`}
+                        style={{ strokeWidth: 2 }}
+                      />
+                    </button>
+                    {isServicesOpen && (
+                      <div className="flex flex-col mt-2 space-y-1.5 bg-[#1b2542] border border-white/20 rounded-2xl shadow-xl p-2">
+                        <Link
+                          href="/online-order-management"
+                          className="block px-4 py-2 rounded-lg hover:bg-[#2b3655] transition"
+                        >
+                          Online Order Management
+                        </Link>
+                        <Link
+                          href="/video-transaction-analytics"
+                          className="block px-4 py-2 rounded-lg hover:bg-[#2b3655] transition"
+                        >
+                          Video + Transaction Analytics
+                        </Link>
+                        <Link
+                          href="/aibased-invoice-processing"
+                          className="block px-4 py-2 rounded-lg hover:bg-[#2b3655] transition"
+                        >
+                          AI-Based Invoice Processing
+                        </Link>
+                        <Link
+                          href="/surveillance-monitoring"
+                          className="block px-4 py-2 rounded-lg hover:bg-[#2b3655] transition"
+                        >
+                          Surveillance Monitoring
+                        </Link>
+                      </div>
+                    )}
+                  </div>
+                  <Link
+                    href="/pricing"
+                    className="hover:opacity-80 px-3 py-2 rounded-md transition-opacity"
+                  >
+                    Pricing
+                  </Link>
+                  <Link
+                    href="/about-us"
+                    className="hover:opacity-80 px-3 py-2 rounded-md transition-opacity"
+                  >
+                    About
+                  </Link>
+                  <button
+                    onClick={handleContactClick}
+                    className="hover:opacity-80 px-3 py-2 rounded-md transition-opacity text-left"
+                  >
+                    Contact
+                  </button>
+                </nav>
+                <button
+                  className="mt-6 w-full rounded-full py-2.5 tracking-wide text-sm font-semibold text-white transition-opacity hover:opacity-90"
+                  style={{
+                    background:
+                      'linear-gradient(95.49deg, #F462F3 52.87%, #7B50FE 106.28%)',
+                  }}
+                >
+                  Book a Demo
+                </button>
+              </div>
+            </div>
+          </>
+        )}
+
+        {/* Desktop Navbar */}
+        <div className="hidden md:flex items-center justify-between px-6 lg:px-12 py-4 relative z-10">
+          <Link href="/" className="flex items-center">
+            <Image
+              src="/images/logo.png"
+              alt="Logo"
+              width={160}
+              height={45}
+              priority
+              className="scale-[1.05]"
+            />
+          </Link>
+          <nav className="flex gap-8 lg:gap-16 items-center relative">
+            <div className="flex gap-6 lg:gap-10 items-center text-white text-sm font-semibold tracking-wider">
+              <div className="relative group">
+                <button className="flex items-center gap-2 cursor-pointer text-sm px-3 py-2">
+                  <span>Services</span>
+                  <ChevronDown
+                    size={18}
+                    className="transition-transform duration-300 group-hover:rotate-180"
+                    style={{ strokeWidth: 2 }}
+                  />
+                </button>
+                <div className="absolute top-full py-3 px-2 left-0 mt-2 w-72 bg-[#1b2542] border border-white/20 rounded-2xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible space-y-1.5 transition-all duration-300 z-20">
+                  <Link
+                    href="/online-order-management"
+                    className="block px-4 py-2 rounded-lg hover:bg-[#2b3655] transition"
+                  >
+                    Online Order Management
+                  </Link>
+                  <Link
+                    href="/video-transaction-analytics"
+                    className="block px-4 py-2 rounded-lg hover:bg-[#2b3655] transition"
+                  >
+                    Video + Transaction Analytics
+                  </Link>
+                  <Link
+                    href="/aibased-invoice-processing"
+                    className="block px-4 py-2 rounded-lg hover:bg-[#2b3655] transition"
+                  >
+                    AI-Based Invoice Processing
+                  </Link>
+                  <Link
+                    href="/surveillance-monitoring"
+                    className="block px-4 py-2 rounded-lg hover:bg-[#2b3655] transition"
+                  >
+                    Surveillance Monitoring
+                  </Link>
+                </div>
+              </div>
+              <Link
+                href="/pricing"
+                className="hover:opacity-80 px-3 transition-opacity"
+              >
+                Pricing
+              </Link>
+              <Link
+                href="/about-us"
+                className="hover:opacity-80 px-3 transition-opacity"
+              >
+                About
+              </Link>
+              <button
+                onClick={handleContactClick}
+                className="hover:opacity-80 px-3 transition-opacity text-sm font-semibold tracking-wider"
+              >
+                Contact
+              </button>
+            </div>
+            <button
+              className="rounded-full px-5 py-2.5 tracking-wide text-sm font-semibold text-white transition-opacity hover:opacity-90"
+              style={{
+                background:
+                  'linear-gradient(95.49deg, #F462F3 52.87%, #7B50FE 106.28%)',
+              }}
+            >
+              Book a Demo
+            </button>
+          </nav>
+        </div>
+      </header>
+
+      {/* Contact Modal - Now outside header */}
+      {isContactOpen && (
+        <>
+
+
+          {/* Centered modal */}
+          <div className="fixed inset-0 flex items-center justify-center z-[102] pointer-events-none">
+            <div className="bg-[#1b2542] border border-white/50 text-white rounded-2xl p-8 max-w-xl w-full shadow-2xl mx-4 pointer-events-auto">
+              {/* Header */}
+              <div className="flex justify-between items-center mb-4 ">
+                <h2 className="text-xl font-semibold">Contact Us</h2>
+                <button
+                  onClick={closeContact}
+                  className="text-white/50 p-2 hover:opacity-80 transition-opacity"
+                  aria-label="Close contact form"
+                >
+                  <X size={24} />
+                </button>
+              </div>
+
+              {/* Form */}
+              <form className="space-y-8">
+                <input
+                  type="text"
+                  placeholder="First name"
+                  className="w-full py-2 text-sm bg-transparent text-white placeholder-white border-b border-white focus:outline-none focus:border-white/50 transition"
+                />
+                <input
+                  type="text"
+                  placeholder="Last name"
+                  className="w-full py-2 text-sm bg-transparent text-white placeholder-white border-b border-white focus:outline-none focus:border-white/50 transition"
+                />
+                <input
+                  type="email"
+                  placeholder="Email"
+                  className="w-full py-2 text-sm bg-transparent text-white placeholder-white border-b border-white focus:outline-none focus:border-white/50 transition"
+                />
+                <input
+                  type="text"
+                  placeholder="Company name"
+                  className="w-full py-2 text-sm bg-transparent text-white placeholder-white border-b border-white focus:outline-none focus:border-white/50 transition"
+                />
+                <textarea
+                  placeholder="Your message"
+                  rows={4}
+                  className="w-full py-2 text-sm bg-transparent text-white placeholder-white border-b border-white focus:outline-none focus:border-white/50 transition"
+                ></textarea>
+                <button
+                  type="submit"
+                  className="w-full rounded-full py-3 tracking-wide text-sm font-semibold text-white transition-opacity hover:opacity-90"
+                  style={{
+                    background:
+                      'linear-gradient(95.49deg, #F462F3 52.87%, #7B50FE 106.28%)',
+                  }}
+                >
+                  Submit
+                </button>
+              </form>
+            </div>
+          </div>
+        </>
+      )}
+    </>
   )
 }
