@@ -35,7 +35,7 @@ export default function AboutUs() {
   ];
   return (
     <>
-      <section className="relative min-h-screen w-full overflow-hidden md:bg-[#020D2D] bg-gradient-to-b from-[#020D2D] to-transparent ">
+      <section className="relative min-h-screen w-full overflow-x-hidden md:bg-[#020D2D] bg-gradient-to-b from-[#020D2D] to-transparent ">
 
 
 
@@ -47,13 +47,13 @@ export default function AboutUs() {
         <div className="hidden md:block absolute inset-0 pointer-events-none bg-[radial-gradient(54.1%_56.99%_at_49.11%_40.56%,rgba(2,13,45,0)_1.5%,#020D2D_100%)]" />
 
         {/* Blue Ellipse (smaller radius) */}
-        <div className="block absolute w-[400px] h-[400px] md:left-60 md:top-30 opacity-60 md:opacity-15 pointer-events-none md:bg-blue-500 bg-blue-500/50 blur-[150px]" />
+        <div className="block absolute w-[400px] h-[400px] md:left-1/3 md:top-30 opacity-60 md:opacity-15 pointer-events-none md:bg-blue-500 bg-blue-500/50 blur-[150px]" />
 
         {/* Green Ellipse (smaller radius) */}
-        <div className="hidden md:block absolute w-[400px] h-[400px] right-40 top-50 opacity-25 pointer-events-none bg-green-400 blur-[180px]" />
+        <div className="hidden md:block absolute w-[400px] h-[400px] right-40 top-50 opacity-35 pointer-events-none bg-green-400 blur-[180px]" />
 
         {/* Pink-Purple Glare */}
-        <div className="hidden md:block absolute w-[500px] h-[500px] left-20 -top-20 opacity-15 pointer-events-none bg-[radial-gradient(circle_at_center,#F462F3_0%,#7B50FE_50%,transparent_100%)] blur-[180px]" />
+        <div className="hidden md:block absolute w-[500px] h-[500px] left-0 -top-20 opacity-35 pointer-events-none bg-[radial-gradient(circle_at_center,#F462F3_0%,#7B50FE_50%,transparent_100%)] blur-[180px]" />
 
         {/* Content */}
 
@@ -71,7 +71,7 @@ export default function AboutUs() {
         </div>
 
         <div className="relative z-10 container mx-auto px-6 md:px-18 py-20">
-          <div className="relative w-full mx-auto aspect-video md:aspect-[3/1] h-[300px] md:h-[450px] rounded-[20px] border border-white/20 overflow-hidden">
+          <div className="relative w-full mx-auto aspect-video md:aspect-[3/1] h-[250px] md:h-[400px] rounded-[20px] border border-white/20 overflow-hidden">
             <video
               className="w-full h-full object-cover"
               poster="/images/video-placeholder.jpg" // Placeholder image for now
@@ -120,7 +120,7 @@ export default function AboutUs() {
       </section>
 
 
-      <section className="relative flex flex-col items-center gap-12 sm:gap-16 md:gap-20 lg:gap-32 w-full py-8 sm:py-12 md:py-16 bg-gradient-to-b from-transparent via-[#020D2D] to-[#020D2D] md:bg-[#020D2D]  ">
+      <section className="relative flex flex-col overflow-x-clip items-center gap-12 sm:gap-16 md:gap-20 lg:gap-32 w-full py-8 sm:py-12 md:py-16 bg-gradient-to-b from-transparent via-[#020D2D] to-[#020D2D] md:bg-[#020D2D]  ">
 
         <div className="absolute lg:flex hidden z-50 w-88 h-60 pointer-events-none left-30 bottom-10 bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 blur-[180px]" />
         <div className="absolute lg:flex hidden z-50 w-88 h-60 pointer-events-none right-30 bottom-10 opacity-60 bg-blue-500/50 blur-[150px]" />
@@ -130,7 +130,7 @@ export default function AboutUs() {
           {/* Mission */}
           <div className="flex justify-center md:justify-start">
             <Image
-              src="/images/heroSection.png"
+              src="/images/mission.png"
               alt="Mission"
               width={600}
               height={300}
@@ -156,7 +156,7 @@ export default function AboutUs() {
           </div>
           <div className="flex justify-center order-1 md:order-2">
             <Image
-              src="/images/heroSection.png"
+              src="/images/vision.png"
               alt="Vision"
               width={600}
               height={300}
@@ -169,7 +169,7 @@ export default function AboutUs() {
       </section>
 
 
-      <section className="relative w-full py-12 md:py-20 lg:py-30 bg-[#020D2D] overflow-hidden">
+      <section className="relative w-full py-12 overflow-x-clip md:py-20 lg:py-30 bg-[#020D2D]">
         <div className="w-full z-50">
           <h1 className="text-center py-6 md:py-10 font-bold text-2xl md:text-3xl lg:text-[2.2rem] tracking-wide text-white mb-4 md:mb-8 px-4">
             Meet the Founders
@@ -222,7 +222,9 @@ export default function AboutUs() {
         </div>
       </section>
 
-      <section className="relative w-full py-12 md:py-20 lg:py-30 md:bg-none md:bg-[#020D2D]  bg-gradient-to-b from-[#020D2D] to-transparent overflow-hidden">
+      <section className="relative w-full overflow-x-clip py-12 md:py-20 lg:py-30 md:bg-none md:bg-[#020D2D]  bg-gradient-to-b from-[#020D2D] to-transparent">
+
+        <div className="hidden md:block absolute w-[400px] h-[400px] z-10 right-60 top-50 opacity-25 pointer-events-none bg-green-400 blur-[180px]" />
         <div className="w-full z-50">
           <h1 className="text-center py-6 md:py-10 font-bold text-2xl md:text-3xl lg:text-[2.2rem] tracking-wide text-white mb-8 px-4">
             Our Values
@@ -323,9 +325,9 @@ export default function AboutUs() {
 
 
 
-      <section className="relative w-full py-12 md:py-20 lg:py-30 md:bg-[#020D2D] bg-gradient-to-b from-transparent via-transparent to-[#0F5F4F]/40 overflow-hidden">
+      <section className="relative w-full py-12 md:py-20 lg:py-30 md:bg-none md:bg-[#020D2D] bg-gradient-to-b from-transparent via-transparent to-[#0F5F4F]/40 overflow-x-clip">
         <div className="w-full z-50">
-          <h1 className="text-center hidden md:flex py-4 font-bold text-2xl md:text-3xl lg:text-[2.2rem] tracking-wide text-white mb-4 md:mb-8 px-4">
+          <h1 className="text-center py-6 md:py-10 font-bold text-2xl md:text-3xl lg:text-[2.2rem] tracking-wide text-white mb-8 px-4">
             Our Partners & Integrations
           </h1>
           <h1 className="text-center md:hidden py-4 font-bold text-2xl md:text-3xl lg:text-[2.2rem] tracking-wide text-white mb-4 md:mb-8 px-4">

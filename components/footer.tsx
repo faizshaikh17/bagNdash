@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Footer() {
     return (
-        <footer className="w-full relative text-sm  bg-gradient-to-b from-[#0F5F4F]/40 via-black/50 to-[#0F5F4F]/40 
+        <footer className="w-full relative overflow-x-clip text-sm py-20  bg-gradient-to-b from-[#0F5F4F]/40 via-black/50 to-[#0F5F4F]/40 
   md:bg-none md:bg-[#020D2D]">
             <div
                 className="absolute  lg:flex hidden w-[50%] h-80 opacity-60  pointer-events-none 

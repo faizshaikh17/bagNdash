@@ -196,14 +196,16 @@ const HeroAndHowItWorks = () => {
                                 ))}
                             </div>
                             <div className="aspect-square hidden lg:block">
-                                <Image
-                                    src={currentFaqImage}
-                                    alt="How it works illustration"
-                                    width={400}
-                                    height={300}
+                                <video
+                                    src={currentFaqImage} // replace with your video URL or state variable
+                                    autoPlay
+                                    loop
+                                    muted
+                                    playsInline
                                     className="object-cover w-full h-full border border-gray-600 rounded-3xl"
                                 />
                             </div>
+
                         </div>
                     </div>
                 </div>

@@ -3,11 +3,13 @@ import React, { useState, useRef, useEffect } from 'react'
 import { ChevronDown, Menu, X } from 'lucide-react'
 import Link from 'next/link'
 import Image from 'next/image'
+import { usePathname } from 'next/navigation'
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isServicesOpen, setIsServicesOpen] = useState(false)
   const [isContactOpen, setIsContactOpen] = useState(false)
+  const pathname = usePathname()
 
   const handleContactClick = () => {
     // e.preventDefault()
@@ -18,7 +20,7 @@ export default function Navbar() {
     setIsContactOpen(false)
   }
 
-const dropdownRef = useRef<HTMLDivElement | null>(null);
+  const dropdownRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -35,7 +37,8 @@ const dropdownRef = useRef<HTMLDivElement | null>(null);
   return (
     <>
       <header
-        className="fixed top-0 left-0 w-full md:bg-black/30 md:backdrop-blur-xs z-[100]"
+        className={`fixed top-0 left-0 w-full z-[100] md:backdrop-blur-xs transition-colors duration-300 ${pathname === '/' ? 'md:bg-black/30' : 'bg-transparent'
+          }`}
       >
         {/* Background Glow */}
         <div
@@ -278,6 +281,11 @@ const dropdownRef = useRef<HTMLDivElement | null>(null);
       {/* Contact Modal - Now outside header */}
       {isContactOpen && (
         <>
+
+          <div
+            className="fixed inset-0 bg-black/50 z-[101]"
+            onClick={closeContact} 
+          />
           {/* Centered modal */}
           <div className="fixed inset-0 flex items-center justify-center z-[102] pointer-events-none">
             <div className="bg-[#1b2542] border border-white/50 text-white rounded-2xl p-8 max-w-xl w-full shadow-2xl mx-4 pointer-events-auto">
