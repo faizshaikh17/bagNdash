@@ -17,9 +17,9 @@ export default function Footer() {
                 </div>
 
                 {/* Image Column */}
-                <div className="relative w-full md:scale-[1.1] md:w-[280px] h-[300px] md:h-[350px] flex-shrink-0 flex justify-center order-2 md:order-1">
+                <div className="relative w-full md:scale-[1.1] md:w-[280px] h-[300px] md:h-[350px] flex-shrink-0 flex-col items-center justify-center order-2 md:order-1">
                     <Image
-                        src="/images/mobile.png"
+                        src="/images/mobile.svg"
                         alt="App Preview"
                         width={244}
                         height={527}
@@ -31,7 +31,7 @@ export default function Footer() {
                         alt="iPhone Background"
                         width={280}
                         height={560}
-                        className="absolute sm:-top-12 top-24 left-1/2 ml-4 -translate-x-1/2 border-4 w-[12rem] md:w-[12rem] h-[14rem] md:h-[16rem] border-orange-400 rounded-2xl object-cover"
+                        className="absolute sm:-top-12 top-24 left-1/2 ml-5 -translate-x-1/2 border-4 w-[10rem] md:w-[11rem] h-[14rem] md:h-[14rem] border-orange-400 rounded-2xl object-cover"
                     />
                     {/* <Image
                         src="/images/iphoneframe.png"
@@ -45,7 +45,7 @@ export default function Footer() {
                         alt="iPhone Frame"
                         width={280}
                         height={560}
-                        className="absolute scale-[0.6] ml-4 top-78 md:top-6 left-1/2 md:left-0 -translate-x-1/2 md:translate-x-0 w-[230px] md:w-[280px] h-[470px] md:h-[560px] object-contain"
+                        className="absolute scale-[0.6] ml-5 top-78 md:-top-10 left-1/2 md:left-0 -translate-x-1/2 md:translate-x-0 w-[230px] md:w-[280px] h-[470px] md:h-[560px] object-contain"
                     />
                 </div>
 
