@@ -3,7 +3,7 @@ import { ChevronRight } from 'lucide-react';
 
 export default function HeroSection() {
   return (
-    <section className="relative w-full h-screen lg:h-[1300px] overflow-x-clip md:bg-[#020D2D] bg-gradient-to-b from-[#020D2D] to-transparent">
+    <section className="relative w-full min-h-screen lg:h-[1300px] overflow-x-clip md:bg-[#020D2D] bg-gradient-to-b from-[#020D2D] to-transparent">
       {/* Grid Background - Vertical Lines (Hidden on mobile) */}
       <div className="hidden md:flex absolute inset-0 pointer-events-none opacity-20">
         {[...Array(24)].map((_, index) => (
@@ -83,9 +83,12 @@ export default function HeroSection() {
           </button>
         </div>
 
-        <div className="relative mx-auto z-50 w-full h-[500px] sm:aspect-[2/1] sm:h-auto md:max-w-5xl rounded-[20px] border border-white/20 overflow-hidden">
+
+        <div className="block md:hidden  absolute w-full h-[4rem] bottom-30  pointer-events-none bg-green-400 blur-[180px]" />
+        <div className="relative mx-auto z-50 w-full h-[18rem]  sm:aspect-[2/1] sm:h-auto md:max-w-5xl rounded-[20px] border border-white/20 overflow-hidden">
+
           <video
-            src="/images/heroSection.mp4"
+            src="/images/demo.mp4"
             className="w-full h-full object-cover"
             autoPlay
             muted

@@ -64,8 +64,8 @@ export default function ServicesSection() {
             <div className="relative flex justify-center px-4 sm:px-6 lg:px-8 z-10">
                 <div
                     className={`flex transition-transform duration-500 ease-in-out ${isDesktop
-                            ? "flex-row gap-10 w-full max-w-[650px]"
-                            : "flex-col gap-6 sm:gap-8 md:gap-10 w-full max-w-[600px]"
+                        ? "flex-row gap-10 w-full max-w-[650px]"
+                        : "flex-col gap-6 sm:gap-8 md:gap-10 w-full max-w-[600px]"
                         }`}
                     style={
                         isDesktop
@@ -80,10 +80,10 @@ export default function ServicesSection() {
                         >
                             <div
                                 className={`w-full max-w-[650px] border border-[#333] rounded-xl lg:rounded-[20px] overflow-hidden bg-black/40 backdrop-blur-[20px] transition-all duration-500 flex flex-col ${isDesktop
-                                        ? active === index
-                                            ? "opacity-100 scale-100"
-                                            : "opacity-50 scale-95"
-                                        : "opacity-100 scale-100"
+                                    ? active === index
+                                        ? "opacity-100 scale-100"
+                                        : "opacity-50 scale-95"
+                                    : "opacity-100 scale-100"
                                     }`}
                             >
                                 <div className="w-full h-[180px] sm:h-[220px] md:h-[280px] lg:h-[350px] overflow-hidden flex-shrink-0">
@@ -150,8 +150,8 @@ export default function ServicesSection() {
                             key={index}
                             onClick={() => setActive(index)}
                             className={`w-3 h-3 rounded-full transition-all ${active === index
-                                    ? "bg-gradient-to-r from-[#F462F3] to-[#7B50FE]"
-                                    : "bg-[#4F4F4F]"
+                                ? "bg-gradient-to-r from-[#F462F3] to-[#7B50FE]"
+                                : "bg-[#4F4F4F]"
                                 }`}
                         />
                     ))}

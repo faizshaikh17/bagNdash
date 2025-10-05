@@ -58,13 +58,16 @@ export default function IndustriesSection() {
                 }}
             />
 
-            <div className="absolute top-10 md:hidden inset-0 flex items-center justify-center pointer-events-none">
-                <div className="h-[20%] min-w-5xl rounded-full bg-[radial-gradient(circle_at_top,_#4B2FFF_0%,_#7B50FE_35%,_transparent_70%)] blur-[200px]" />
+            <div className="absolute top-[-20%] md:hidden inset-0 flex items-center justify-center pointer-events-none">
+                <div className="h-[60%] min-w-5xl rounded-full bg-[radial-gradient(circle_at_top,_#0B0B1F_0%,_#2A1A4D_50%,_transparent_80%)] blur-[200px]" />
             </div>
 
-            <div className="absolute bottom-10 opacity-40 md:hidden inset-0 flex items-center justify-center pointer-events-none">
-                <div className="h-[60%] min-w-5xl rounded-full bg-[radial-gradient(circle_at_top,_#260E26_0%,_#5C1D4B_35%,_transparent_70%)] blur-[200px]" />
+
+
+            <div className="absolute bottom-[50%] opacity-40 md:hidden inset-0 flex items-center justify-center pointer-events-none">
+                <div className="h-[80%] min-w-5xl rounded-full bg-[radial-gradient(circle_at_top,_#0A0815_0%,_#1C1140_45%,_transparent_80%)] blur-[200px]" />
             </div>
+
 
             <div className="w-full z-10">
                 <h1 className="text-center font-bold text-2xl sm:text-3xl md:text-3xl lg:text-[2.2rem] tracking-wide text-white mb-6 sm:mb-8 md:mb-8 py-10 px-4">
@@ -144,15 +147,15 @@ export default function IndustriesSection() {
                     Why Choose Bag N Dash?
                 </h1>
 
-                <div className="mx-auto z-10 px-4 sm:px-6 lg:px-8 max-w-6xl w-full">
+                <div className="mx-auto z-10 px-0 sm:px-6 lg:px-8 max-w-6xl w-full">
                     <div className="block lg:hidden">
                         <div className="relative w-full mb-6 overflow-hidden">
                             <div
-                                className="flex transition-transform duration-500 ease-out"
-                                style={{ transform: `translateX(-${activeWhy * 100}%)` }}
+                                className="flex gap-8 justify-start transition-transform duration-500 ease-out"
+                                style={{ transform: `translateX(calc(50% - 8.5rem - ${activeWhy * (17 + 2)}rem))` }}
                             >
-                                <div className="w-full flex-shrink-0 px-2">
-                                    <div className="relative border border-[#434343] rounded-3xl p-4 flex flex-col items-start justify-start shadow-2xl bg-[radial-gradient(circle_at_80%_70%,rgba(20,184,166,0.10)_5%,rgba(15,15,15,0.5)_70%,#0f0f0f_100%)] h-[28rem] sm:h-[30rem]">
+                                <div className="w-[17rem] flex-shrink-0 px-2">
+                                    <div className="relative border border-[#434343] rounded-3xl p-4 flex flex-col items-start justify-start bg-[radial-gradient(circle_at_80%_70%,rgba(20,184,166,0.10)_5%,rgba(15,15,15,0.5)_70%,#0f0f0f_100%)] h-[28rem] sm:h-[30rem]">
                                         <Image
                                             src="/images/cctv.svg"
                                             alt="Decoration 1"
@@ -166,8 +169,8 @@ export default function IndustriesSection() {
                                     </div>
                                 </div>
 
-                                <div className="w-full flex-shrink-0 px-2">
-                                    <div className="relative border border-[#434343] rounded-3xl p-4 flex flex-col items-start justify-start shadow-2xl bg-[radial-gradient(circle_at_70%_50%,rgba(168,85,247,0.08)_10%,rgba(15,15,15,0.95)_70%,#0f0f0f_100%)] h-[28rem] sm:h-[30rem]">
+                                <div className="w-[17rem] flex-shrink-0 px-2">
+                                    <div className="relative border border-[#434343] rounded-3xl p-4 flex flex-col items-start justify-start bg-[radial-gradient(circle_at_70%_50%,rgba(168,85,247,0.08)_10%,rgba(15,15,15,0.95)_70%,#0f0f0f_100%)] h-[28rem] sm:h-[30rem]">
                                         <Image
                                             src="/images/atm1.svg"
                                             alt="Decoration 2"
@@ -188,8 +191,8 @@ export default function IndustriesSection() {
                                     </div>
                                 </div>
 
-                                <div className="w-full flex-shrink-0 px-2">
-                                    <div className="relative border border-[#434343] rounded-3xl p-4 flex flex-col items-start justify-end shadow-2xl bg-[radial-gradient(circle_at_80%_80%,rgba(22,101,52,0.32)_0%,rgba(15,15,15,0.95)_75%,#0f0f0f_100%)] h-[28rem] sm:h-[30rem]">
+                                <div className="w-[17rem] flex-shrink-0 px-2">
+                                    <div className="relative border border-[#434343] rounded-3xl p-4 flex flex-col items-start justify-end bg-[radial-gradient(circle_at_80%_80%,rgba(22,101,52,0.32)_0%,rgba(15,15,15,0.95)_75%,#0f0f0f_100%)] h-[28rem] sm:h-[30rem]">
                                         <Image
                                             src="/images/shield.svg"
                                             alt="Decoration 3"
@@ -203,8 +206,8 @@ export default function IndustriesSection() {
                                     </div>
                                 </div>
 
-                                <div className="w-full flex-shrink-0 px-2">
-                                    <div className="relative border border-[#434343] rounded-3xl p-4 flex flex-col items-start justify-end shadow-2xl bg-[radial-gradient(circle_at_80%_50%,rgba(100,181,246,0.05)_0%,rgba(15,15,15,0.95)_70%,#0f0f0f_100%)] h-[28rem] sm:h-[30rem]">
+                                <div className="w-[17rem] flex-shrink-0 px-2">
+                                    <div className="relative border border-[#434343] rounded-3xl p-4 flex flex-col items-start justify-end bg-[radial-gradient(circle_at_80%_50%,rgba(100,181,246,0.05)_0%,rgba(15,15,15,0.95)_70%,#0f0f0f_100%)] h-[28rem] sm:h-[30rem]">
                                         <Image
                                             src="/images/human.svg"
                                             alt="Decoration 4"
@@ -218,8 +221,8 @@ export default function IndustriesSection() {
                                     </div>
                                 </div>
 
-                                <div className="w-full flex-shrink-0 px-2">
-                                    <div className="relative overflow-hidden border border-[#434343] rounded-3xl p-4 flex flex-col items-start justify-start shadow-2xl bg-[radial-gradient(circle_at_50%_90%,rgba(190,30,90,0.12)_0%,rgba(255,94,58,0.08)_10%,rgba(15,15,15,0.96)_70%,#0f0f0f_100%)] h-[28rem] sm:h-[30rem]">
+                                <div className="w-[17rem] flex-shrink-0 px-2">
+                                    <div className="relative overflow-hidden border border-[#434343] rounded-3xl p-4 flex flex-col items-start justify-start bg-[radial-gradient(circle_at_50%_90%,rgba(190,30,90,0.12)_0%,rgba(255,94,58,0.08)_10%,rgba(15,15,15,0.96)_70%,#0f0f0f_100%)] h-[28rem] sm:h-[30rem]">
                                         <Image
                                             src="/images/lock.svg"
                                             alt="Decoration 5"
@@ -268,7 +271,7 @@ export default function IndustriesSection() {
                     </div>
 
                     <div className="hidden lg:grid grid-cols-6 grid-rows-6 gap-4 aspect-square w-full">
-                        <div className="col-span-2 relative row-span-4 border border-[#434343] rounded-3xl p-8 flex flex-col items-center justify-start shadow-2xl bg-[radial-gradient(circle_at_80%_70%,rgba(20,184,166,0.10)_5%,rgba(15,15,15,0.5)_70%,#0f0f0f_100%)]">
+                        <div className="col-span-2 relative row-span-4 border border-[#434343] rounded-3xl p-8 flex flex-col items-center justify-start bg-[radial-gradient(circle_at_80%_70%,rgba(20,184,166,0.10)_5%,rgba(15,15,15,0.5)_70%,#0f0f0f_100%)]">
                             <Image
                                 src="/images/cctv.svg"
                                 alt="Decoration 1"
@@ -281,7 +284,7 @@ export default function IndustriesSection() {
                             </h2>
                         </div>
 
-                        <div className="col-span-4 relative row-span-2 border border-[#434343] rounded-3xl p-8 flex flex-col items-start justify-start shadow-2xl bg-[radial-gradient(circle_at_70%_50%,rgba(168,85,247,0.1)_5%,rgba(15,15,15,0.95)_90%,#0f0f0f_100%)]">
+                        <div className="col-span-4 relative row-span-2 border border-[#434343] rounded-3xl p-8 flex flex-col items-start justify-start bg-[radial-gradient(circle_at_70%_50%,rgba(168,85,247,0.1)_5%,rgba(15,15,15,0.95)_90%,#0f0f0f_100%)]">
                             <Image
                                 src="/images/atm1.svg"
                                 alt="Decoration 2"
@@ -301,7 +304,7 @@ export default function IndustriesSection() {
                             </h2>
                         </div>
 
-                        <div className="col-span-2 relative row-span-2 border border-[#434343] rounded-3xl p-8 flex flex-col items-start justify-end shadow-2xl bg-[radial-gradient(circle_at_80%_80%,rgba(22,101,52,0.42)_0%,rgba(15,15,15,0.95)_75%,#0f0f0f_100%)]">
+                        <div className="col-span-2 relative row-span-2 border border-[#434343] rounded-3xl p-8 flex flex-col items-start justify-end bg-[radial-gradient(circle_at_80%_80%,rgba(22,101,52,0.42)_0%,rgba(15,15,15,0.95)_75%,#0f0f0f_100%)]">
                             <Image
                                 src="/images/shield.svg"
                                 alt="Decoration 3"
@@ -314,7 +317,7 @@ export default function IndustriesSection() {
                             </h2>
                         </div>
 
-                        <div className="col-span-2 relative row-span-4 border border-[#434343] rounded-3xl p-6 flex flex-col items-start justify-end shadow-2xl bg-[radial-gradient(circle_at_80%_50%,rgba(100,181,246,0.15)_0%,rgba(15,15,15,0.95)_70%,#0f0f0f_100%)]">
+                        <div className="col-span-2 relative row-span-4 border border-[#434343] rounded-3xl p-6 flex flex-col items-start justify-end bg-[radial-gradient(circle_at_80%_50%,rgba(100,181,246,0.15)_0%,rgba(15,15,15,0.95)_70%,#0f0f0f_100%)]">
                             <Image
                                 src="/images/human.svg"
                                 alt="Decoration 4"
@@ -327,7 +330,7 @@ export default function IndustriesSection() {
                             </h2>
                         </div>
 
-                        <div className="col-span-4 relative row-span-2 overflow-hidden border border-[#434343] rounded-3xl p-6 flex flex-col items-start justify-start shadow-2xl bg-[radial-gradient(circle_at_50%_85%,rgba(150,20,40,0.28)_0%,rgba(255,160,60,0.15)_0%,rgba(20,10,10,0.46)_60%,#0b0b0b_100%)]">
+                        <div className="col-span-4 relative row-span-2 overflow-hidden border border-[#434343] rounded-3xl p-6 flex flex-col items-start justify-start bg-[radial-gradient(circle_at_50%_85%,rgba(150,20,40,0.28)_0%,rgba(255,160,60,0.15)_0%,rgba(20,10,10,0.46)_60%,#0b0b0b_100%)]">
                             <Image
                                 src="/images/lock.png"
                                 alt="Decoration 5"
@@ -364,12 +367,22 @@ export default function IndustriesSection() {
                 </div>
             </div>
 
-            <div className="w-full z-10">
-                <h1 className="text-center font-bold text-2xl sm:text-3xl md:text-3xl lg:text-[2.2rem] tracking-wide text-white mb-6 sm:mb-8 md:mb-8 py-10 px-4">
+            <div className="w-full relative z-10">
+
+                <div className="absolute bottom-0 z-0 opacity-30 inset-0 md:hidden flex items-center justify-center pointer-events-none">
+                    <div className="h-[25rem] min-w-5xl rounded-full bg-[radial-gradient(circle_at_bottom,_#2C0A1F_0%,_#4B1F3C_50%,_transparent_85%)] blur-[170px]" />
+                </div>
+
+
+                <div className="absolute opacity-20 z-0 md:hidden inset-0 flex items-center justify-center pointer-events-none">
+                    <div className="h-[60%] min-w-5xl rounded-full bg-[radial-gradient(circle_at_top,_#0D0510_0%,_#260E26_45%,_transparent_80%)] blur-[200px]" />
+                </div>
+
+                <h1 className="relative z-20 text-center font-bold text-2xl sm:text-3xl md:text-3xl lg:text-[2.2rem] tracking-wide text-white mb-6 sm:mb-8 md:mb-8 py-10 px-4">
                     Partners & Integration
                 </h1>
 
-                <div className="mx-auto z-10 mb-16 sm:mb-20 md:mb-30 px-4 sm:px-6 lg:px-8 w-full">
+                <div className="relative z-20 mx-auto mb-16 sm:mb-20 md:mb-30 px-4 sm:px-6 lg:px-8 w-full">
                     <div className="hidden lg:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10 max-w-7xl mx-auto">
                         {logos.map((logo, index) => (
                             <div
@@ -399,7 +412,7 @@ export default function IndustriesSection() {
                                         alt={logo.title}
                                         height={100}
                                         width={160}
-                                        className="object-contain"
+                                        className="object-contain brightness-110"
                                     />
                                 </div>
                             ))}
@@ -437,38 +450,77 @@ export default function IndustriesSection() {
                     Testimonials
                 </h1>
 
-                <div className="relative flex justify-center px-4 sm:px-6 lg:px-8 w-full">
-                    <div
-                        className="flex transition-transform duration-500 ease-in-out w-full max-w-[800px]"
-                        style={{ transform: `translateX(-${activeTestimonial * 100}%)` }}
-                    >
-                        {testimonials.map((testimonial, index) => (
-                            <div key={index} className="min-w-full flex justify-center px-2">
-                                <div className="relative w-full max-w-[260px] sm:max-w-[400px] lg:max-w-[750px] min-h-[440px] sm:min-h-[480px] lg:min-h-[280px] lg:h-[280px] border border-[#434343]/70 rounded-[24px] lg:rounded-[30px] overflow-hidden bg-black/40 backdrop-blur-[20px] flex flex-col lg:flex-row">
-                                    <div className="w-full lg:w-[280px] h-[220px] sm:h-[240px] lg:h-full flex-shrink-0 p-4 sm:p-4 lg:p-4">
-                                        <div className="w-full h-full rounded-[12px] overflow-hidden">
-                                            <Image
-                                                src={testimonial.image}
-                                                alt={testimonial.name}
-                                                width={280}
-                                                height={280}
-                                                className="w-full h-full object-cover"
-                                            />
+                <div className="relative py-10 w-full overflow-hidden">
+                    {/* Mobile and Tablet View */}
+                    <div className="lg:hidden relative w-full px-8">
+                        <div
+                            className="flex transition-transform duration-500 ease-in-out"
+                            style={{
+                                transform: `translateX(calc(-${activeTestimonial * 100}% + ${activeTestimonial * 40}px))`,
+                            }}
+                        >
+                            {testimonials.map((testimonial, index) => (
+                                <div key={index} className="flex-shrink-0 w-[calc(100%-40px)] mx-2 px-2">
+                                    <div className="relative w-full min-h-[440px] sm:min-h-[480px] border border-[#434343]/70 rounded-[24px] overflow-hidden bg-black/40 backdrop-blur-[20px] flex flex-col">
+                                        <div className="w-full h-[220px] sm:h-[240px] flex-shrink-0 p-4 sm:p-4">
+                                            <div className="w-full h-full rounded-[12px] overflow-hidden">
+                                                <Image
+                                                    src={testimonial.image}
+                                                    alt={testimonial.name}
+                                                    width={280}
+                                                    height={280}
+                                                    className="w-full h-full object-cover"
+                                                />
+                                            </div>
+                                        </div>
+                                        <div className="w-[90%] h-[3px] mx-auto rounded-full bg-gradient-to-r from-[#F462F3] to-[#7B50FE]" />
+                                        <div className="flex-1 flex flex-col justify-start px-6 sm:px-7 pt-5 sm:pt-6 pb-6 sm:pb-7">
+                                            <h2 className="font-semibold text-xl sm:text-2xl leading-[140%] text-white mb-3 sm:mb-4">
+                                                {testimonial.name}
+                                            </h2>
+                                            <p className="font-normal text-sm sm:text-base leading-[160%] text-[#E0E0E0]">
+                                                {testimonial.review}
+                                            </p>
                                         </div>
                                     </div>
-                                    <div className="hidden lg:block w-[4px] h-[268px] my-auto rounded-full bg-gradient-to-b from-[#F462F3] to-[#7B50FE]" />
-                                    <div className="lg:hidden w-[300px] sm:w-[340px] h-[3px] mx-auto rounded-full bg-gradient-to-r from-[#F462F3] to-[#7B50FE]" />
-                                    <div className="flex-1 flex flex-col justify-start lg:justify-center px-6 sm:px-7 lg:px-10 pt-5 sm:pt-6 pb-6 sm:pb-7 lg:pb-0">
-                                        <h2 className="font-semibold text-xl sm:text-2xl lg:text-[32px] leading-[140%] lg:leading-[160%] text-white mb-3 sm:mb-4 lg:mb-4">
-                                            {testimonial.name}
-                                        </h2>
-                                        <p className="font-normal lg:font-medium text-sm sm:text-base lg:text-[18px] leading-[160%] lg:leading-[180%] text-[#E0E0E0]">
-                                            {testimonial.review}
-                                        </p>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+
+                    {/* Desktop View */}
+                    <div className="hidden lg:flex justify-center px-8 w-full">
+                        <div
+                            className="flex transition-transform duration-500 ease-in-out w-full max-w-[800px]"
+                            style={{ transform: `translateX(-${activeTestimonial * 100}%)` }}
+                        >
+                            {testimonials.map((testimonial, index) => (
+                                <div key={index} className="min-w-full flex justify-center px-2">
+                                    <div className="relative w-full max-w-[750px] min-h-[280px] h-[280px] border border-[#434343]/70 rounded-[30px] overflow-hidden bg-black/40 backdrop-blur-[20px] flex flex-row">
+                                        <div className="w-[280px] h-full flex-shrink-0 p-4">
+                                            <div className="w-full h-full rounded-[12px] overflow-hidden">
+                                                <Image
+                                                    src={testimonial.image}
+                                                    alt={testimonial.name}
+                                                    width={280}
+                                                    height={280}
+                                                    className="w-full h-full object-cover"
+                                                />
+                                            </div>
+                                        </div>
+                                        <div className="w-[4px] h-[268px] my-auto rounded-full bg-gradient-to-b from-[#F462F3] to-[#7B50FE]" />
+                                        <div className="flex-1 flex flex-col justify-center px-10">
+                                            <h2 className="font-semibold text-[32px] leading-[160%] text-white mb-4">
+                                                {testimonial.name}
+                                            </h2>
+                                            <p className="font-medium text-[18px] leading-[180%] text-[#E0E0E0]">
+                                                {testimonial.review}
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        ))}
+                            ))}
+                        </div>
                     </div>
                 </div>
 
