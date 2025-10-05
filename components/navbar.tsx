@@ -1,5 +1,5 @@
 'use client'
-import React, { useState } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import { ChevronDown, Menu, X } from 'lucide-react'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -17,6 +17,20 @@ export default function Navbar() {
   const closeContact = () => {
     setIsContactOpen(false)
   }
+
+const dropdownRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setIsServicesOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
+
 
   return (
     <>
@@ -179,42 +193,55 @@ export default function Navbar() {
           </Link>
           <nav className="flex gap-8 lg:gap-16 items-center relative">
             <div className="flex gap-6 lg:gap-10 items-center text-white text-sm font-semibold tracking-wider">
-              <div className="relative group">
-                <button className="flex items-center gap-2 cursor-pointer text-sm px-3 py-2">
+              {/* ↓ Replaced section starts here ↓ */}
+              <div className="relative" ref={dropdownRef}>
+                <button
+                  onClick={() => setIsServicesOpen(!isServicesOpen)}
+                  className="flex items-center gap-2 cursor-pointer text-sm px-3 py-2"
+                >
                   <span>Services</span>
                   <ChevronDown
                     size={18}
-                    className="transition-transform duration-300 group-hover:rotate-180"
+                    className={`transition-transform duration-300 ${isServicesOpen ? 'rotate-180' : ''}`}
                     style={{ strokeWidth: 2 }}
                   />
                 </button>
-                <div className="absolute top-full py-3 px-2 left-0 mt-2 w-72 bg-[#1b2542] border border-white/20 rounded-2xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible space-y-1.5 transition-all duration-300 z-20">
-                  <Link
-                    href="/online-order-management"
-                    className="block px-4 py-2 rounded-lg hover:bg-[#2b3655] transition"
+
+                {isServicesOpen && (
+                  <div
+                    className="absolute top-full py-3 px-2 left-0 mt-2 w-72 bg-[#1b2542]
+            border border-white/20 rounded-2xl shadow-xl space-y-1.5
+            transition-all duration-300 z-20"
                   >
-                    Online Order Management
-                  </Link>
-                  <Link
-                    href="/video-transaction-analytics"
-                    className="block px-4 py-2 rounded-lg hover:bg-[#2b3655] transition"
-                  >
-                    Video + Transaction Analytics
-                  </Link>
-                  <Link
-                    href="/aibased-invoice-processing"
-                    className="block px-4 py-2 rounded-lg hover:bg-[#2b3655] transition"
-                  >
-                    AI-Based Invoice Processing
-                  </Link>
-                  <Link
-                    href="/surveillance-monitoring"
-                    className="block px-4 py-2 rounded-lg hover:bg-[#2b3655] transition"
-                  >
-                    Surveillance Monitoring
-                  </Link>
-                </div>
+                    <Link
+                      href="/online-order-management"
+                      className="block px-4 py-2 rounded-lg hover:bg-[#2b3655] transition"
+                    >
+                      Online Order Management
+                    </Link>
+                    <Link
+                      href="/video-transaction-analytics"
+                      className="block px-4 py-2 rounded-lg hover:bg-[#2b3655] transition"
+                    >
+                      Video + Transaction Analytics
+                    </Link>
+                    <Link
+                      href="/aibased-invoice-processing"
+                      className="block px-4 py-2 rounded-lg hover:bg-[#2b3655] transition"
+                    >
+                      AI-Based Invoice Processing
+                    </Link>
+                    <Link
+                      href="/surveillance-monitoring"
+                      className="block px-4 py-2 rounded-lg hover:bg-[#2b3655] transition"
+                    >
+                      Surveillance Monitoring
+                    </Link>
+                  </div>
+                )}
               </div>
+              {/* ↑ Replaced section ends here ↑ */}
+
               <Link
                 href="/pricing"
                 className="hover:opacity-80 px-3 transition-opacity"
@@ -245,6 +272,7 @@ export default function Navbar() {
             </button>
           </nav>
         </div>
+
       </header>
 
       {/* Contact Modal - Now outside header */}

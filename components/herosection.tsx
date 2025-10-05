@@ -3,7 +3,7 @@ import { ChevronRight } from 'lucide-react';
 
 export default function HeroSection() {
   return (
-    <section className="relative w-full h-screen lg:h-[1300px] overflow-hidden md:bg-[#020D2D] bg-gradient-to-b from-[#020D2D] to-transparent">
+    <section className="relative w-full h-screen lg:h-[1300px] overflow-x-clip md:bg-[#020D2D] bg-gradient-to-b from-[#020D2D] to-transparent">
       {/* Grid Background - Vertical Lines (Hidden on mobile) */}
       <div className="hidden md:flex absolute inset-0 pointer-events-none opacity-20">
         {[...Array(24)].map((_, index) => (
@@ -25,10 +25,10 @@ export default function HeroSection() {
       </div>
 
       {/* Gradient Overlay Top */}
-      <div className="hidden md:block absolute inset-x-0 top-0 h-screen max-h-[1174px] opacity-65 pointer-events-none bg-[linear-gradient(180deg,#010314_40.24%,rgba(1,3,20,0)_100%),radial-gradient(85.05%_65.08%_at_50%_50%,#7B50FE_37.41%,#F462F3_69.27%,#FFFFFF_100%)] blur-[200px] rotate-180" />
+      <div className="hidden md:block absolute inset-x-0 top-0 h-screen max-h-[1174px] opacity-65 pointer-events-none bg-[linear-gradient(180deg,#010314_40.24%,rgba(1,3,20,0)_100%),radial-gradient(85.05%_65.08%_at_50%_50%,#7B50FE_37.41%,#F462F3_69.27%,#FFFFFF_100%)] blur-[200px] rotate-180"  />
 
       {/* Radial Gradient Center */}
-      <div className="hidden md:block absolute inset-0 pointer-events-none bg-[radial-gradient(54.1%_56.99%_at_49.11%_40.56%,rgba(2,13,45,0)_1.5%,#020D2D_100%)]" />
+      <div className="hidden md:block absolute inset-0 pointer-events-none bg-[radial-gradient(54.1%_56.99%_at_49.11%_40.56%,rgba(2,13,45,0)_1.5%,#020D2D_120%)]" />
 
       {/* Blue Ellipse (smaller radius) */}
       <div className="md:block hidden absolute w-[400px] h-[400px] md:left-60 md:top-30 opacity-25 pointer-events-none md:bg-blue-500 bg-blue-500/50 blur-[150px]" />

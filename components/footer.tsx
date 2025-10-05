@@ -3,49 +3,48 @@ import Link from "next/link";
 
 export default function Footer() {
     return (
-        <footer className="w-full relative text-sm px-4 pt-20  md:px-20 bg-gradient-to-b from-[#0F5F4F]/40 via-black/50 to-[#0F5F4F]/40 
+        <footer className="w-full relative text-sm  bg-gradient-to-b from-[#0F5F4F]/40 via-black/50 to-[#0F5F4F]/40 
   md:bg-none md:bg-[#020D2D]">
             <div
-                className="absolute lg:flex hidden w-[50%] h-80 opacity-60  pointer-events-none 
+                className="absolute  lg:flex hidden w-[50%] h-80 opacity-60  pointer-events-none 
              right-0 bottom-80 
              bg-gradient-to-r from-green-400 via-teal-500 to-green-600 blur-[220px]"
             />
-            <div className="relative max-w-[1200px] overflow-clip md:overflow-visible mb-20 mx-auto w-full border border-[#434343] rounded-3xl md:rounded-[40px] flex flex-col md:flex-row items-center justify-start gap-8 md:gap-16 px-4 md:px-12 py-8">
+            <div className="relative max-w-[1200px] px-4 pt-20  md:px-20 overflow-clip md:overflow-visible mb-20 mx-auto w-full border border-[#434343] rounded-3xl md:rounded-[40px] flex flex-col md:flex-row items-center justify-start gap-8 md:gap-16 py-8">
                 {/* Background Gradient Blur */}
                 <div className="absolute inset-0 overflow-hidden rounded-3xl md:rounded-[40px]">
                     <div className="absolute inset-0 bg-gradient-to-r from-[#ED61F3] via-[#ED61F3] to-[#7C3AED] blur-[80px]" />
                 </div>
 
                 {/* Image Column */}
-                <div className="relative w-full md:scale-[1.1] md:w-[280px] h-[300px] md:h-[400px] flex-shrink-0 flex justify-center order-2 md:order-1">
+                <div className="relative w-full md:scale-[1.1] md:w-[280px] h-[300px] md:h-[350px] flex-shrink-0 flex justify-center order-2 md:order-1">
                     <Image
-                        src="/images/iphoneBg1.png"
+                        src="/images/mobile.png"
                         alt="App Preview"
                         width={244}
                         height={527}
-                        className="absolute top-18 md:-top-26 left-1/2 md:left-[19px] -translate-x-1/2 md:translate-x-0 w-[200px] md:w-[244px] h-[431px] md:h-[527px] object-cover rounded-[35px]"
+                        className="absolute top-18 md:-top-22 left-1/2 md:left-[19px] -translate-x-1/2 md:translate-x-0 w-[200px] md:w-full h-[431px] md:h-[450px] "
                     />
                     <Image
                         src="/images/preFooter.png"
                         alt="iPhone Background"
                         width={280}
                         height={560}
-                        className="absolute sm:-top-12 top-24 left-1/2 md:left-5 -translate-x-1/2 md:translate-x-0 border-4 w-[12rem] md:w-[15rem] h-[14rem] md:h-[18rem] border-orange-400 rounded-2xl object-cover"
+                        className="absolute sm:-top-12 top-24 left-1/2 ml-4 -translate-x-1/2 border-4 w-[12rem] md:w-[12rem] h-[14rem] md:h-[16rem] border-orange-400 rounded-2xl object-cover"
                     />
-                    <Image
+                    {/* <Image
                         src="/images/iphoneframe.png"
-                        unoptimized
                         alt="iPhone Frame"
                         width={280}
                         height={560}
                         className="absolute top-14 md:-top-30 left-1/2 md:left-0 -translate-x-1/2 md:translate-x-0 w-[230px] md:w-[280px] h-[470px] md:h-[560px] object-contain"
-                    />
+                    /> */}
                     <Image
                         src="/images/logo.png"
                         alt="iPhone Frame"
                         width={280}
                         height={560}
-                        className="absolute scale-[0.6] md:scale-[0.8] top-78 md:top-6 left-1/2 md:left-0 -translate-x-1/2 md:translate-x-0 w-[230px] md:w-[280px] h-[470px] md:h-[560px] object-contain"
+                        className="absolute scale-[0.6] ml-4 top-78 md:top-6 left-1/2 md:left-0 -translate-x-1/2 md:translate-x-0 w-[230px] md:w-[280px] h-[470px] md:h-[560px] object-contain"
                     />
                 </div>
 
@@ -74,27 +73,29 @@ export default function Footer() {
                 />
             </div>
 
+            <div className="border-t border-[#434343]" />
 
-
-            <div className="w-full border-t border-[#434343]">
+            <div className="w-full px-4  md:px-20 ">
                 <div className="max-w-[1600px] mx-auto px-4 md:px-12 py-16 flex flex-col gap-12">
                     <div className="grid grid-cols-2 gap-8 md:flex md:flex-wrap md:justify-between md:gap-12">
-                        <div className="col-span-2 md:max-w-[300px] flex flex-col gap-4">
+                        <div className="col-span-2 md:max-w-[300px] flex flex-col items-start gap-4">
                             <Image
                                 src="/images/logo.png"
                                 alt="Logo"
                                 width={100}
                                 height={40}
                                 priority
-                                className="w-auto scale-[0.8] h-auto"
+                                className="scale-[1.5] origin-left"
                             />
+
                             <p className="text-white text-xs">
                                 📞 913-208-3535  📍 Kansas City, MO
                             </p>
-                            <div className="flex gap-3">
+
+                            <div className="flex justify-start gap-3">
                                 <Link href="https://twitter.com/bagndash" target="_blank">
                                     <Image
-                                        src="/images/facebook.png"
+                                        src="/images/facebook.svg"
                                         alt="Facebook"
                                         width={24}
                                         height={24}
@@ -103,7 +104,7 @@ export default function Footer() {
                                 </Link>
                                 <Link href="https://linkedin.com/company/bagndash" target="_blank">
                                     <Image
-                                        src="/images/linkedIn.png"
+                                        src="/images/linkedIn.svg"
                                         alt="LinkedIn"
                                         width={24}
                                         height={24}
@@ -112,6 +113,7 @@ export default function Footer() {
                                 </Link>
                             </div>
                         </div>
+
 
 
                         <div className="flex flex-col gap-6">
@@ -156,14 +158,14 @@ export default function Footer() {
 
                         <div className="flex flex-col gap-4">
                             <Image
-                                src="/images/appStore.png"
+                                src="/images/appStore.svg"
                                 alt="Download on the Apple Store"
                                 width={170}
                                 height={51}
                                 className="scale-[0.85]"
                             />
                             <Image
-                                src="/images/googlePlay.png"
+                                src="/images/googlePlay.svg"
                                 alt="Get it on Google Play"
                                 width={170}
                                 height={51}

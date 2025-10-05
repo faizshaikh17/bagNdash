@@ -50,7 +50,7 @@ export default function IndustriesSection() {
     const [activeTestimonial, setActiveTestimonial] = useState(1);
 
     return (
-        <section className="relative flex flex-col items-center gap-12 sm:gap-16 md:gap-20 lg:gap-32 w-full py-8 sm:py-12 md:py-16 bg-gradient-to-b from-transparent via-transparent to-[#0F5F4F]/40 md:bg-none md:bg-[#020D2D] overflow-hidden">
+        <section className="relative flex flex-col items-center gap-12 sm:gap-16 md:gap-20 lg:gap-32 w-full py-8 sm:py-12 md:py-16 bg-gradient-to-b from-transparent via-transparent to-[#0F5F4F]/40 md:bg-none md:bg-[#020D2D] overflow-x-clip">
             <div
                 className="absolute lg:flex hidden inset-0 pointer-events-none opacity-15"
                 style={{
@@ -67,7 +67,7 @@ export default function IndustriesSection() {
             </div>
 
             <div className="w-full z-10">
-                <h1 className="text-center font-bold text-2xl sm:text-3xl md:text-3xl lg:text-[2.2rem] tracking-wide text-white mb-6 sm:mb-8 md:mb-8 px-4">
+                <h1 className="text-center font-bold text-2xl sm:text-3xl md:text-3xl lg:text-[2.2rem] tracking-wide text-white mb-6 sm:mb-8 md:mb-8 py-10 px-4">
                     Industries We Serve
                 </h1>
 
@@ -140,7 +140,7 @@ export default function IndustriesSection() {
             </div>
 
             <div className="w-full z-10">
-                <h1 className="text-center font-bold text-2xl sm:text-3xl md:text-3xl lg:text-[2.2rem] tracking-wide text-white mb-6 sm:mb-8 md:mb-8 px-4">
+                <h1 className="text-center font-bold text-2xl sm:text-3xl md:text-3xl lg:text-[2.2rem] tracking-wide text-white mb-6 sm:mb-8 md:mb-8 py-10 px-4">
                     Why Choose Bag N Dash?
                 </h1>
 
@@ -152,7 +152,7 @@ export default function IndustriesSection() {
                                 style={{ transform: `translateX(-${activeWhy * 100}%)` }}
                             >
                                 <div className="w-full flex-shrink-0 px-2">
-                                    <div className="relative border border-[#434343] rounded-3xl p-4 flex flex-col items-start justify-start shadow-2xl bg-[radial-gradient(circle_at_80%_70%,rgba(20,184,166,0.18)_5%,rgba(15,15,15,0.5)_70%,#0f0f0f_100%)] h-[28rem] sm:h-[30rem]">
+                                    <div className="relative border border-[#434343] rounded-3xl p-4 flex flex-col items-start justify-start shadow-2xl bg-[radial-gradient(circle_at_80%_70%,rgba(20,184,166,0.10)_5%,rgba(15,15,15,0.5)_70%,#0f0f0f_100%)] h-[28rem] sm:h-[30rem]">
                                         <Image
                                             src="/images/cctv.svg"
                                             alt="Decoration 1"
@@ -167,7 +167,7 @@ export default function IndustriesSection() {
                                 </div>
 
                                 <div className="w-full flex-shrink-0 px-2">
-                                    <div className="relative border border-[#434343] rounded-3xl p-4 flex flex-col items-start justify-start shadow-2xl bg-[radial-gradient(circle_at_70%_50%,rgba(168,85,247,0.08)_0%,rgba(15,15,15,0.95)_70%,#0f0f0f_100%)] h-[28rem] sm:h-[30rem]">
+                                    <div className="relative border border-[#434343] rounded-3xl p-4 flex flex-col items-start justify-start shadow-2xl bg-[radial-gradient(circle_at_70%_50%,rgba(168,85,247,0.08)_10%,rgba(15,15,15,0.95)_70%,#0f0f0f_100%)] h-[28rem] sm:h-[30rem]">
                                         <Image
                                             src="/images/atm1.svg"
                                             alt="Decoration 2"
@@ -189,7 +189,7 @@ export default function IndustriesSection() {
                                 </div>
 
                                 <div className="w-full flex-shrink-0 px-2">
-                                    <div className="relative border border-[#434343] rounded-3xl p-4 flex flex-col items-start justify-end shadow-2xl bg-[radial-gradient(circle_at_80%_80%,rgba(22,101,52,0.52)_0%,rgba(15,15,15,0.95)_75%,#0f0f0f_100%)] h-[28rem] sm:h-[30rem]">
+                                    <div className="relative border border-[#434343] rounded-3xl p-4 flex flex-col items-start justify-end shadow-2xl bg-[radial-gradient(circle_at_80%_80%,rgba(22,101,52,0.32)_0%,rgba(15,15,15,0.95)_75%,#0f0f0f_100%)] h-[28rem] sm:h-[30rem]">
                                         <Image
                                             src="/images/shield.svg"
                                             alt="Decoration 3"
@@ -204,7 +204,7 @@ export default function IndustriesSection() {
                                 </div>
 
                                 <div className="w-full flex-shrink-0 px-2">
-                                    <div className="relative border border-[#434343] rounded-3xl p-4 flex flex-col items-start justify-end shadow-2xl bg-[radial-gradient(circle_at_80%_50%,rgba(100,181,246,0.25)_0%,rgba(15,15,15,0.95)_70%,#0f0f0f_100%)] h-[28rem] sm:h-[30rem]">
+                                    <div className="relative border border-[#434343] rounded-3xl p-4 flex flex-col items-start justify-end shadow-2xl bg-[radial-gradient(circle_at_80%_50%,rgba(100,181,246,0.05)_0%,rgba(15,15,15,0.95)_70%,#0f0f0f_100%)] h-[28rem] sm:h-[30rem]">
                                         <Image
                                             src="/images/human.svg"
                                             alt="Decoration 4"
@@ -219,7 +219,7 @@ export default function IndustriesSection() {
                                 </div>
 
                                 <div className="w-full flex-shrink-0 px-2">
-                                    <div className="relative overflow-hidden border border-[#434343] rounded-3xl p-4 flex flex-col items-start justify-start shadow-2xl bg-[radial-gradient(circle_at_50%_90%,rgba(190,30,90,0.32)_0%,rgba(255,94,58,0.08)_50%,rgba(15,15,15,0.96)_70%,#0f0f0f_100%)] h-[28rem] sm:h-[30rem]">
+                                    <div className="relative overflow-hidden border border-[#434343] rounded-3xl p-4 flex flex-col items-start justify-start shadow-2xl bg-[radial-gradient(circle_at_50%_90%,rgba(190,30,90,0.12)_0%,rgba(255,94,58,0.08)_10%,rgba(15,15,15,0.96)_70%,#0f0f0f_100%)] h-[28rem] sm:h-[30rem]">
                                         <Image
                                             src="/images/lock.svg"
                                             alt="Decoration 5"
@@ -268,7 +268,7 @@ export default function IndustriesSection() {
                     </div>
 
                     <div className="hidden lg:grid grid-cols-6 grid-rows-6 gap-4 aspect-square w-full">
-                        <div className="col-span-2 relative row-span-4 border border-[#434343] rounded-3xl p-8 flex flex-col items-center justify-start shadow-2xl bg-[radial-gradient(circle_at_80%_70%,rgba(20,184,166,0.18)_5%,rgba(15,15,15,0.5)_70%,#0f0f0f_100%)]">
+                        <div className="col-span-2 relative row-span-4 border border-[#434343] rounded-3xl p-8 flex flex-col items-center justify-start shadow-2xl bg-[radial-gradient(circle_at_80%_70%,rgba(20,184,166,0.10)_5%,rgba(15,15,15,0.5)_70%,#0f0f0f_100%)]">
                             <Image
                                 src="/images/cctv.svg"
                                 alt="Decoration 1"
@@ -281,7 +281,7 @@ export default function IndustriesSection() {
                             </h2>
                         </div>
 
-                        <div className="col-span-4 relative row-span-2 border border-[#434343] rounded-3xl p-8 flex flex-col items-start justify-start shadow-2xl bg-[radial-gradient(circle_at_70%_50%,rgba(168,85,247,0.08)_0%,rgba(15,15,15,0.95)_70%,#0f0f0f_100%)]">
+                        <div className="col-span-4 relative row-span-2 border border-[#434343] rounded-3xl p-8 flex flex-col items-start justify-start shadow-2xl bg-[radial-gradient(circle_at_70%_50%,rgba(168,85,247,0.1)_5%,rgba(15,15,15,0.95)_90%,#0f0f0f_100%)]">
                             <Image
                                 src="/images/atm1.svg"
                                 alt="Decoration 2"
@@ -301,7 +301,7 @@ export default function IndustriesSection() {
                             </h2>
                         </div>
 
-                        <div className="col-span-2 relative row-span-2 border border-[#434343] rounded-3xl p-8 flex flex-col items-start justify-end shadow-2xl bg-[radial-gradient(circle_at_80%_80%,rgba(22,101,52,0.52)_0%,rgba(15,15,15,0.95)_75%,#0f0f0f_100%)]">
+                        <div className="col-span-2 relative row-span-2 border border-[#434343] rounded-3xl p-8 flex flex-col items-start justify-end shadow-2xl bg-[radial-gradient(circle_at_80%_80%,rgba(22,101,52,0.42)_0%,rgba(15,15,15,0.95)_75%,#0f0f0f_100%)]">
                             <Image
                                 src="/images/shield.svg"
                                 alt="Decoration 3"
@@ -314,7 +314,7 @@ export default function IndustriesSection() {
                             </h2>
                         </div>
 
-                        <div className="col-span-2 relative row-span-4 border border-[#434343] rounded-3xl p-6 flex flex-col items-start justify-end shadow-2xl bg-[radial-gradient(circle_at_80%_50%,rgba(100,181,246,0.25)_0%,rgba(15,15,15,0.95)_70%,#0f0f0f_100%)]">
+                        <div className="col-span-2 relative row-span-4 border border-[#434343] rounded-3xl p-6 flex flex-col items-start justify-end shadow-2xl bg-[radial-gradient(circle_at_80%_50%,rgba(100,181,246,0.15)_0%,rgba(15,15,15,0.95)_70%,#0f0f0f_100%)]">
                             <Image
                                 src="/images/human.svg"
                                 alt="Decoration 4"
@@ -327,7 +327,7 @@ export default function IndustriesSection() {
                             </h2>
                         </div>
 
-                        <div className="col-span-4 relative row-span-2 overflow-hidden border border-[#434343] rounded-3xl p-6 flex flex-col items-start justify-start shadow-2xl bg-[radial-gradient(circle_at_50%_90%,rgba(190,30,90,0.32)_0%,rgba(255,94,58,0.08)_50%,rgba(15,15,15,0.96)_70%,#0f0f0f_100%)]">
+                        <div className="col-span-4 relative row-span-2 overflow-hidden border border-[#434343] rounded-3xl p-6 flex flex-col items-start justify-start shadow-2xl bg-[radial-gradient(circle_at_50%_85%,rgba(150,20,40,0.28)_0%,rgba(255,160,60,0.15)_0%,rgba(20,10,10,0.46)_60%,#0b0b0b_100%)]">
                             <Image
                                 src="/images/lock.png"
                                 alt="Decoration 5"
@@ -365,7 +365,7 @@ export default function IndustriesSection() {
             </div>
 
             <div className="w-full z-10">
-                <h1 className="text-center font-bold text-2xl sm:text-3xl md:text-3xl lg:text-[2.2rem] tracking-wide text-white mb-6 sm:mb-8 md:mb-8 px-4">
+                <h1 className="text-center font-bold text-2xl sm:text-3xl md:text-3xl lg:text-[2.2rem] tracking-wide text-white mb-6 sm:mb-8 md:mb-8 py-10 px-4">
                     Partners & Integration
                 </h1>
 
@@ -374,7 +374,7 @@ export default function IndustriesSection() {
                         {logos.map((logo, index) => (
                             <div
                                 key={index}
-                                className="relative border h-36 border-[#434343] rounded-[30px] bg-gradient-to-br from-black/20 to-[#14b8a62e]/50 backdrop-blur-[20px] py-8 px-24 flex items-center justify-center"
+                                className="relative border h-36 border-[#434343] rounded-[30px] bg-gradient-to-br from-black/50 to-[#14b8a62e]/40 backdrop-blur-[20px] py-8 px-24 flex items-center justify-center"
                             >
                                 <Image
                                     src={logo.image}
@@ -430,7 +430,7 @@ export default function IndustriesSection() {
                 }}
             />
 
-            <div className="absolute lg:flex z-50 hidden w-88 h-60 pointer-events-none left-20 bottom-70 bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 blur-[220px]" />
+            <div className="absolute lg:flex z-10 hidden w-88 h-60 pointer-events-none left-20 bottom-0 bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 blur-[220px]" />
 
             <div className="w-full z-10">
                 <h1 className="text-center font-bold text-2xl sm:text-3xl md:text-3xl lg:text-[2.2rem] tracking-wide text-white mb-6 sm:mb-8 md:mb-8 px-4">

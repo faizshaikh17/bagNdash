@@ -44,10 +44,10 @@ export default function ServicesSection() {
     const currentActive = isDesktop ? active : 0;
 
     return (
-        <section className="relative overflow-hidden w-full py-8 sm:py-10 md:py-12 lg:py-16 bg-gradient-to-b from-transparent via-[#020D2D] to-transparent lg:bg-none lg:bg-[#020D2D]">
-            <div className="absolute lg:flex hidden w-88 h-60 top-0 pointer-events-none left-[calc(35%-1075px/2+600px)] bg-gradient-to-r from-purple-400 via-purple-500 to-purple-600 blur-[220px]" />
+        <section className="relative  w-full py-8 sm:py-10 overflow-x-clip md:py-12 lg:py-20 bg-gradient-to-b from-transparent via-[#020D2D] to-transparent lg:bg-none lg:bg-[#020D2D]">
+            <div className="absolute lg:flex  hidden w-88 h-60 top-0 pointer-events-none left-[calc(35%-1075px/2+600px)] bg-gradient-to-r from-purple-400 via-purple-500 to-purple-600 blur-[220px]" />
 
-            <div className="absolute lg:flex hidden z-50 w-88 h-40 pointer-events-none left-20 bottom-100 bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 blur-[220px]" />
+            <div className="absolute lg:flex hidden z-5 w-88 h-40 pointer-events-none left-20 bottom-50 bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 blur-[220px]" />
 
             <div className="absolute top-0 opacity-40 md:hidden inset-0 flex items-center justify-center pointer-events-none">
                 <div className="h-[20%] min-w-5xl rounded-full bg-[radial-gradient(circle_at_top,_#60A5FA_0%,_#A78BFA_35%,_transparent_70%)] blur-[200px]" />
@@ -57,7 +57,7 @@ export default function ServicesSection() {
                 <div className="h-[20%] min-w-5xl rounded-full bg-[radial-gradient(circle_at_bottom,_#064E3B_0%,_transparent_75%)] blur-[70px]" />
             </div>
 
-            <h1 className="text-center font-bold text-2xl sm:text-3xl md:text-3xl lg:text-[2.2rem] tracking-wide text-white mb-6 sm:mb-8 md:mb-10 lg:mb-12 px-4 relative z-10">
+            <h1 className="text-center font-bold text-2xl sm:text-3xl md:text-3xl lg:text-[2.2rem] tracking-wide text-white mb-6 sm:mb-8 md:mb-10 lg:mb-12 py-10 px-4 relative z-10">
                 Our Services
             </h1>
 
@@ -144,7 +144,7 @@ export default function ServicesSection() {
             </div>
 
             {isDesktop && (
-                <div className="my-10 lg:my-14 flex justify-center gap-3 relative z-10">
+                <div className="my-10 lg:my-14 flex justify-center gap-3 overflow-x-hidden relative z-10">
                     {services.map((_, index) => (
                         <button
                             key={index}
