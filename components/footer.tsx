@@ -24,6 +24,7 @@ export default function Footer() {
                         width={244}
                         height={527}
                         className="absolute top-18 md:-top-22 left-1/2 md:left-[19px] -translate-x-1/2 md:translate-x-0 w-[200px] md:w-full h-[431px] md:h-[450px] "
+                        unoptimized
                     />
                     <Image
                         src="/images/preFooter.png"
