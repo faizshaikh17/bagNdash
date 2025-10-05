@@ -93,7 +93,23 @@ const HeroAndHowItWorks = () => {
     return (
         <>
             <section className="relative flex flex-col justify-end w-full min-h-screen bg-[#010B29] overflow-hidden">
-                <div className="lg:hidden rounded-2xl my-4 mx-auto relative w-[90%] aspect-square">
+
+                <div className="block md:hidden absolute w-[400px] h-[400px] 
+  left-0 top-10 
+  opacity-60 pointer-events-none 
+  rounded-full blur-[120px]
+  bg-[radial-gradient(circle_at_center,_#2563eb,_#1e3a8a)]" />
+
+                {/* <div className="absolute -bottom-60 lg:hidden inset-0 flex items-center justify-center">
+                    <div
+                        className=" h-full min-w-5xl rounded-full bg-[radial-gradient(circle_at_center,_#064E3B_0%,_transparent_75%)] blur-[70px]"
+                    />
+                </div> */}
+
+
+
+
+                <div className="lg:hidden rounded-2xl mt-20 my-10 mx-auto relative w-[90%] aspect-square">
                     <Image
                         src="/images/onlineOrderHero.png"
                         alt="Online Orders Background"
@@ -126,15 +142,16 @@ const HeroAndHowItWorks = () => {
                             Manage UberEats, Grubhub, and DoorDash in one easy dashboard — built for <br className="hidden lg:block" />
                             liquor stores, convenience stores, and gas stations.
                         </p>
-                        <button className="w-full md:w-auto rounded-full px-6 lg:px-4 py-3 lg:py-2 mb-8 lg:mt-6 tracking-wide text-sm font-semibold text-white transition-opacity hover:opacity-90 bg-gradient-to-r from-[#F462F3] via-[#F462F3] to-[#7B50FE]">
+                        <button className=" md:w-auto rounded-full px-6 lg:px-4 py-3 lg:py-2 mb-8 lg:mt-6 tracking-wide text-sm font-semibold text-white transition-opacity hover:opacity-90 bg-gradient-to-r from-[#F462F3] via-[#F462F3] to-[#7B50FE]">
                             Book a Demo
                         </button>
                     </div>
                 </div>
             </section>
 
-            <section className="relative w-full py-12 md:py-20 lg:py-30 bg-[#020D2D] overflow-hidden">
-                <div className="relative z-10 container mx-auto px-6 md:px-12">
+            <section className="relative w-full py-12 md:py-20 lg:py-30 bg-[#020D2D] overflow-x-clip">
+                <div className="absolute lg:flex hidden opacity-75 z-5 w-88 h-40 pointer-events-none left-1/2 top-60 bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 blur-[220px]" />
+                <div className="relative z-10 container mx-auto px-2 md:px-12">
                     <h2 className="text-3xl md:text-[2.4rem] py-6 md:py-10 font-extrabold text-white mb-6 md:mb-12 text-center">
                         How it Works
                     </h2>
@@ -149,7 +166,7 @@ const HeroAndHowItWorks = () => {
                                     className="object-cover w-full h-full border border-gray-600 rounded-3xl"
                                 />
                             </div>
-                            <div className="rounded-2xl p-4 md:p-8 flex flex-col justify-center lg:aspect-square">
+                            <div className="rounded-2xl p-2 md:p-8 flex flex-col justify-center lg:aspect-square">
                                 {faqs.map((faq, index) => (
                                     <div
                                         key={index}
@@ -192,7 +209,12 @@ const HeroAndHowItWorks = () => {
                 </div>
             </section>
 
-            <section className="relative w-full py-12 md:py-20 lg:py-30 bg-[#020D2D] overflow-hidden">
+            <section className="relative w-full py-12 md:py-20 lg:py-30 bg-[#020D2D] overflow-x-clip">
+
+                <div className="absolute lg:flex hidden z-5 w-88 h-40 pointer-events-none bottom-30 left-20 bg-gradient-to-r from-purple-400 via-purple-500 to-purple-600 blur-[220px]" />
+
+
+
                 <div className="w-full z-50">
                     <h1 className="text-center py-6 md:py-10 font-bold text-2xl md:text-3xl lg:text-[2.2rem] tracking-wide text-white mb-4 md:mb-8 px-4">
                         Benefits

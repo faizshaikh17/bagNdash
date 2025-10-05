@@ -107,6 +107,8 @@ const HeroAndHowItWorks = () => {
                 </div> */}
 
 
+
+
                 <div className="lg:hidden rounded-2xl mt-20 my-10 mx-auto relative w-[90%] aspect-square">
                     <Image
                         src="/images/onlineOrderHero.png"
@@ -147,7 +149,8 @@ const HeroAndHowItWorks = () => {
                 </div>
             </section>
 
-            <section className="relative w-full py-12 md:py-20 lg:py-30 bg-[#020D2D] overflow-hidden">
+            <section className="relative w-full py-12 md:py-20 lg:py-30 bg-[#020D2D] overflow-x-clip">
+                <div className="absolute lg:flex hidden opacity-75 z-5 w-88 h-40 pointer-events-none left-1/2 top-60 bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 blur-[220px]" />
                 <div className="relative z-10 container mx-auto px-2 md:px-12">
                     <h2 className="text-3xl md:text-[2.4rem] py-6 md:py-10 font-extrabold text-white mb-6 md:mb-12 text-center">
                         How it Works
@@ -206,10 +209,11 @@ const HeroAndHowItWorks = () => {
                 </div>
             </section>
 
-            <section className="relative w-full py-12 md:py-20 lg:py-30 bg-[#020D2D] overflow-hidden">
+            <section className="relative w-full py-12 md:py-20 lg:py-30 bg-[#020D2D] overflow-x-clip">
+
+                <div className="absolute lg:flex hidden z-5 w-88 h-40 pointer-events-none bottom-30 left-20 bg-gradient-to-r from-purple-400 via-purple-500 to-purple-600 blur-[220px]" />
 
 
-                
 
                 <div className="w-full z-50">
                     <h1 className="text-center py-6 md:py-10 font-bold text-2xl md:text-3xl lg:text-[2.2rem] tracking-wide text-white mb-4 md:mb-8 px-4">
