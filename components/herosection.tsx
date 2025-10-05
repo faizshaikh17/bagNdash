@@ -9,29 +9,29 @@ export default function HeroSection() {
         {[...Array(24)].map((_, index) => (
           <div
             key={`vertical-${index}`}
-            className="flex-1 border-r-2 border-white"
+            className=" w-[4rem] h-[40rem] border-r-2 border-white"
           />
         ))}
       </div>
 
       {/* Grid Background - Horizontal Lines (Hidden on mobile) */}
-      <div className="hidden md:flex absolute inset-0 flex-col pointer-events-none opacity-20">
-        {[...Array(20)].map((_, index) => (
+      <div className="hidden md:flex absolute   inset-0 flex-col pointer-events-none opacity-20">
+        {[...Array(10)].map((_, index) => (
           <div
             key={`horizontal-${index}`}
-            className="flex-1 border-b border-white"
+            className=" h-[4rem] border-t-2 border-white"
           />
         ))}
       </div>
 
       {/* Gradient Overlay Top */}
-      <div className="hidden md:block absolute inset-x-0 top-0 h-screen max-h-[1174px] opacity-65 pointer-events-none bg-[linear-gradient(180deg,#010314_40.24%,rgba(1,3,20,0)_100%),radial-gradient(85.05%_65.08%_at_50%_50%,#7B50FE_37.41%,#F462F3_69.27%,#FFFFFF_100%)] blur-[200px] rotate-180"  />
+      <div className="hidden md:block absolute inset-x-0 top-0 h-screen max-h-[1174px] opacity-65 pointer-events-none bg-[linear-gradient(180deg,#010314_40.24%,rgba(1,3,20,0)_100%),radial-gradient(85.05%_65.08%_at_50%_50%,#7B50FE_37.41%,#F462F3_69.27%,#FFFFFF_100%)] blur-[200px] rotate-180" />
 
       {/* Radial Gradient Center */}
-      <div className="hidden md:block absolute inset-0 pointer-events-none bg-[radial-gradient(54.1%_56.99%_at_49.11%_40.56%,rgba(2,13,45,0)_1.5%,#020D2D_120%)]" />
+      <div className="hidden md:block absolute  inset-0 pointer-events-none bg-[radial-gradient(54.1%_56.99%_at_49.11%_40.56%,rgba(2,13,45,0)_1.5%,#020D2D_90%)]" />
 
       {/* Blue Ellipse (smaller radius) */}
-      <div className="md:block hidden absolute w-[400px] h-[400px] md:left-60 md:top-30 opacity-25 pointer-events-none md:bg-blue-500 bg-blue-500/50 blur-[150px]" />
+      <div className="md:block hidden absolute z-10 w-[400px] h-[400px] md:left-60 md:top-30 opacity-25 pointer-events-none md:bg-blue-500 bg-blue-500/50 blur-[150px]" />
 
       <div className="block md:hidden absolute w-[400px] h-[400px] 
   md:left-60 md:top-30 
@@ -41,10 +41,10 @@ export default function HeroSection() {
 
 
       {/* Green Ellipse (smaller radius) */}
-      <div className="hidden md:block absolute w-[400px] h-[400px] right-40 top-50 opacity-40 pointer-events-none bg-green-400 blur-[180px]" />
+      <div className="hidden md:block  z-10 absolute w-[400px] h-[400px] right-40 top-50 opacity-40 pointer-events-none bg-green-400 blur-[180px]" />
 
       {/* Pink-Purple Glare */}
-      <div className="hidden md:block absolute w-[500px] h-[500px] left-20 -top-20 opacity-25 pointer-events-none bg-[radial-gradient(circle_at_center,#F462F3_0%,#7B50FE_50%,transparent_100%)] blur-[180px]" />
+      <div className="hidden md:block z-10 absolute w-[500px] h-[500px] left-20 -top-20 opacity-25 pointer-events-none bg-[radial-gradient(circle_at_center,#F462F3_0%,#7B50FE_50%,transparent_100%)] blur-[180px]" />
 
 
       {/* Content */}
