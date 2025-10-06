@@ -33,7 +33,10 @@ export default function Navbar() {
   }, [])
 
   // Close menu on navigation
-  const handleMobileNavClose = () => {
+  const handleMobileNavClose = (href?: string) => {
+    if (href) {
+      router.push(href)
+    }
     setIsServicesOpen(false)
     setIsMenuOpen(false)
   }
@@ -41,8 +44,9 @@ export default function Navbar() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 w-full z-[100] md:backdrop-blur-xs transition-colors duration-300 ${pathname === '/' ? 'md:bg-black/30' : 'bg-transparent'
-          }`}
+        className={`fixed top-0 left-0 w-full z-[100] md:backdrop-blur-xs transition-colors duration-300 ${
+          pathname === '/' ? 'md:bg-black/30' : 'bg-transparent'
+        }`}
       >
         {/* Background Glow */}
         <div
@@ -87,24 +91,27 @@ export default function Navbar() {
 
         {/* Mobile Menu (Slide Animation) */}
         <div
-          className={`fixed inset-0 z-[99] md:hidden transition-all duration-500 ease-in-out ${isMenuOpen ? 'pointer-events-auto' : 'pointer-events-none'
-            }`}
+          className={`fixed inset-0 z-[99] md:hidden transition-all duration-500 ease-in-out ${
+            isMenuOpen ? 'pointer-events-auto' : 'pointer-events-none'
+          }`}
         >
           {/* Dark Overlay */}
           <div
-            className={`absolute inset-0 bg-black/50 backdrop-blur-sm transition-opacity duration-500 ${isMenuOpen ? 'opacity-100' : 'opacity-0'
-              }`}
+            className={`absolute inset-0 bg-black/50 backdrop-blur-sm transition-opacity duration-500 ${
+              isMenuOpen ? 'opacity-100' : 'opacity-0'
+            }`}
             onClick={() => setIsMenuOpen(false)}
           />
 
           {/* Sliding Menu Panel */}
           <div
-            className={`absolute inset-x-0 top-0 bg-[#1b2542] py-6 px-4 z-[100] max-h-screen overflow-y-auto transform transition-transform duration-500 ease-in-out ${isMenuOpen ? 'translate-y-0' : '-translate-y-full'
-              }`}
+            className={`absolute inset-x-0 top-0 bg-[#1b2542] py-6 px-4 z-[100] max-h-screen overflow-y-auto transform transition-transform duration-500 ease-in-out ${
+              isMenuOpen ? 'translate-y-0' : '-translate-y-full'
+            }`}
           >
             <div className="flex flex-col h-full">
               <div className="flex justify-between items-center mb-6">
-                <Link href="/" className="flex items-center" onClick={handleMobileNavClose}>
+                <Link href="/" className="flex items-center" onClick={() => handleMobileNavClose()}>
                   <Image
                     src="/images/logo.png"
                     alt="Logo"
@@ -132,55 +139,52 @@ export default function Navbar() {
                     <span>Services</span>
                     <ChevronDown
                       size={18}
-                      className={`transition-transform duration-300 ${isServicesOpen ? 'rotate-180' : ''
-                        }`}
+                      className={`transition-transform duration-300 ${
+                        isServicesOpen ? 'rotate-180' : ''
+                      }`}
                       style={{ strokeWidth: 2 }}
                     />
                   </button>
                   {isServicesOpen && (
                     <div className="flex flex-col mt-2 space-y-1.5 bg-[#1b2542] border border-white/20 rounded-2xl shadow-xl p-2 pointer-events-auto">
-                      <Link
-                        href="/online-order-management"
+                      <button
+                        onClick={() => handleMobileNavClose('/online-order-management')}
                         className="block text-left px-4 py-2 rounded-lg hover:bg-[#2b3655] transition pointer-events-auto"
-                        onClick={handleMobileNavClose}
                       >
                         Online Order Management
-                      </Link>
-                      <Link
-                        href="/video-transaction-analytics"
+                      </button>
+                      <button
+                        onClick={() => handleMobileNavClose('/video-transaction-analytics')}
                         className="block text-left px-4 py-2 rounded-lg hover:bg-[#2b3655] transition pointer-events-auto"
-                        onClick={handleMobileNavClose}
                       >
                         Video + Transaction Analytics
-                      </Link>
-                      <Link
-                        href="/aibased-invoice-processing"
+                      </button>
+                      <button
+                        onClick={() => handleMobileNavClose('/aibased-invoice-processing')}
                         className="block text-left px-4 py-2 rounded-lg hover:bg-[#2b3655] transition pointer-events-auto"
-                        onClick={handleMobileNavClose}
                       >
                         AI-Based Invoice Processing
-                      </Link>
-                      <Link
-                        href="/surveillance-monitoring"
+                      </button>
+                      <button
+                        onClick={() => handleMobileNavClose('/surveillance-monitoring')}
                         className="block text-left px-4 py-2 rounded-lg hover:bg-[#2b3655] transition pointer-events-auto"
-                        onClick={handleMobileNavClose}
                       >
                         Surveillance Monitoring
-                      </Link>
+                      </button>
                     </div>
                   )}
                 </div>
                 <Link
                   href="/pricing"
                   className="hover:opacity-80 px-3 py-2 rounded-md transition-opacity text-left pointer-events-auto"
-                  onClick={handleMobileNavClose}
+                  onClick={() => handleMobileNavClose()}
                 >
                   Pricing
                 </Link>
                 <Link
                   href="/about-us"
                   className="hover:opacity-80 px-3 py-2 rounded-md transition-opacity text-left pointer-events-auto"
-                  onClick={handleMobileNavClose}
+                  onClick={() => handleMobileNavClose()}
                 >
                   About
                 </Link>
@@ -233,18 +237,15 @@ export default function Navbar() {
                   <span>Services</span>
                   <ChevronDown
                     size={18}
-                    className={`transition-transform duration-300 ${isServicesOpen ? 'rotate-180' : ''
-                      }`}
+                    className={`transition-transform duration-300 ${
+                      isServicesOpen ? 'rotate-180' : ''
+                    }`}
                     style={{ strokeWidth: 2 }}
                   />
                 </button>
 
                 {isServicesOpen && (
-                  <div
-                    className="absolute top-full py-3 px-2 left-0 mt-2 w-72 bg-[#1b2542]
-            border border-white/20 rounded-2xl shadow-xl space-y-1.5
-            transition-all duration-300 z-20"
-                  >
+                  <div className="absolute top-full py-3 px-2 left-0 mt-2 w-72 bg-[#1b2542] border border-white/20 rounded-2xl shadow-xl space-y-1.5 transition-all duration-300 z-20">
                     <Link
                       href="/online-order-management"
                       className="block px-4 py-2 rounded-lg hover:bg-[#2b3655] transition"
@@ -305,7 +306,7 @@ export default function Navbar() {
           <div className="fixed inset-0 bg-black/50 z-[101]" onClick={closeContact} />
           <div className="fixed inset-0 flex items-center justify-center z-[102] pointer-events-none">
             <div className="bg-[#1b2542] border border-white/50 text-white rounded-2xl p-8 max-w-xl w-full shadow-2xl mx-4 pointer-events-auto">
-              <div className="flex justify-between items-center mb-4 ">
+              <div className="flex justify-between items-center mb-4">
                 <h2 className="text-xl font-semibold">Contact Us</h2>
                 <button
                   onClick={closeContact}

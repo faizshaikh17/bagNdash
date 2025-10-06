@@ -84,7 +84,7 @@ export default function AboutUs() {
       </section>
 
 
-      <section className='relative flex flex-col items-center gap-12 sm:gap-16 md:gap-20 lg:gap-32 w-full py-8 sm:py-12 md:py-16 bg-transparent
+      <section className='relative flex flex-col overflow-x-clip items-center gap-12 sm:gap-16 md:gap-20 lg:gap-32 w-full py-8 sm:py-12 md:py-16 bg-transparent
   md:bg-none md:bg-[#020D2D] '>
 
         <div
@@ -326,8 +326,13 @@ export default function AboutUs() {
 
 
       <section className="relative w-full py-12 md:py-20 lg:py-30 md:bg-none md:bg-[#020D2D] bg-gradient-to-b from-transparent via-transparent to-[#0F5F4F]/40 overflow-x-clip">
-        <div className="w-full z-50">
-          <h1 className="text-center py-6 md:py-10 font-bold text-2xl md:text-3xl lg:text-[2.2rem] tracking-wide text-white mb-8 px-4">
+        <div className="w-full relative z-50">
+          <div className="absolute z-0 opacity-55 inset-0 md:hidden flex items-center justify-center pointer-events-none">
+            <div className="h-[25rem] min-w-5xl rounded-full bg-[radial-gradient(circle_at_bottom,_#0B0A3F_0%,_#3C1F8C_50%,_transparent_85%)] blur-[170px]" />
+          </div>
+
+
+          <h1 className="text-center hidden md:block py-6 md:py-10 font-bold text-2xl md:text-3xl lg:text-[2.2rem] tracking-wide text-white mb-8 px-4">
             Our Partners & Integrations
           </h1>
           <h1 className="text-center md:hidden py-4 font-bold text-2xl md:text-3xl lg:text-[2.2rem] tracking-wide text-white mb-4 md:mb-8 px-4">

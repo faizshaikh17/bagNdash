@@ -92,21 +92,13 @@ const HeroAndHowItWorks = () => {
 
     return (
         <>
-            <section className="relative flex flex-col justify-end w-full min-h-screen bg-[#010B29] overflow-hidden">
+            <section className="relative flex flex-col justify-end w-full min-h-screen md:bg-[#010B29] md:bg-none bg-gradient-to-b from-[#010B29] to-transparent overflow-x-clip">
 
                 <div className="block md:hidden absolute w-[400px] h-[400px] 
   left-0 top-10 
   opacity-60 pointer-events-none 
   rounded-full blur-[120px]
   bg-[radial-gradient(circle_at_center,_#2563eb,_#1e3a8a)]" />
-
-                {/* <div className="absolute -bottom-60 lg:hidden inset-0 flex items-center justify-center">
-                    <div
-                        className=" h-full min-w-5xl rounded-full bg-[radial-gradient(circle_at_center,_#064E3B_0%,_transparent_75%)] blur-[70px]"
-                    />
-                </div> */}
-
-
 
 
                 <div className="lg:hidden rounded-2xl mt-20 my-10 mx-auto relative w-[90%] aspect-square">
@@ -120,21 +112,30 @@ const HeroAndHowItWorks = () => {
                 </div>
 
                 <div className="absolute inset-0 z-0 hidden lg:block">
-                    <Image
-                        src="/images/onlineOrderHero.png"
-                        alt="Online Orders Background"
-                        fill
-                        priority
-                        className="object-cover object-center"
-                    />
+                    <video
+                        src="/videos/onlineOrderHero.mp4" // replace with your video path
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        className="object-cover object-center w-full h-full"
+                    ></video>
+
                     <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,0,0,0)_0%,rgba(1,11,41,0.9)_80%,#010B29_100%)]" />
                     <div className="absolute inset-0 bg-[linear-gradient(180deg,#010314_40.24%,rgba(1,3,20,0)_100%),radial-gradient(85.05%_65.08%_at_50%_50%,#7B50FE_37.41%,#F462F3_69.27%,#FFFFFF_100%)] opacity-40 blur-[160px]" />
                 </div>
 
                 <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-b from-transparent to-[#020D2D] z-[5] hidden lg:block" />
 
-                <div className="relative z-10 container mx-auto px-6 md:px-18 h-full lg:flex lg:flex-col lg:justify-end">
-                    <div className="flex flex-col gap-6 lg:gap-8 items-start lg:pt-20 max-w-7xl">
+                <div className="relative overflow-x-clip container mx-auto px-6 md:px-18 h-full lg:flex lg:flex-col lg:justify-end">
+                    {/* Gradient background (behind content) */}
+                    <div className="absolute md:hidden inset-0 opacity-65 flex items-center justify-center z-0">
+                        <div className="h-[25rem] bottom-0 min-w-5xl rounded-full bg-[radial-gradient(circle_at_center,_#033326_0%,_#064E3B_45%,_transparent_80%)] blur-[80px]" />
+                    </div>
+
+
+                    {/* Foreground content (in front) */}
+                    <div className="relative z-10 flex flex-col gap-6 lg:gap-8 items-start lg:pt-20 max-w-7xl">
                         <h1 className="font-extrabold text-3xl md:text-5xl lg:text-6xl leading-[1.5] text-white max-w-4xl">
                             Centralize and Simplify All Your Online Orders
                         </h1>
@@ -142,14 +143,15 @@ const HeroAndHowItWorks = () => {
                             Manage UberEats, Grubhub, and DoorDash in one easy dashboard — built for <br className="hidden lg:block" />
                             liquor stores, convenience stores, and gas stations.
                         </p>
-                        <button className=" md:w-auto rounded-full px-6 lg:px-4 py-3 lg:py-2 mb-8 lg:mt-6 tracking-wide text-sm font-semibold text-white transition-opacity hover:opacity-90 bg-gradient-to-r from-[#F462F3] via-[#F462F3] to-[#7B50FE]">
+                        <button className="md:w-auto rounded-full px-6 lg:px-4 py-3 lg:py-2 mb-8 lg:mt-6 tracking-wide text-sm font-semibold text-white transition-opacity hover:opacity-90 bg-gradient-to-r from-[#F462F3] via-[#F462F3] to-[#7B50FE]">
                             Book a Demo
                         </button>
                     </div>
                 </div>
+
             </section>
 
-            <section className="relative w-full py-12 md:py-20 lg:py-30 bg-[#020D2D] overflow-x-clip">
+            <section className="relative w-full py-12 md:py-20 lg:py-30 md:bg-[#020D2D] md:bg-none bg-gradient-to-b from-transparent to-[#020D2D] overflow-x-clip">
                 <div className="absolute lg:flex hidden opacity-75 z-5 w-88 h-40 pointer-events-none left-1/2 top-60 bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 blur-[220px]" />
                 <div className="relative z-10 container mx-auto px-2 md:px-12">
                     <h2 className="text-3xl md:text-[2.4rem] py-6 md:py-10 font-extrabold text-white mb-6 md:mb-12 text-center">
@@ -157,15 +159,6 @@ const HeroAndHowItWorks = () => {
                     </h2>
                     <div className="flex justify-center px-4">
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-5xl w-full">
-                            <div className="w-full aspect-square max-w-md mx-auto lg:max-w-none lg:hidden">
-                                <Image
-                                    src={currentFaqImage}
-                                    alt="How it works illustration"
-                                    width={400}
-                                    height={300}
-                                    className="object-cover w-full h-full border border-gray-600 rounded-3xl"
-                                />
-                            </div>
                             <div className="rounded-2xl p-2 md:p-8 flex flex-col justify-center lg:aspect-square">
                                 {faqs.map((faq, index) => (
                                     <div
@@ -188,9 +181,21 @@ const HeroAndHowItWorks = () => {
                                             </div>
                                         </button>
                                         {openIndex === index && (
-                                            <p className="mt-4 text-gray-400 text-sm leading-relaxed">
-                                                {faq.answer}
-                                            </p>
+                                            <>
+                                                <p className="mt-4 text-gray-400 text-sm leading-relaxed">
+                                                    {faq.answer}
+                                                </p>
+                                                <div className="w-full aspect-square max-w-md mx-auto mt-4 lg:hidden">
+                                                    <video
+                                                        src={faqImages[index]}
+                                                        autoPlay
+                                                        loop
+                                                        muted
+                                                        playsInline
+                                                        className="object-cover w-full h-full border border-gray-600 rounded-3xl"
+                                                    />
+                                                </div>
+                                            </>
                                         )}
                                     </div>
                                 ))}
@@ -213,7 +218,10 @@ const HeroAndHowItWorks = () => {
 
             <section className="relative w-full py-12 md:py-20 lg:py-30 bg-[#020D2D] overflow-x-clip">
 
-                <div className="absolute lg:flex hidden z-5 w-88 h-40 pointer-events-none bottom-30 left-20 bg-gradient-to-r from-purple-400 via-purple-500 to-purple-600 blur-[220px]" />
+                <div className="absolute lg:flex hidden z-5 w-88 h-40 pointer-events-none bottom-30 left-20 bg-gradient-to-r from-[#3b0764] via-[#5b21b6] to-[#7e22ce] blur-[220px]" />
+
+
+                <div className="absolute lg:hidden block z-5 w-88 h-full opacity-65 pointer-events-none bottom-30 left-20 bg-gradient-to-r from-[#4c1d95] via-[#a21caf] to-[#db2777] blur-[220px]" />
 
 
 
@@ -282,8 +290,11 @@ const HeroAndHowItWorks = () => {
                 </div>
             </section>
 
-            <section className="relative w-full py-12 md:py-20 lg:py-30 bg-[#020D2D] overflow-hidden">
+            <section className="relative w-full py-12 md:py-20 lg:py-30 md:bg-[#020D2D] md:bg-none bg-gradient-to-b from-[#020D2D] to-transparent overflow-hidden">
                 <div className="w-full z-50">
+                    <div className="absolute md:hidden inset-0 opacity-65 flex items-center justify-center z-0">
+                        <div className="h-[25rem] bottom-0 min-w-5xl rounded-full bg-[radial-gradient(circle_at_center,_#033326_0%,_#064E3B_45%,_transparent_80%)] blur-[80px]" />
+                    </div>
                     <h1 className="text-center py-6 md:py-10 font-bold text-2xl md:text-3xl lg:text-[2.2rem] tracking-wide text-white mb-4 md:mb-8 px-4">
                         Industries That Benefit
                     </h1>
@@ -318,7 +329,7 @@ const HeroAndHowItWorks = () => {
                 </div>
             </section>
 
-            <section className="relative w-full py-12 md:py-20 lg:py-30 bg-[#020D2D] overflow-hidden">
+            <section className="relative w-full py-12 md:py-20 lg:py-30 md:bg-[#020D2D] md:bg-none bg-gradient-to-b from-transparent via-[#020D2D]/50 to-transparent overflow-hidden">
                 <div className="w-full z-50">
                     <h1 className="text-center py-4 font-bold text-2xl md:text-3xl lg:text-[2.2rem] tracking-wide text-white mb-4 md:mb-8 px-4">
                         Integration Strip
