@@ -127,7 +127,7 @@ const HeroAndHowItWorks = () => {
 
                 <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-b from-transparent to-[#020D2D] z-[5] hidden lg:block" />
 
-                <div className="relative overflow-x-clip container mx-auto px-6 md:px-18 h-full lg:flex lg:flex-col lg:justify-end">
+                <div className="relative overflow-x-clip container px-6 md:px-18 h-full lg:flex lg:flex-col lg:justify-end">
                     {/* Gradient background (behind content) */}
                     <div className="absolute md:hidden inset-0 opacity-65 flex items-center justify-center z-0">
                         <div className="h-[25rem] bottom-0 min-w-5xl rounded-full bg-[radial-gradient(circle_at_center,_#033326_0%,_#064E3B_45%,_transparent_80%)] blur-[80px]" />

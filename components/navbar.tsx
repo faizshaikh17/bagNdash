@@ -3,23 +3,21 @@ import React, { useState, useRef, useEffect } from 'react'
 import { ChevronDown, Menu, X } from 'lucide-react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { usePathname, useRouter } from 'next/navigation'
+import { usePathname } from 'next/navigation'
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isServicesOpen, setIsServicesOpen] = useState(false)
+  const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false)
   const [isContactOpen, setIsContactOpen] = useState(false)
   const pathname = usePathname()
-  const router = useRouter()
 
   const dropdownRef = useRef<HTMLDivElement | null>(null)
-  const menuPanelRef = useRef<HTMLDivElement>(null)
-  const mobileServicesRef = useRef<HTMLDivElement>(null)
 
   const handleContactClick = () => setIsContactOpen(true)
   const closeContact = () => setIsContactOpen(false)
 
-  // Close desktop services dropdown if clicked outside
+  // Close desktop dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
@@ -30,40 +28,13 @@ export default function Navbar() {
     return () => document.removeEventListener('mousedown', handleClickOutside)
   }, [])
 
-  // Close mobile services dropdown if clicked outside (but inside menu)
-  useEffect(() => {
-    const handleClickOutsideMobile = (event: MouseEvent) => {
-      if (
-        isMenuOpen &&
-        isServicesOpen &&
-        menuPanelRef.current &&
-        mobileServicesRef.current
-      ) {
-        const target = event.target as Node
-        if (
-          menuPanelRef.current.contains(target) &&
-          !mobileServicesRef.current.contains(target)
-        ) {
-          setIsServicesOpen(false)
-        }
-      }
-    }
-    document.addEventListener('click', handleClickOutsideMobile)
-    return () => document.removeEventListener('click', handleClickOutsideMobile)
-  }, [isMenuOpen, isServicesOpen])
-
-  // Helper to handle mobile dropdown links with proper TS typing
-  const handleMobileNavCloseAndNavigate = (href: string) => (event: React.MouseEvent) => {
-    event.preventDefault()
+  const closeMobileMenu = () => {
     setIsMenuOpen(false)
-    setIsServicesOpen(false)
-    router.push(href)
+    setIsMobileServicesOpen(false)
   }
 
-  // Close mobile menu only
-  const handleMobileNavClose = () => {
-    setIsMenuOpen(false)
-    setIsServicesOpen(false)
+  const toggleMobileServices = () => {
+    setIsMobileServicesOpen(!isMobileServicesOpen)
   }
 
   return (
@@ -89,7 +60,7 @@ export default function Navbar() {
             >
               <Menu size={22} />
             </button>
-            <Link href="/" className="flex items-center" onClick={handleMobileNavClose}>
+            <Link href="/" className="flex items-center" onClick={closeMobileMenu}>
               <Image
                 src="/images/logo.png"
                 alt="Logo"
@@ -107,7 +78,7 @@ export default function Navbar() {
             }}
             onClick={() => {
               handleContactClick()
-              handleMobileNavClose()
+              closeMobileMenu()
             }}
           >
             Book a Demo
@@ -115,133 +86,127 @@ export default function Navbar() {
         </div>
 
         {/* Mobile Menu */}
-        <div
-          className={`fixed inset-0 z-[99] md:hidden transition-all duration-500 ease-in-out ${
-            isMenuOpen ? 'pointer-events-auto' : 'pointer-events-none'
-          }`}
-        >
-          <div
-            className={`absolute inset-0 bg-black/50 backdrop-blur-sm transition-opacity duration-500 ${
-              isMenuOpen ? 'opacity-100' : 'opacity-0'
-            }`}
-            onClick={handleMobileNavClose}
-          />
+        {isMenuOpen && (
+          <div className="fixed inset-0 z-[99] md:hidden">
+            <div
+              className="absolute inset-0 bg-black/50 backdrop-blur-sm"
+              onClick={closeMobileMenu}
+            />
 
-          <div
-            ref={menuPanelRef}
-            className={`absolute inset-x-0 top-0 bg-[#1b2542] py-6 px-4 z-[100] max-h-screen overflow-y-auto transform transition-transform duration-500 ease-in-out ${
-              isMenuOpen ? 'translate-y-0' : '-translate-y-full'
-            }`}
-          >
-            <div className="flex flex-col h-full">
-              <div className="flex justify-between items-center mb-6">
-                <Link href="/" className="flex items-center" onClick={handleMobileNavClose}>
-                  <Image
-                    src="/images/logo.png"
-                    alt="Logo"
-                    width={120}
-                    height={40}
-                    priority
-                    className="h-auto w-auto"
-                  />
-                </Link>
-                <button
-                  onClick={handleMobileNavClose}
-                  className="text-white p-2 hover:opacity-80 transition-opacity"
-                  aria-label="Close menu"
-                >
-                  <X size={24} />
-                </button>
-              </div>
-
-              <nav className="flex flex-col gap-4 text-white text-sm font-semibold tracking-wider flex-1 pointer-events-auto">
-                <div className="relative" ref={mobileServicesRef}>
-                  <button
-                    onClick={() => setIsServicesOpen(!isServicesOpen)}
-                    className="flex items-center gap-2 w-full text-left px-3 py-2 rounded-md hover:bg-[#2b3655] transition pointer-events-auto"
-                  >
-                    <span>Services</span>
-                    <ChevronDown
-                      size={18}
-                      className={`transition-transform duration-300 ${
-                        isServicesOpen ? 'rotate-180' : ''
-                      }`}
-                      style={{ strokeWidth: 2 }}
+            <div className="absolute inset-x-0 top-0 bg-[#1b2542] py-6 px-4 z-[100] max-h-screen overflow-y-auto">
+              <div className="flex flex-col h-full">
+                <div className="flex justify-between items-center mb-6">
+                  <Link href="/" className="flex items-center" onClick={closeMobileMenu}>
+                    <Image
+                      src="/images/logo.png"
+                      alt="Logo"
+                      width={120}
+                      height={40}
+                      priority
+                      className="h-auto w-auto"
                     />
+                  </Link>
+                  <button
+                    onClick={closeMobileMenu}
+                    className="text-white p-2 hover:opacity-80 transition-opacity"
+                    aria-label="Close menu"
+                  >
+                    <X size={24} />
                   </button>
-                  {isServicesOpen && (
-                    <div className="flex flex-col mt-2 space-y-1.5 bg-[#1b2542] border border-white/20 rounded-2xl shadow-xl p-2 pointer-events-auto">
-                      <Link
-                        href="/online-order-management"
-                        className="block text-left px-4 py-2 rounded-lg hover:bg-[#2b3655] transition pointer-events-auto"
-                        onClick={handleMobileNavCloseAndNavigate('/online-order-management')}
-                      >
-                        Online Order Management
-                      </Link>
-                      <Link
-                        href="/video-transaction-analytics"
-                        className="block text-left px-4 py-2 rounded-lg hover:bg-[#2b3655] transition pointer-events-auto"
-                        onClick={handleMobileNavCloseAndNavigate('/video-transaction-analytics')}
-                      >
-                        Video + Transaction Analytics
-                      </Link>
-                      <Link
-                        href="/aibased-invoice-processing"
-                        className="block text-left px-4 py-2 rounded-lg hover:bg-[#2b3655] transition pointer-events-auto"
-                        onClick={handleMobileNavCloseAndNavigate('/aibased-invoice-processing')}
-                      >
-                        AI-Based Invoice Processing
-                      </Link>
-                      <Link
-                        href="/surveillance-monitoring"
-                        className="block text-left px-4 py-2 rounded-lg hover:bg-[#2b3655] transition pointer-events-auto"
-                        onClick={handleMobileNavCloseAndNavigate('/surveillance-monitoring')}
-                      >
-                        Surveillance Monitoring
-                      </Link>
-                    </div>
-                  )}
                 </div>
-                <Link
-                  href="/pricing"
-                  className="hover:opacity-80 px-3 py-2 rounded-md transition-opacity text-left pointer-events-auto"
-                  onClick={handleMobileNavCloseAndNavigate('/pricing')}
-                >
-                  Pricing
-                </Link>
-                <Link
-                  href="/about-us"
-                  className="hover:opacity-80 px-3 py-2 rounded-md transition-opacity text-left pointer-events-auto"
-                  onClick={handleMobileNavCloseAndNavigate('/about-us')}
-                >
-                  About
-                </Link>
+
+                <nav className="flex flex-col gap-4 text-white text-sm font-semibold tracking-wider flex-1">
+                  {/* Mobile Services - Click based */}
+                  <div className="relative">
+                    <button
+                      onClick={toggleMobileServices}
+                      className="flex items-center gap-2 w-full text-left px-3 py-2 rounded-md hover:bg-[#2b3655]/50 transition"
+                    >
+                      <span>Services</span>
+                      <ChevronDown
+                        size={18}
+                        className={`transition-transform duration-300 ${
+                          isMobileServicesOpen ? 'rotate-180' : ''
+                        }`}
+                        style={{ strokeWidth: 2 }}
+                      />
+                    </button>
+                    {/* Dropdown appears on click */}
+                    {isMobileServicesOpen && (
+                      <div className="flex flex-col mt-2 space-y-1.5 bg-[#1b2542] border border-white/20 rounded-2xl shadow-xl p-2">
+                        <Link
+                          href="/online-order-management"
+                          className="block text-left px-4 py-2 rounded-lg hover:bg-[#2b3655] transition"
+                          onClick={closeMobileMenu}
+                        >
+                          Online Order Management
+                        </Link>
+                        <Link
+                          href="/video-transaction-analytics"
+                          className="block text-left px-4 py-2 rounded-lg hover:bg-[#2b3655] transition"
+                          onClick={closeMobileMenu}
+                        >
+                          Video + Transaction Analytics
+                        </Link>
+                        <Link
+                          href="/aibased-invoice-processing"
+                          className="block text-left px-4 py-2 rounded-lg hover:bg-[#2b3655] transition"
+                          onClick={closeMobileMenu}
+                        >
+                          AI-Based Invoice Processing
+                        </Link>
+                        <Link
+                          href="/surveillance-monitoring"
+                          className="block text-left px-4 py-2 rounded-lg hover:bg-[#2b3655] transition"
+                          onClick={closeMobileMenu}
+                        >
+                          Surveillance Monitoring
+                        </Link>
+                      </div>
+                    )}
+                  </div>
+
+                  <Link
+                    href="/pricing"
+                    className="hover:opacity-80 px-3 py-2 rounded-md transition-opacity text-left"
+                    onClick={closeMobileMenu}
+                  >
+                    Pricing
+                  </Link>
+                  <Link
+                    href="/about-us"
+                    className="hover:opacity-80 px-3 py-2 rounded-md transition-opacity text-left"
+                    onClick={closeMobileMenu}
+                  >
+                    About
+                  </Link>
+                  <button
+                    onClick={() => {
+                      handleContactClick()
+                      closeMobileMenu()
+                    }}
+                    className="hover:opacity-80 px-3 py-2 rounded-md transition-opacity text-left"
+                  >
+                    Contact
+                  </button>
+                </nav>
+
                 <button
+                  className="mt-6 w-full rounded-full py-2.5 tracking-wide text-sm font-semibold text-white transition-opacity hover:opacity-90"
+                  style={{
+                    background: 'linear-gradient(95.49deg, #F462F3 52.87%, #7B50FE 106.28%)',
+                  }}
                   onClick={() => {
                     handleContactClick()
-                    handleMobileNavClose()
+                    closeMobileMenu()
                   }}
-                  className="hover:opacity-80 px-3 py-2 rounded-md transition-opacity text-left pointer-events-auto"
                 >
-                  Contact
+                  Book a Demo
                 </button>
-              </nav>
-
-              <button
-                className="mt-6 w-full rounded-full py-2.5 tracking-wide text-sm font-semibold text-white transition-opacity hover:opacity-90 pointer-events-auto"
-                style={{
-                  background: 'linear-gradient(95.49deg, #F462F3 52.87%, #7B50FE 106.28%)',
-                }}
-                onClick={() => {
-                  handleContactClick()
-                  handleMobileNavClose()
-                }}
-              >
-                Book a Demo
-              </button>
+              </div>
             </div>
           </div>
-        </div>
+        )}
 
         {/* Desktop Navbar */}
         <div className="hidden md:flex items-center justify-between px-6 lg:px-12 py-4 relative z-10">
@@ -260,7 +225,7 @@ export default function Navbar() {
               <div className="relative" ref={dropdownRef}>
                 <button
                   onClick={() => setIsServicesOpen(!isServicesOpen)}
-                  className="flex items-center gap-2 cursor-pointer text-sm px-3 py-2"
+                  className="flex items-center gap-2 cursor-pointer text-sm px-3 py-2 hover:opacity-80 transition-opacity"
                 >
                   <span>Services</span>
                   <ChevronDown
