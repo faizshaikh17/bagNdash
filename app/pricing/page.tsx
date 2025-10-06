@@ -39,7 +39,7 @@ export default function AboutUs() {
 
   return (
     <div className="min-h-screen bg-[#020D2D]">
-      <section className="relative w-full overflow-hidden md:bg-[#020D2D] md:bg-none bg-gradient-to-b from-[#020D2D] to-transparent">
+      <section className="relative w-full overflow-hidden md:py-0 py-10 md:bg-[#020D2D] md:bg-none bg-gradient-to-b from-[#020D2D] to-transparent">
         <div className="hidden md:block absolute inset-x-0 top-0 h-screen max-h-[1174px] opacity-35 pointer-events-none bg-[linear-gradient(180deg,#010314_40.24%,rgba(1,3,20,0)_100%),radial-gradient(85.05%_65.08%_at_50%_50%,#7B50FE_37.41%,#F462F3_69.27%,#FFFFFF_100%)] blur-[200px] rotate-180" />
         <div className="hidden md:block absolute inset-0 pointer-events-none bg-[radial-gradient(54.1%_56.99%_at_49.11%_40.56%,rgba(2,13,45,0)_1.5%,#020D2D_100%)]" />
         <div className="block absolute w-[200px] h-[200px] md:w-[400px] md:h-[400px] left-1/2 md:left-60 top-4 md:top-10 -translate-x-1/2 md:translate-x-0 opacity-60 md:opacity-10 pointer-events-none bg-blue-500/50 md:bg-blue-500 blur-[100px] md:blur-[150px]" />

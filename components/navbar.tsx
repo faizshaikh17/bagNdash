@@ -12,16 +12,14 @@ export default function Navbar() {
   const pathname = usePathname()
   const router = useRouter()
 
-  const handleContactClick = () => {
-    setIsContactOpen(true)
-  }
-
-  const closeContact = () => {
-    setIsContactOpen(false)
-  }
-
   const dropdownRef = useRef<HTMLDivElement | null>(null)
+  const menuPanelRef = useRef<HTMLDivElement>(null)
+  const mobileServicesRef = useRef<HTMLDivElement>(null)
 
+  const handleContactClick = () => setIsContactOpen(true)
+  const closeContact = () => setIsContactOpen(false)
+
+  // Close desktop services dropdown if clicked outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
@@ -32,13 +30,40 @@ export default function Navbar() {
     return () => document.removeEventListener('mousedown', handleClickOutside)
   }, [])
 
-  // Close menu on navigation
-  const handleMobileNavClose = (href?: string) => {
-    if (href) {
-      router.push(href)
+  // Close mobile services dropdown if clicked outside (but inside menu)
+  useEffect(() => {
+    const handleClickOutsideMobile = (event: MouseEvent) => {
+      if (
+        isMenuOpen &&
+        isServicesOpen &&
+        menuPanelRef.current &&
+        mobileServicesRef.current
+      ) {
+        const target = event.target as Node
+        if (
+          menuPanelRef.current.contains(target) &&
+          !mobileServicesRef.current.contains(target)
+        ) {
+          setIsServicesOpen(false)
+        }
+      }
     }
-    setIsServicesOpen(false)
+    document.addEventListener('click', handleClickOutsideMobile)
+    return () => document.removeEventListener('click', handleClickOutsideMobile)
+  }, [isMenuOpen, isServicesOpen])
+
+  // Helper to handle mobile dropdown links with proper TS typing
+  const handleMobileNavCloseAndNavigate = (href: string) => (event: React.MouseEvent) => {
+    event.preventDefault()
     setIsMenuOpen(false)
+    setIsServicesOpen(false)
+    router.push(href)
+  }
+
+  // Close mobile menu only
+  const handleMobileNavClose = () => {
+    setIsMenuOpen(false)
+    setIsServicesOpen(false)
   }
 
   return (
@@ -64,7 +89,7 @@ export default function Navbar() {
             >
               <Menu size={22} />
             </button>
-            <Link href="/" className="flex items-center" onClick={() => setIsMenuOpen(false)}>
+            <Link href="/" className="flex items-center" onClick={handleMobileNavClose}>
               <Image
                 src="/images/logo.png"
                 alt="Logo"
@@ -82,36 +107,35 @@ export default function Navbar() {
             }}
             onClick={() => {
               handleContactClick()
-              setIsMenuOpen(false)
+              handleMobileNavClose()
             }}
           >
             Book a Demo
           </button>
         </div>
 
-        {/* Mobile Menu (Slide Animation) */}
+        {/* Mobile Menu */}
         <div
           className={`fixed inset-0 z-[99] md:hidden transition-all duration-500 ease-in-out ${
             isMenuOpen ? 'pointer-events-auto' : 'pointer-events-none'
           }`}
         >
-          {/* Dark Overlay */}
           <div
             className={`absolute inset-0 bg-black/50 backdrop-blur-sm transition-opacity duration-500 ${
               isMenuOpen ? 'opacity-100' : 'opacity-0'
             }`}
-            onClick={() => setIsMenuOpen(false)}
+            onClick={handleMobileNavClose}
           />
 
-          {/* Sliding Menu Panel */}
           <div
+            ref={menuPanelRef}
             className={`absolute inset-x-0 top-0 bg-[#1b2542] py-6 px-4 z-[100] max-h-screen overflow-y-auto transform transition-transform duration-500 ease-in-out ${
               isMenuOpen ? 'translate-y-0' : '-translate-y-full'
             }`}
           >
             <div className="flex flex-col h-full">
               <div className="flex justify-between items-center mb-6">
-                <Link href="/" className="flex items-center" onClick={() => handleMobileNavClose()}>
+                <Link href="/" className="flex items-center" onClick={handleMobileNavClose}>
                   <Image
                     src="/images/logo.png"
                     alt="Logo"
@@ -122,7 +146,7 @@ export default function Navbar() {
                   />
                 </Link>
                 <button
-                  onClick={() => setIsMenuOpen(false)}
+                  onClick={handleMobileNavClose}
                   className="text-white p-2 hover:opacity-80 transition-opacity"
                   aria-label="Close menu"
                 >
@@ -131,7 +155,7 @@ export default function Navbar() {
               </div>
 
               <nav className="flex flex-col gap-4 text-white text-sm font-semibold tracking-wider flex-1 pointer-events-auto">
-                <div className="relative">
+                <div className="relative" ref={mobileServicesRef}>
                   <button
                     onClick={() => setIsServicesOpen(!isServicesOpen)}
                     className="flex items-center gap-2 w-full text-left px-3 py-2 rounded-md hover:bg-[#2b3655] transition pointer-events-auto"
@@ -147,51 +171,55 @@ export default function Navbar() {
                   </button>
                   {isServicesOpen && (
                     <div className="flex flex-col mt-2 space-y-1.5 bg-[#1b2542] border border-white/20 rounded-2xl shadow-xl p-2 pointer-events-auto">
-                      <button
-                        onClick={() => handleMobileNavClose('/online-order-management')}
+                      <Link
+                        href="/online-order-management"
                         className="block text-left px-4 py-2 rounded-lg hover:bg-[#2b3655] transition pointer-events-auto"
+                        onClick={handleMobileNavCloseAndNavigate('/online-order-management')}
                       >
                         Online Order Management
-                      </button>
-                      <button
-                        onClick={() => handleMobileNavClose('/video-transaction-analytics')}
+                      </Link>
+                      <Link
+                        href="/video-transaction-analytics"
                         className="block text-left px-4 py-2 rounded-lg hover:bg-[#2b3655] transition pointer-events-auto"
+                        onClick={handleMobileNavCloseAndNavigate('/video-transaction-analytics')}
                       >
                         Video + Transaction Analytics
-                      </button>
-                      <button
-                        onClick={() => handleMobileNavClose('/aibased-invoice-processing')}
+                      </Link>
+                      <Link
+                        href="/aibased-invoice-processing"
                         className="block text-left px-4 py-2 rounded-lg hover:bg-[#2b3655] transition pointer-events-auto"
+                        onClick={handleMobileNavCloseAndNavigate('/aibased-invoice-processing')}
                       >
                         AI-Based Invoice Processing
-                      </button>
-                      <button
-                        onClick={() => handleMobileNavClose('/surveillance-monitoring')}
+                      </Link>
+                      <Link
+                        href="/surveillance-monitoring"
                         className="block text-left px-4 py-2 rounded-lg hover:bg-[#2b3655] transition pointer-events-auto"
+                        onClick={handleMobileNavCloseAndNavigate('/surveillance-monitoring')}
                       >
                         Surveillance Monitoring
-                      </button>
+                      </Link>
                     </div>
                   )}
                 </div>
                 <Link
                   href="/pricing"
                   className="hover:opacity-80 px-3 py-2 rounded-md transition-opacity text-left pointer-events-auto"
-                  onClick={() => handleMobileNavClose()}
+                  onClick={handleMobileNavCloseAndNavigate('/pricing')}
                 >
                   Pricing
                 </Link>
                 <Link
                   href="/about-us"
                   className="hover:opacity-80 px-3 py-2 rounded-md transition-opacity text-left pointer-events-auto"
-                  onClick={() => handleMobileNavClose()}
+                  onClick={handleMobileNavCloseAndNavigate('/about-us')}
                 >
                   About
                 </Link>
                 <button
                   onClick={() => {
                     handleContactClick()
-                    setIsMenuOpen(false)
+                    handleMobileNavClose()
                   }}
                   className="hover:opacity-80 px-3 py-2 rounded-md transition-opacity text-left pointer-events-auto"
                 >
@@ -206,7 +234,7 @@ export default function Navbar() {
                 }}
                 onClick={() => {
                   handleContactClick()
-                  setIsMenuOpen(false)
+                  handleMobileNavClose()
                 }}
               >
                 Book a Demo
@@ -249,24 +277,28 @@ export default function Navbar() {
                     <Link
                       href="/online-order-management"
                       className="block px-4 py-2 rounded-lg hover:bg-[#2b3655] transition"
+                      onClick={() => setIsServicesOpen(false)}
                     >
                       Online Order Management
                     </Link>
                     <Link
                       href="/video-transaction-analytics"
                       className="block px-4 py-2 rounded-lg hover:bg-[#2b3655] transition"
+                      onClick={() => setIsServicesOpen(false)}
                     >
                       Video + Transaction Analytics
                     </Link>
                     <Link
                       href="/aibased-invoice-processing"
                       className="block px-4 py-2 rounded-lg hover:bg-[#2b3655] transition"
+                      onClick={() => setIsServicesOpen(false)}
                     >
                       AI-Based Invoice Processing
                     </Link>
                     <Link
                       href="/surveillance-monitoring"
                       className="block px-4 py-2 rounded-lg hover:bg-[#2b3655] transition"
+                      onClick={() => setIsServicesOpen(false)}
                     >
                       Surveillance Monitoring
                     </Link>
