@@ -7,6 +7,7 @@ import { usePathname } from 'next/navigation'
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isClosing, setIsClosing] = useState(false)
   const [isServicesOpen, setIsServicesOpen] = useState(false)
   const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false)
   const [isContactOpen, setIsContactOpen] = useState(false)
@@ -29,8 +30,12 @@ export default function Navbar() {
   }, [])
 
   const closeMobileMenu = () => {
-    setIsMenuOpen(false)
-    setIsMobileServicesOpen(false)
+    setIsClosing(true)
+    setTimeout(() => {
+      setIsMenuOpen(false)
+      setIsMobileServicesOpen(false)
+      setIsClosing(false)
+    }, 300) // Match animation duration
   }
 
   const toggleMobileServices = () => {
@@ -39,6 +44,64 @@ export default function Navbar() {
 
   return (
     <>
+      <style jsx global>{`
+        @keyframes slide-down {
+          from {
+            transform: translateY(-100%);
+            opacity: 0;
+          }
+          to {
+            transform: translateY(0);
+            opacity: 1;
+          }
+        }
+
+        @keyframes slide-up {
+          from {
+            transform: translateY(0);
+            opacity: 1;
+          }
+          to {
+            transform: translateY(-100%);
+            opacity: 0;
+          }
+        }
+
+        @keyframes fade-in {
+          from {
+            opacity: 0;
+          }
+          to {
+            opacity: 1;
+          }
+        }
+
+        @keyframes fade-out {
+          from {
+            opacity: 1;
+          }
+          to {
+            opacity: 0;
+          }
+        }
+
+        .animate-slide-down {
+          animation: slide-down 0.3s ease-out forwards;
+        }
+
+        .animate-slide-up {
+          animation: slide-up 0.3s ease-out forwards;
+        }
+
+        .animate-fade-in {
+          animation: fade-in 0.3s ease-out forwards;
+        }
+
+        .animate-fade-out {
+          animation: fade-out 0.3s ease-out forwards;
+        }
+      `}</style>
+
       <header
         className={`fixed top-0 left-0 w-full z-[100] md:backdrop-blur-xs transition-colors duration-300 ${
           pathname === '/' ? 'md:bg-black/30' : 'bg-transparent'
@@ -89,11 +152,17 @@ export default function Navbar() {
         {isMenuOpen && (
           <div className="fixed inset-0 z-[99] md:hidden">
             <div
-              className="absolute inset-0 bg-black/50 backdrop-blur-sm"
+              className={`absolute inset-0 bg-black/50 backdrop-blur-sm ${
+                isClosing ? 'animate-fade-out' : 'animate-fade-in'
+              }`}
               onClick={closeMobileMenu}
             />
 
-            <div className="absolute inset-x-0 top-0 bg-[#1b2542] py-6 px-4 z-[100] max-h-screen overflow-y-auto">
+            <div
+              className={`absolute inset-x-0 top-0 bg-[#1b2542] py-6 px-4 z-[100] max-h-screen overflow-y-auto ${
+                isClosing ? 'animate-slide-up' : 'animate-slide-down'
+              }`}
+            >
               <div className="flex flex-col h-full">
                 <div className="flex justify-between items-center mb-6">
                   <Link href="/" className="flex items-center" onClick={closeMobileMenu}>
