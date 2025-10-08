@@ -29,7 +29,7 @@ export default function Footer() {
               alt="App Preview"
               width={244}
               height={527}
-              className="absolute top-4 pointer-events-none md:-top-22 left-1/2 md:left-[19px] -translate-x-1/2 md:translate-x-0 w-[200px] md:w-full h-[431px] md:h-[450px]"
+              className="absolute top-4 pointer-events-none md:-top-22 left-1/2 md:left-[19px] -translate-x-1/2 md:translate-x-0 w-[270px] md:w-full h-[431px] md:h-[450px]"
               priority
             />
             <Image
@@ -37,7 +37,7 @@ export default function Footer() {
               alt="iPhone Background"
               width={280}
               height={560}
-              className="absolute top-24 md:-top-12 left-1/2 md:left-35 -translate-x-1/2 md:-translate-x-1/2 md:ml-5 border-4 w-[10rem] md:w-[12rem] h-[12rem] md:h-[14rem] border-orange-400 rounded-2xl pointer-events-none object-cover"
+              className="absolute top-14 md:-top-12 left-1/2 md:left-35 -translate-x-1/2 md:-translate-x-1/2 md:ml-5 border-4 w-[12rem] md:w-[12rem] h-[14rem] md:h-[14rem] border-orange-400 rounded-2xl pointer-events-none object-cover"
             />
             <Image
               src="/images/logo.png"
@@ -77,37 +77,37 @@ export default function Footer() {
 
       <div className="w-full px-4 md:px-20">
         <div className="max-w-[1600px] mx-auto px-4 md:px-12 py-16 flex flex-col gap-12">
-          <div className="md:hidden flex flex-col gap-10">
+          <div className="md:hidden flex flex-col gap-10 py-8">
             {/* Logo + Info */}
             <div className="flex flex-col items-start gap-4 z-50">
               <Image
                 src="/images/logo.png"
                 alt="Logo"
-                width={100}
-                height={40}
+                width={120}
+                height={32}
                 priority
-                className="scale-[1.5] origin-left mb-2"
+                className=""
               />
-              <p className="text-white text-xs leading-relaxed">
+              <p className="text-[#E0E0E0] text-xs leading-relaxed">
                 📞 913-208-3535<br />
                 📍 Kansas City, MO
               </p>
-              <div className="flex justify-start gap-3 mt-1 z-50">
-                <Link href="https://twitter.com/bagndash" target="_blank" className="z-50 pointer-events-auto">
+              <div className="flex justify-start gap-4 mt-3 z-50">
+                <Link href="https://twitter.com/bagndash" target="_blank" className="pointer-events-auto">
                   <Image
                     src="/images/facebook.svg"
                     alt="Facebook"
-                    width={24}
-                    height={24}
+                    width={20}
+                    height={20}
                     unoptimized
                   />
                 </Link>
-                <Link href="https://linkedin.com/company/bagndash" target="_blank" className="z-50 pointer-events-auto">
+                <Link href="https://linkedin.com/company/bagndash" target="_blank" className="pointer-events-auto">
                   <Image
                     src="/images/linkedIn.svg"
                     alt="LinkedIn"
-                    width={24}
-                    height={24}
+                    width={20}
+                    height={20}
                     unoptimized
                   />
                 </Link>
@@ -115,72 +115,72 @@ export default function Footer() {
             </div>
 
             {/* Services + Quick Links */}
-            <div className="w-full flex justify-between gap-12 z-50">
-              <div className="flex flex-col gap-5">
+            <div className="w-full flex justify-between gap-8 z-50">
+              <div className="flex flex-col gap-6">
                 <h3 className="text-white font-poppins font-semibold text-xs">Our Services</h3>
-                <div className="flex flex-col gap-3 z-50">
-                  <Link href="/online-order-management" className="text-[#E0E0E0] text-nowrap hover:text-white text-xs z-50 pointer-events-auto">
+                <div className="flex flex-col gap-4">
+                  <Link href="/online-order-management" className="text-[#E0E0E0] hover:text-white text-xs pointer-events-auto">
                     Online Order Management
                   </Link>
-                  <Link href="/video-transaction-analytics" className="text-[#E0E0E0] text-nowrap hover:text-white text-xs z-50 pointer-events-auto">
+                  <Link href="/video-transaction-analytics" className="text-[#E0E0E0] hover:text-white text-xs pointer-events-auto">
                     Video + Transaction Analytics
                   </Link>
-                  <Link href="/aibased-invoice-processing" className="text-[#E0E0E0] text-nowrap hover:text-white text-xs z-50 pointer-events-auto">
+                  <Link href="/aibased-invoice-processing" className="text-[#E0E0E0] hover:text-white text-xs pointer-events-auto">
                     AI-Based Invoice Processing
                   </Link>
-                  <Link href="/surveillance-monitoring" className="text-[#E0E0E0] text-nowrap hover:text-white text-xs z-50 pointer-events-auto">
+                  <Link href="/surveillance-monitoring" className="text-[#E0E0E0] hover:text-white text-xs pointer-events-auto">
                     Surveillance Monitoring
                   </Link>
                 </div>
               </div>
 
-              <div className="flex flex-col gap-5">
+              <div className="flex flex-col gap-6">
                 <h3 className="text-white font-poppins font-semibold text-xs">Quick Links</h3>
-                <div className="flex flex-col gap-3 z-50">
-                  <Link href={'/about-us'} className="text-[#E0E0E0] hover:text-white text-xs z-50 ">About</Link>
-                  <Link href="/pricing" className="text-[#E0E0E0] hover:text-white text-xs z-50 pointer-events-auto">Pricing</Link>
-                  <Link href="/contact" className="text-[#E0E0E0] hover:text-white text-xs z-50 pointer-events-auto">Contact</Link>
-                  <Link href="/video-transaction-analytics" className="text-[#E0E0E0] hover:text-white text-xs z-50 pointer-events-auto">Services</Link>
+                <div className="flex flex-col gap-4">
+                  <Link href="/about-us" className="text-[#E0E0E0] hover:text-white text-xs pointer-events-auto">About</Link>
+                  <Link href="/pricing" className="text-[#E0E0E0] hover:text-white text-xs pointer-events-auto">Pricing</Link>
+                  <Link href="/contact" className="text-[#E0E0E0] hover:text-white text-xs pointer-events-auto">Contact</Link>
                 </div>
               </div>
             </div>
 
             {/* Important Info + App Store */}
-            <div className="flex justify-between gap-12 z-50">
-              <div className="flex flex-col gap-5">
+            <div className="w-full flex justify-between gap-8 z-50">
+              <div className="flex flex-col gap-6">
                 <h3 className="text-white font-poppins font-semibold text-xs">Important Information</h3>
-                <div className="flex flex-col gap-3 z-50">
-                  <Link href="/terms-and-conditions" className="text-[#E0E0E0] text-nowrap hover:text-white text-xs z-50 pointer-events-auto">
+                <div className="flex flex-col gap-4">
+                  <Link href="/terms-and-conditions" className="text-[#E0E0E0] hover:text-white text-xs pointer-events-auto">
                     Terms and Conditions
                   </Link>
-                  <Link href="/privacy-policy" className="text-[#E0E0E0] text-nowrap hover:text-white text-xs z-50 pointer-events-auto">
+                  <Link href="/privacy-policy" className="text-[#E0E0E0] hover:text-white text-xs pointer-events-auto">
                     Privacy Policy
                   </Link>
                 </div>
               </div>
 
               <div className="flex flex-col gap-4 z-50">
-                <a href="https://www.apple.com/app-store/" target="_blank" rel="noopener noreferrer" className="z-50 pointer-events-auto">
+                <a href="https://www.apple.com/app-store/" target="_blank" rel="noopener noreferrer" className="pointer-events-auto">
                   <Image
                     src="/images/appStore.svg"
                     alt="Download on the Apple Store"
-                    width={170}
-                    height={51}
-                    className="scale-[0.85] origin-left"
+                    width={140}
+                    height={42}
+                    className="origin-left"
                   />
                 </a>
-                <a href="https://play.google.com/store" target="_blank" rel="noopener noreferrer" className="z-50 pointer-events-auto">
+                <a href="https://play.google.com/store" target="_blank" rel="noopener noreferrer" className="pointer-events-auto">
                   <Image
                     src="/images/googlePlay.svg"
                     alt="Get it on Google Play"
-                    width={170}
-                    height={51}
-                    className="scale-[0.85] origin-left"
+                    width={140}
+                    height={42}
+                    className="origin-left"
                   />
                 </a>
               </div>
             </div>
           </div>
+
 
           <div className="hidden md:flex md:flex-wrap md:justify-between md:gap-12">
             <div className="md:max-w-[300px] flex flex-col items-start gap-4 z-50">

@@ -1,10 +1,10 @@
-"use client";
-
+'use client'
 import React, { useState, useEffect } from "react";
 
 const services = [
     {
         title: "Online Order Management",
+        link: 'online-order-management',
         video: "/images/heroSection.mp4",
         points: [
             "Centralize UberEats, Grubhub & more",
@@ -12,16 +12,27 @@ const services = [
         ],
     },
     {
-        title: "Smart Inventory Tracking",
+        title: "Video Transaction Analytics",
+        link: 'video-transaction-analytics',
         video: "/images/heroSection.mp4",
-        points: ["Monitor stock in real-time", "Predict shortages with AI alerts"],
+        points: ["Pair sales data with video footage", "Get real-time fraud & loss alerts"],
     },
     {
-        title: "Customer Loyalty Program",
+        title: "AI Invoice Processing",
+        link: 'aibased-invoice-processing',
         video: "/images/heroSection.mp4",
         points: [
-            "Reward repeat buyers automatically",
-            "Boost retention & engagement",
+            "Scan, digitize your invoices",
+            "Spot errors and overcharges instantly",
+        ],
+    },
+    {
+        title: "Surveillance Monitoring",
+        link: 'surveillance-monitoring',
+        video: "/images/heroSection.mp4",
+        points: [
+            "24/7 camera feed monitoring",
+            "Get instant alerts for theft & safety",
         ],
     },
 ];
@@ -41,6 +52,14 @@ export default function ServicesSection() {
         return () => window.removeEventListener("resize", check);
     }, []);
 
+    useEffect(() => {
+        if (!isDesktop) return;
+        const interval = setInterval(() => {
+            setActive((prev) => (prev + 1) % services.length);
+        }, 3000);
+        return () => clearInterval(interval);
+    }, [isDesktop]);
+
     const currentActive = isDesktop ? active : 0;
 
     return (
@@ -58,7 +77,7 @@ export default function ServicesSection() {
             </div>
 
             <h1 className="text-center font-bold text-2xl sm:text-3xl md:text-3xl lg:text-[2.2rem] tracking-wide text-white mb-6 sm:mb-8 md:mb-10 lg:mb-12 py-10 px-4 relative z-10">
-                Our Services
+                Bag N Dash Features
             </h1>
 
             <div className="relative flex justify-center px-4 sm:px-6 lg:px-8 z-10">
@@ -85,6 +104,7 @@ export default function ServicesSection() {
                                         : "opacity-50 scale-95"
                                     : "opacity-100 scale-100"
                                     }`}
+                                onClick={isDesktop ? () => window.location.href = service.link : undefined}
                             >
                                 <div className="w-full h-[180px] sm:h-[220px] md:h-[280px] lg:h-[350px] overflow-hidden flex-shrink-0">
                                     <video
@@ -126,12 +146,22 @@ export default function ServicesSection() {
                                                 background:
                                                     "linear-gradient(95.49deg, #F462F3 52.87%, #7B50FE 106.28%)",
                                             }}
+                                            onClick={(e) => {
+                                                e.stopPropagation();
+                                                window.location.href = "https://outlook.office365.com/book/BagNDashBookaDemo@bagndash.com/?ismsaljsauthenabled=true";
+                                            }}
                                         >
                                             Book a Demo
                                         </button>
 
                                         {!isDesktop && (
-                                            <button className="px-4 h-8 sm:h-9 md:h-10 rounded-full font-semibold text-xs md:text-sm text-white border border-purple-400 hover:opacity-90 transition-opacity">
+                                            <button
+                                                className="px-4 h-8 sm:h-9 md:h-10 rounded-full font-semibold text-xs md:text-sm text-white border border-purple-400 hover:opacity-90 transition-opacity"
+                                                onClick={(e) => {
+                                                    e.stopPropagation();
+                                                    window.location.href = service.link;
+                                                }}
+                                            >
                                                 Learn More
                                             </button>
                                         )}

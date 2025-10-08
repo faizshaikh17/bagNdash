@@ -51,7 +51,7 @@ export default function HeroSection() {
       <div className="relative z-10 flex h-full flex-col items-center justify-center lg:px-6 px-3 space-y-10">
         {/* Hero Title */}
         <h1 className="max-w-6xl text-center lg:mt-0 mt-34  text-[2rem] font-bold leading-[1.4] text-white md:text-4xl lg:text-[4.3rem]">
-          One Platform. Three Powerful Solutions for Retailers.
+          One Platform. Four Powerful Solutions for Retailers.
         </h1>
 
         {/* Subtitle */}

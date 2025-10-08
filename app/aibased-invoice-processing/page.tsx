@@ -9,12 +9,32 @@ const HeroAndHowItWorks = () => {
     const [currentFaqImage, setCurrentFaqImage] = useState("/images/preFooter.png");
 
     const faqs = [
-        { question: "What is your service?", answer: "We provide comprehensive solutions tailored to your needs." },
-        { question: "How does pricing work?", answer: "Our pricing is flexible and based on your specific requirements." },
-        { question: "Is there a free trial?", answer: "Yes, we offer a 14-day free trial with full access to all features." },
-        { question: "How do I get started?", answer: "Simply sign up and follow our onboarding process to get started in minutes." },
-        { question: "What support do you offer?", answer: "We provide 24/7 customer support via chat, email, and phone." }
-    ];
+    {
+        question: "Invoice Capture",
+        answer: "Snap a photo of any invoice; let us handle the rest."
+    },
+    {
+        question: "Accurate Line-Item Entry",
+        answer: "We digitize every product, price, and quantity — no manual typing."
+    },
+    {
+        question: "Error & Variance Flagging",
+        answer: "We flag overcharges, missed deals, or price spikes for review."
+    },
+    {
+        question: "Back Office Integration",
+        answer: "Receive files ready for Mercury One, Clover, Modisoft, Verifone, and more."
+    },
+    {
+        question: "Always Updated Price Book",
+        answer: "New items and updated costs are added automatically."
+    },
+    {
+        question: "Invoice Access Anytime",
+        answer: "Download processed invoices whenever you need them."
+    }
+];
+
 
     const faqImages = [
         "/images/faqImage1.png",
@@ -158,7 +178,7 @@ const HeroAndHowItWorks = () => {
                         How it Works
                     </h2>
                     <div className="flex justify-center px-4">
-                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-5xl w-full">
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-5xl h-full w-full">
                             <div className="rounded-2xl p-2 md:p-8 flex flex-col justify-center lg:aspect-square">
                                 {faqs.map((faq, index) => (
                                     <div
@@ -200,7 +220,7 @@ const HeroAndHowItWorks = () => {
                                     </div>
                                 ))}
                             </div>
-                            <div className="aspect-square hidden lg:block">
+                            <div className="aspect-square hidden h-full lg:block">
                                 <video
                                     src={currentFaqImage} // replace with your video URL or state variable
                                     autoPlay

@@ -9,12 +9,38 @@ const HeroAndHowItWorks = () => {
     const [currentFaqImage, setCurrentFaqImage] = useState("/images/preFooter.png");
 
     const faqs = [
-        { question: "What is your service?", answer: "We provide comprehensive solutions tailored to your needs." },
-        { question: "How does pricing work?", answer: "Our pricing is flexible and based on your specific requirements." },
-        { question: "Is there a free trial?", answer: "Yes, we offer a 14-day free trial with full access to all features." },
-        { question: "How do I get started?", answer: "Simply sign up and follow our onboarding process to get started in minutes." },
-        { question: "What support do you offer?", answer: "We provide 24/7 customer support via chat, email, and phone." }
+        {
+            question: "Unified Dashboard",
+            answer: "View all UberEats, DoorDash, and Grubhub orders in one place. Suggested Image: Dashboard screenshot with orders from multiple apps.",
+            image: "/images/benefitIcon1.png"
+        },
+        {
+            question: "Menu & Item Sync",
+            answer: "Sync menus and prices across every delivery app automatically.",
+            image: "/images/benefitIcon2.png"
+        },
+        {
+            question: "Real-Time Order Flow",
+            answer: "New orders update instantly for faster prep and dispatch.",
+            image: "/images/benefitIcon3.png"
+        },
+        {
+            question: "Sales Insights",
+            answer: "Track top sellers, busy times, and customer trends",
+            image: "/images/benefitIcon4.png"
+        },
+        {
+            question: "Simplified Reconciliation",
+            answer: "Generate quick payout and accounting reports across apps.",
+            image: "/images/benefitIcon5.png"
+        },
+        {
+            question: "Smart Alerts",
+            answer: "Get instant notifications for orders, delays, or issues.",
+            image: "/images/benefitIcon5.png"
+        }
     ];
+
 
     const faqImages = [
         "/images/faqImage1.png",
@@ -38,28 +64,33 @@ const HeroAndHowItWorks = () => {
 
     const benefits = [
         {
-            title: "Save time",
-            description: "No more bouncing between tablets and apps.",
+            title: "Unified Dashboard",
+            description: "View all UberEats, DoorDash, and Grubhub orders in one place. Suggested Image: Dashboard screenshot with orders from multiple apps.",
             image: "/images/benefitIcon1.png",
         },
         {
-            title: "Increase accuracy",
-            description: "Fewer missed, duplicated, or mispriced items.",
+            title: "Menu & Item Sync",
+            description: "Sync menus and prices across every delivery app automatically.",
             image: "/images/benefitIcon2.png",
         },
         {
-            title: "Grow profits",
-            description: "Optimize menus and pricing with real-time insights.",
+            title: "Real-Time Order Flow",
+            description: "New orders update instantly for faster prep and dispatch.",
             image: "/images/benefitIcon3.png",
         },
         {
-            title: "Simplify reporting",
-            description: "Faster reconciliation with fewer errors.",
+            title: "Sales Insights",
+            description: "Track top sellers, busy times, and customer trends",
             image: "/images/benefitIcon4.png",
         },
         {
-            title: "Customer satisfaction",
-            description: "Faster service and fewer mistakes.",
+            title: "Simplified Reconciliation",
+            description: "Generate quick payout and accounting reports across apps.",
+            image: "/images/benefitIcon5.png",
+        },
+        {
+            title: "Smart Alerts",
+            description: "Get instant notifications for orders, delays, or issues.",
             image: "/images/benefitIcon5.png",
         }
     ];
@@ -158,7 +189,7 @@ const HeroAndHowItWorks = () => {
                         How it Works
                     </h2>
                     <div className="flex justify-center px-4">
-                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-5xl w-full">
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-5xl h-full w-full">
                             <div className="rounded-2xl p-2 md:p-8 flex flex-col justify-center lg:aspect-square">
                                 {faqs.map((faq, index) => (
                                     <div
@@ -200,7 +231,7 @@ const HeroAndHowItWorks = () => {
                                     </div>
                                 ))}
                             </div>
-                            <div className="aspect-square hidden lg:block">
+                            <div className="aspect-square h-full hidden lg:block">
                                 <video
                                     src={currentFaqImage} // replace with your video URL or state variable
                                     autoPlay

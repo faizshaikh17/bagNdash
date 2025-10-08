@@ -9,12 +9,33 @@ const HeroAndHowItWorks = () => {
     const [currentFaqImage, setCurrentFaqImage] = useState("/images/preFooter.png");
 
     const faqs = [
-        { question: "What is your service?", answer: "We provide comprehensive solutions tailored to your needs." },
-        { question: "How does pricing work?", answer: "Our pricing is flexible and based on your specific requirements." },
-        { question: "Is there a free trial?", answer: "Yes, we offer a 14-day free trial with full access to all features." },
-        { question: "How do I get started?", answer: "Simply sign up and follow our onboarding process to get started in minutes." },
-        { question: "What support do you offer?", answer: "We provide 24/7 customer support via chat, email, and phone." }
+        {
+            question: "Proactive Transaction & Video Analysis",
+            answer: "We monitor transactions with linked video to spot suspicious refunds or voids."
+        },
+        {
+            question: "Fraud & Theft Alerts",
+            answer: "Get real-time alerts on detected theft or fraud."
+        },
+        {
+            question: "Custom Monitoring & Incident Reporting",
+            answer: "Monitoring fits your store’s needs, with detailed incident reports."
+        },
+        {
+            question: "Two-Way Communication with Cashiers",
+            answer: "Our team communicates directly with cashiers in risky situations."
+        },
+        {
+            question: "Mobile Notifications for Owners & Managers",
+            answer: "Receive instant alerts and incident summaries on your phone."
+        },
+        {
+            question: "Live Surveillance Option",
+            answer: "Upgrade to 24/7 live monitoring of your store feeds."
+        }
     ];
+
+
 
     const faqImages = [
         "/images/faqImage1.png",
@@ -158,7 +179,7 @@ const HeroAndHowItWorks = () => {
                         How it Works
                     </h2>
                     <div className="flex justify-center px-4">
-                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-5xl w-full">
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-5xl h-full w-full">
                             <div className="rounded-2xl p-2 md:p-8 flex flex-col justify-center lg:aspect-square">
                                 {faqs.map((faq, index) => (
                                     <div
@@ -200,7 +221,7 @@ const HeroAndHowItWorks = () => {
                                     </div>
                                 ))}
                             </div>
-                            <div className="aspect-square hidden lg:block">
+                            <div className="aspect-square hidden h-full lg:block">
                                 <video
                                     src={currentFaqImage} // replace with your video URL or state variable
                                     autoPlay
