@@ -101,7 +101,7 @@ export default function Navbar() {
       `}</style>
 
       <header
-        className={`fixed top-0 left-0 w-full z-[100] transition-colors duration-300 bg-transparent`}
+        className={`fixed top-0 left-0 w-full z-[100] md:backdrop-blur-xs transition-colors duration-300 bg-transparent`}
       >
         {/* Background Glow */}
         <div
@@ -148,16 +148,14 @@ export default function Navbar() {
         {isMenuOpen && (
           <div className="fixed inset-0 z-[99] md:hidden">
             <div
-              className={`absolute inset-0 bg-black/50 backdrop-blur-sm ${
-                isClosing ? 'animate-fade-out' : 'animate-fade-in'
-              }`}
+              className={`absolute inset-0 bg-black/50 backdrop-blur-sm ${isClosing ? 'animate-fade-out' : 'animate-fade-in'
+                }`}
               onClick={closeMobileMenu}
             />
 
             <div
-              className={`absolute inset-x-0 top-0 bg-[#1b2542] py-6 px-4 z-[100] max-h-screen overflow-y-auto ${
-                isClosing ? 'animate-slide-up' : 'animate-slide-down'
-              }`}
+              className={`absolute inset-x-0 top-0 bg-[#1b2542] py-6 px-4 z-[100] max-h-screen overflow-y-auto ${isClosing ? 'animate-slide-up' : 'animate-slide-down'
+                }`}
             >
               <div className="flex flex-col h-full">
                 <div className="flex justify-between items-center mb-6">
@@ -190,9 +188,8 @@ export default function Navbar() {
                       <span>Services</span>
                       <ChevronDown
                         size={18}
-                        className={`transition-transform duration-300 ${
-                          isMobileServicesOpen ? 'rotate-180' : ''
-                        }`}
+                        className={`transition-transform duration-300 ${isMobileServicesOpen ? 'rotate-180' : ''
+                          }`}
                         style={{ strokeWidth: 2 }}
                       />
                     </button>
@@ -295,9 +292,8 @@ export default function Navbar() {
                   <span>Services</span>
                   <ChevronDown
                     size={18}
-                    className={`transition-transform duration-300 ${
-                      isServicesOpen ? 'rotate-180' : ''
-                    }`}
+                    className={`transition-transform duration-300 ${isServicesOpen ? 'rotate-180' : ''
+                      }`}
                     style={{ strokeWidth: 2 }}
                   />
                 </button>

@@ -63,7 +63,7 @@ export default function AboutUs() {
         </div>
       </section>
 
-      <section className="relative w-full py-12 md:py-20 lg:py-30 md:bg-[#020D2D] md:bg-none bg-gradient-to-b from-[#020D2D] to-transparent overflow-hidden">
+      <section className="relative w-full py-12  md:bg-[#020D2D] md:bg-none bg-gradient-to-b from-[#020D2D] to-transparent overflow-hidden">
         <div className="container mx-auto flex flex-col items-center justify-center gap-12 max-w-7xl px-8">
           <div className="relative w-full max-w-4xl">
             <div className="flex justify-between items-center mb-6 gap-4">
@@ -106,9 +106,9 @@ export default function AboutUs() {
       </section>
 
       {/* Video Analytic Section */}
-      <section ref={videoRef} className="relative w-full py-12 md:py-20 bg-[#020D2D] overflow-hidden">
+      <section ref={videoRef} className="relative w-full py-12 bg-[#020D2D] overflow-hidden">
         <div className="container mx-auto flex flex-col items-center justify-center gap-12 max-w-7xl px-8">
-          <div className="w-full max-w-7xl mt-8 mx-auto">
+          <div className="w-full max-w-7xl mx-auto">
             <h2 className="text-white text-2xl md:text-3xl font-bold text-center mb-8">
               {plans[0].name}
             </h2>
@@ -179,9 +179,9 @@ export default function AboutUs() {
 
       {/* Order Management and Invoice Processing Section */}
       <section className='flex sm:flex-row sm:justify-center mx-auto max-w-7xl sm:gap-4 flex-col'>
-        <section ref={orderRef} className="relative w-full py-12 md:py-20 bg-[#020D2D] overflow-hidden">
+        <section ref={orderRef} className="relative w-full py-12 bg-[#020D2D] overflow-hidden">
           <div className="container mx-auto flex flex-col items-center justify-center gap-12 max-w-7xl px-8">
-            <div className="w-full max-w-2xl mt-8">
+            <div className="w-full max-w-2xl">
               <h2 className="text-white text-2xl md:text-3xl font-bold text-center mb-8">
                 {plans[1].name}
               </h2>
@@ -237,9 +237,9 @@ export default function AboutUs() {
         </section>
 
         {/* Invoice Processing Section */}
-        <section ref={invoiceRef} className="relative w-full py-12 md:py-20 bg-[#020D2D] overflow-hidden">
+        <section ref={invoiceRef} className="relative w-full py-12 bg-[#020D2D] overflow-hidden">
           <div className="container mx-auto flex flex-col items-center justify-center gap-12 max-w-7xl px-8">
-            <div className="w-full max-w-2xl mt-8">
+            <div className="w-full max-w-2xl">
               <h2 className="text-white text-2xl md:text-3xl font-bold text-center mb-8">
                 {plans[2].name}
               </h2>

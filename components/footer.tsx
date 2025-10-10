@@ -29,7 +29,7 @@ export default function Footer() {
               alt="App Preview"
               width={244}
               height={527}
-              className="absolute top-4 pointer-events-none md:-top-22 left-1/2 md:left-[19px] -translate-x-1/2 md:translate-x-0 w-[270px] md:w-full h-[431px] md:h-[450px]"
+              className="absolute top-4 pointer-events-none md:-top-22 left-1/2 md:left-[19px] -translate-x-1/2 md:translate-x-0 w-[270px] md:w-full h-[431px] md:scale-[1] scale-[1.1] md:h-[450px]"
               priority
             />
             <Image
