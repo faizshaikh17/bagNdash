@@ -1,11 +1,13 @@
 'use client'
 
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import Image from "next/image";
 import { X, CircleAlert } from "lucide-react";
 
 export default function AboutUs() {
-  const [activeTab, setActiveTab] = useState(0);
+  const videoRef = useRef<HTMLElement>(null);
+  const orderRef = useRef<HTMLElement>(null);
+  const invoiceRef = useRef<HTMLElement>(null);
   const [isTrialOpen, setIsTrialOpen] = useState(false);
 
   const plans = [
@@ -37,6 +39,10 @@ export default function AboutUs() {
     }
   ];
 
+  const scrollToSection = (ref: React.RefObject<HTMLElement | null>) => {
+    ref.current?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <div className="min-h-screen bg-[#020D2D]">
       <section className="relative w-full overflow-hidden md:py-0 py-10 md:bg-[#020D2D] md:bg-none bg-gradient-to-b from-[#020D2D] to-transparent">
@@ -61,103 +67,123 @@ export default function AboutUs() {
         <div className="container mx-auto flex flex-col items-center justify-center gap-12 max-w-7xl px-8">
           <div className="relative w-full max-w-4xl">
             <div className="flex justify-between items-center mb-6 gap-4">
-              {plans.map((plan, index) => (
-                <button
-                  key={index}
-                  onClick={() => setActiveTab(index)}
-                  className={`flex-1 text-center transition-all duration-300 ${activeTab === index
-                    ? 'text-white font-semibold'
-                    : 'text-white/50 font-medium hover:text-white/70'
-                    }`}
-                >
-                  <span className="block text-sm md:text-base lg:text-lg">
-                    {plan.name}
-                  </span>
-                </button>
-              ))}
+              <button
+                onClick={() => scrollToSection(videoRef)}
+                className={`flex-1 text-center transition-all duration-300 text-white/50 font-medium hover:text-white/70`}
+              >
+                <span className="block text-sm md:text-base lg:text-lg">
+                  {plans[0].name}
+                </span>
+              </button>
+              <button
+                onClick={() => scrollToSection(orderRef)}
+                className={`flex-1 text-center transition-all duration-300 text-white/50 font-medium hover:text-white/70`}
+              >
+                <span className="block text-sm md:text-base lg:text-lg">
+                  {plans[1].name}
+                </span>
+              </button>
+              <button
+                onClick={() => scrollToSection(invoiceRef)}
+                className={`flex-1 text-center transition-all duration-300 text-white/50 font-medium hover:text-white/70`}
+              >
+                <span className="block text-sm md:text-base lg:text-lg">
+                  {plans[2].name}
+                </span>
+              </button>
             </div>
             <div className="relative w-full h-[2px] bg-white/20">
               <div
                 className="absolute top-1/2 -translate-y-1/2 h-1 bg-white rounded-full transition-all duration-500 ease-out"
                 style={{
                   width: '33.33%',
-                  left: `${activeTab * 33.33}%`
+                  left: `0%`
                 }}
               ></div>
             </div>
           </div>
+        </div>
+      </section>
 
-          {activeTab === 0 ? (
-            <div className="w-full max-w-7xl mt-8 mx-auto">
-              <h2 className="text-white text-2xl md:text-3xl font-bold text-center mb-8">
-                {plans[activeTab].name}
-              </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                {plans[activeTab].cards?.map((card, idx) => (
-                  <div key={idx} className="relative rounded-2xl p-4 overflow-hidden group">
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div
-                        className=" h-[80%] min-w-5xl rounded-full bg-[radial-gradient(circle_at_center,_#064E3B_0%,_transparent_75%)] blur-[70px]"
-                      />
-                    </div>
-                    <div className="absolute inset-0 border border-white/20 rounded-2xl" />
-                    <div className="relative h-full flex flex-col gap-8 justify-between">
-                      <div className='relative space-y-8'>
-                        <div className="inline-block">
-                          <div className="bg-white/10 backdrop-blur-sm px-4 py-1.5 rounded-full border border-white/10">
-                            <span className="text-white text-sm">
-                              {card.title}
-                            </span>
-                          </div>
-                        </div>
-                        <div className="space-y-2">
-                          <div className="text-2xl font-semibold text-white">
-                            ${card.price}/ Month
-                          </div>
-                          <p className="text-gray-300 text-xs">
-                            {plans[activeTab].offer[idx]}
-                          </p>
-                        </div>
-                        <div className="flex flex-col gap-4 pt-2">
-                          {card.features.map((feature, index) => {
-                            const isIncludes = feature.startsWith('*');
-                            return (
-                              <div key={index} className="flex items-start gap-3">
-                                {!isIncludes && (
-                                  <Image
-                                    src="/images/tick.png"
-                                    alt="tick"
-                                    width={20}
-                                    height={20}
-                                    className="w-4 h-4 flex-shrink-0 mt-0.5"
-                                  />
-                                )}
-                                <span className={`text-white flex justify-center items-center gap-2 text-xs leading-relaxed ${isIncludes ? 'ml-2' : ''}`}>
-                                  {feature} <CircleAlert size={14} />
-                                </span>
-                              </div>
-                            );
-                          })}
+      {/* Video Analytic Section */}
+      <section ref={videoRef} className="relative w-full py-12 md:py-20 bg-[#020D2D] overflow-hidden">
+        <div className="container mx-auto flex flex-col items-center justify-center gap-12 max-w-7xl px-8">
+          <div className="w-full max-w-7xl mt-8 mx-auto">
+            <h2 className="text-white text-2xl md:text-3xl font-bold text-center mb-8">
+              {plans[0].name}
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {plans[0].cards?.map((card, idx) => (
+                <div key={idx} className="relative rounded-2xl p-4 overflow-hidden group">
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div
+                      className=" h-[80%] min-w-5xl rounded-full bg-[radial-gradient(circle_at_center,_#064E3B_0%,_transparent_75%)] blur-[70px]"
+                    />
+                  </div>
+                  <div className="absolute inset-0 border border-white/20 rounded-2xl" />
+                  <div className="relative h-full flex flex-col gap-8 justify-between">
+                    <div className='relative space-y-8'>
+                      <div className="inline-block">
+                        <div className="bg-white/10 backdrop-blur-sm px-4 py-1.5 rounded-full border border-white/10">
+                          <span className="text-white text-sm">
+                            {card.title}
+                          </span>
                         </div>
                       </div>
-                      <button
-                        onClick={() => setIsTrialOpen(true)}
-                        className="bg-gradient-to-r from-[#F462F3] via-[#F462F3] to-[#7B50FE] px-6 py-2.5 rounded-full font-semibold text-sm text-white hover:opacity-90 transition w-full mt-4"
-                      >
-                        Start Free Trial
-                      </button>
+                      <div className="space-y-2">
+                        <div className="text-2xl font-semibold text-white">
+                          ${card.price}/ Month
+                        </div>
+                        <p className="text-gray-300 text-xs">
+                          {plans[0].offer[idx]}
+                        </p>
+                      </div>
+                      <div className="flex flex-col gap-4 pt-2">
+                        {card.features.map((feature, index) => {
+                          const isIncludes = feature.startsWith('*');
+                          return (
+                            <div key={index} className="flex items-start gap-3">
+                              {!isIncludes && (
+                                <Image
+                                  src="/images/tick.png"
+                                  alt="tick"
+                                  width={20}
+                                  height={20}
+                                  className="w-4 h-4 flex-shrink-0 mt-0.5"
+                                />
+                              )}
+                              <span className={`text-white flex justify-center items-center gap-2 text-xs leading-relaxed ${isIncludes ? 'ml-2' : ''}`}>
+                                {feature} <CircleAlert size={14} />
+                              </span>
+                            </div>
+                          );
+                        })}
+                      </div>
                     </div>
+                    <button
+                      onClick={() => setIsTrialOpen(true)}
+                      className="bg-gradient-to-r from-[#F462F3] via-[#F462F3] to-[#7B50FE] px-6 py-2.5 rounded-full font-semibold text-sm text-white hover:opacity-90 transition w-full mt-4"
+                    >
+                      Start Free Trial
+                    </button>
                   </div>
-                ))}
-              </div>
-              <p className="text-gray-300 text-xs text-left mt-4">
-                *One-time device cost of $150 (fully refundable in free trial period).
-              </p>
+                </div>
+              ))}
             </div>
-          ) : (
+            <p className="text-gray-300 text-xs text-left mt-4">
+              *One-time device cost of $150 (fully refundable in free trial period).
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Order Management and Invoice Processing Section */}
+      <section className='flex sm:flex-row sm:justify-center mx-auto max-w-7xl sm:gap-4 flex-col'>
+        <section ref={orderRef} className="relative w-full py-12 md:py-20 bg-[#020D2D] overflow-hidden">
+          <div className="container mx-auto flex flex-col items-center justify-center gap-12 max-w-7xl px-8">
             <div className="w-full max-w-2xl mt-8">
               <h2 className="text-white text-2xl md:text-3xl font-bold text-center mb-8">
-                {plans[activeTab].name}
+                {plans[1].name}
               </h2>
               <div className="relative rounded-2xl p-8 overflow-hidden">
                 <div className="absolute inset-0 flex items-center justify-center">
@@ -171,22 +197,17 @@ export default function AboutUs() {
                     <div className="inline-block">
                       <div className="bg-white/10 backdrop-blur-sm px-5 py-2 rounded-full border border-white/10">
                         <span className="text-white font-semibold text-sm">
-                          {plans[activeTab].label}
+                          {plans[1].label}
                         </span>
                       </div>
                     </div>
                     <div className="space-y-2">
                       <div className="text-2xl font-semibold text-white">
-                        ${plans[activeTab].price}/ Month
+                        ${plans[1].price}/ Month
                       </div>
-                      {activeTab !== 1 && (
-                        <p className="text-gray-300 text-xs">
-                          {plans[activeTab].offer}
-                        </p>
-                      )}
                     </div>
                     <div className="flex flex-col gap-4 pt-2">
-                      {plans[activeTab].features?.map((feature, index) => (
+                      {plans[1].features?.map((feature, index) => (
                         <div key={index} className="flex items-start gap-3">
                           <Image
                             src="/images/tick.png"
@@ -208,25 +229,78 @@ export default function AboutUs() {
                   </button>
                 </div>
               </div>
-              {activeTab === 1 && (
-                <p className="text-gray-300 text-xs text-left mt-4">
-                  {plans[activeTab].offer}
-                </p>
-              )}
+              <p className="text-gray-300 text-xs text-left mt-4">
+                {plans[1].offer}
+              </p>
             </div>
-          )}
-        </div>
+          </div>
+        </section>
+
+        {/* Invoice Processing Section */}
+        <section ref={invoiceRef} className="relative w-full py-12 md:py-20 bg-[#020D2D] overflow-hidden">
+          <div className="container mx-auto flex flex-col items-center justify-center gap-12 max-w-7xl px-8">
+            <div className="w-full max-w-2xl mt-8">
+              <h2 className="text-white text-2xl md:text-3xl font-bold text-center mb-8">
+                {plans[2].name}
+              </h2>
+              <div className="relative rounded-2xl p-8 overflow-hidden">
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div
+                    className=" h-full min-w-5xl rounded-full bg-[radial-gradient(circle_at_center,_#064E3B_0%,_transparent_75%)] blur-[70px]"
+                  />
+                </div>
+                <div className="absolute inset-0 border border-white/20 rounded-2xl backdrop-blur-xl" />
+                <div className="relative flex flex-col gap-8 justify-between">
+                  <div className="relative space-y-8">
+                    <div className="inline-block">
+                      <div className="bg-white/10 backdrop-blur-sm px-5 py-2 rounded-full border border-white/10">
+                        <span className="text-white font-semibold text-sm">
+                          {plans[2].label}
+                        </span>
+                      </div>
+                    </div>
+                    <div className="space-y-2">
+                      <div className="text-2xl font-semibold text-white">
+                        ${plans[2].price}/ Month
+                      </div>
+                      <p className="text-gray-300 text-xs">
+                        {plans[2].offer}
+                      </p>
+                    </div>
+                    <div className="flex flex-col gap-4 pt-2">
+                      {plans[2].features?.map((feature, index) => (
+                        <div key={index} className="flex items-start gap-3">
+                          <Image
+                            src="/images/tick.png"
+                            alt="tick"
+                            width={20}
+                            height={20}
+                            className="w-4 h-4 flex-shrink-0 mt-0.5"
+                          />
+                          <span className="text-white flex justify-center items-center gap-2 text-xs leading-relaxed">{feature} <CircleAlert size={14} /></span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                  <button
+                    onClick={() => setIsTrialOpen(true)}
+                    className="bg-gradient-to-r from-[#F462F3] via-[#F462F3] to-[#7B50FE] px-6 py-2.5 rounded-full font-semibold text-sm text-white hover:opacity-90 transition w-full mt-4"
+                  >
+                    Start Free Trial
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
       </section>
 
       {isTrialOpen && (
-
         <>
-
           <div
             className="fixed inset-0 bg-black/50 z-[101]"
             onClick={() => setIsTrialOpen(false)}
           />
-
           <div className="fixed inset-0 flex items-center justify-center z-[102] pointer-events-none">
             <div className="bg-[#1b2542] border border-white/50 text-white rounded-2xl p-8 max-w-xl w-full shadow-2xl mx-4 pointer-events-auto">
               <div className="flex justify-between items-center mb-4">
@@ -302,7 +376,6 @@ export default function AboutUs() {
             </div>
           </div>
         </>
-
       )}
     </div>
   )

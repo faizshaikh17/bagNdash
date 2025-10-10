@@ -3,7 +3,6 @@ import React, { useState, useRef, useEffect } from 'react'
 import { ChevronDown, Menu, X } from 'lucide-react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { usePathname } from 'next/navigation'
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -11,7 +10,6 @@ export default function Navbar() {
   const [isServicesOpen, setIsServicesOpen] = useState(false)
   const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false)
   const [isContactOpen, setIsContactOpen] = useState(false)
-  const pathname = usePathname()
 
   const dropdownRef = useRef<HTMLDivElement | null>(null)
 
@@ -103,9 +101,7 @@ export default function Navbar() {
       `}</style>
 
       <header
-        className={`fixed top-0 left-0 w-full z-[100] md:backdrop-blur-xs transition-colors duration-300 ${
-          pathname === '/' ? 'md:bg-black/30' : 'bg-transparent'
-        }`}
+        className={`fixed top-0 left-0 w-full z-[100] transition-colors duration-300 bg-transparent`}
       >
         {/* Background Glow */}
         <div

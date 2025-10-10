@@ -5,7 +5,7 @@ export default function HeroSection() {
   return (
     <section className="relative w-full min-h-screen lg:h-[1300px] overflow-x-clip md:bg-[#020D2D] bg-gradient-to-b from-[#020D2D] to-transparent">
       {/* Grid Background - Vertical Lines (Hidden on mobile) */}
-      <div className="hidden md:flex absolute inset-0 pointer-events-none opacity-20">
+      <div className="hidden md:flex mt-20 absolute inset-0 pointer-events-none opacity-20">
         {[...Array(24)].map((_, index) => (
           <div
             key={`vertical-${index}`}
@@ -15,7 +15,7 @@ export default function HeroSection() {
       </div>
 
       {/* Grid Background - Horizontal Lines (Hidden on mobile) */}
-      <div className="hidden md:flex absolute   inset-0 flex-col pointer-events-none opacity-20">
+      <div className="hidden md:flex absolute mt-20  inset-0 flex-col pointer-events-none opacity-20">
         {[...Array(10)].map((_, index) => (
           <div
             key={`horizontal-${index}`}
