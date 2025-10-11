@@ -315,7 +315,7 @@ export default function Footer() {
           </div>
 
           <div className="text-center text-[#E0E0E0] text-xs font-poppins">
-            © 2025 Banndash. All rights reserved.
+            © 2025 Bagndash. All rights reserved.
           </div>
         </div>
       </div>
