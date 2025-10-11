@@ -152,7 +152,7 @@ export default function AboutUs() {
                                   className="w-4 h-4 flex-shrink-0 mt-0.5"
                                 />
                               )}
-                              <span className={`text-white flex justify-center items-center gap-2 text-xs leading-relaxed ${isIncludes ? 'ml-2' : ''}`}>
+                              <span className={`text-white flex justify-center items-center gap-2 text-xs leading-relaxed`}>
                                 {feature} <CircleAlert size={14} />
                               </span>
                             </div>

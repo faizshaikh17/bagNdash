@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { Plus, Minus } from 'lucide-react';
 
 const HeroAndHowItWorks = () => {
-    const [openIndex, setOpenIndex] = useState<number | null>(null);
+    const [openIndex, setOpenIndex] = useState<number | null>(0);
     const [activeBenefitIndex, setActiveBenefitIndex] = useState(0);
     const [currentFaqImage, setCurrentFaqImage] = useState("/images/preFooter.png");
 
@@ -64,33 +64,28 @@ const HeroAndHowItWorks = () => {
 
     const benefits = [
         {
-            title: "Unified Dashboard",
-            description: "View all UberEats, DoorDash, and Grubhub orders in one place. Suggested Image: Dashboard screenshot with orders from multiple apps.",
+            title: "Save time",
+            description: "No more bouncing between tablets and apps.",
             image: "/images/benefitIcon1.png",
         },
         {
-            title: "Menu & Item Sync",
-            description: "Sync menus and prices across every delivery app automatically.",
+            title: "Increase accuracy",
+            description: "Fewer missed, duplicated, or mispriced items.",
             image: "/images/benefitIcon2.png",
         },
         {
-            title: "Real-Time Order Flow",
-            description: "New orders update instantly for faster prep and dispatch.",
+            title: "Grow profits",
+            description: "Optimize menus and pricing with real-time insights.",
             image: "/images/benefitIcon3.png",
         },
         {
-            title: "Sales Insights",
-            description: "Track top sellers, busy times, and customer trends",
+            title: "Simplify reporting",
+            description: "Faster reconciliation with fewer errors.",
             image: "/images/benefitIcon4.png",
         },
         {
-            title: "Simplified Reconciliation",
-            description: "Generate quick payout and accounting reports across apps.",
-            image: "/images/benefitIcon5.png",
-        },
-        {
-            title: "Smart Alerts",
-            description: "Get instant notifications for orders, delays, or issues.",
+            title: "Customer satisfaction",
+            description: "Faster service and fewer mistakes.",
             image: "/images/benefitIcon5.png",
         }
     ];
@@ -111,14 +106,6 @@ const HeroAndHowItWorks = () => {
             description: "Capture extra revenue by selling food, drinks, and convenience items online.",
             image: "/images/industrythatbenefit3.png",
         },
-    ];
-
-    const logos = [
-        { title: "Grubhub", image: "/images/grubhubLogo.png" },
-        { title: "Doordash", image: "/images/doordashLogo.png" },
-        { title: "Uber Eats", image: "/images/ubereatsLogo.png" },
-        { title: "Moon", image: "/images/moonLogo.png" },
-        { title: "Clover", image: "/images/cloverLogo.png" },
     ];
 
     return (
@@ -357,47 +344,6 @@ const HeroAndHowItWorks = () => {
                             ))}
                         </div>
                     </div>
-                </div>
-            </section>
-
-            <section className="relative w-full py-12 md:py-20 lg:py-30 md:bg-[#020D2D] md:bg-none bg-gradient-to-b from-transparent via-[#020D2D]/50 to-transparent overflow-hidden">
-                <div className="w-full z-50">
-                    <h1 className="text-center py-4 font-bold text-2xl md:text-3xl lg:text-[2.2rem] tracking-wide text-white mb-4 md:mb-8 px-4">
-                        Integration Strip
-                    </h1>
-                    <div className="mx-auto z-50 mb-12 md:mb-20 lg:mb-30 px-4 sm:px-6 lg:px-8 w-full">
-                        <div className="relative overflow-hidden py-6">
-                            <div className="flex animate-marquee-logos whitespace-nowrap gap-12 md:gap-20 lg:gap-30">
-                                {[...logos, ...logos].map((logo, index) => (
-                                    <div
-                                        key={index}
-                                        className="inline-flex items-center justify-center flex-shrink-0 h-20 w-[160px] md:h-24 md:w-[200px] lg:h-28 lg:w-[240px]"
-                                    >
-                                        <Image
-                                            src={logo.image}
-                                            alt={logo.title}
-                                            height={240}
-                                            width={240}
-                                            className="object-contain"
-                                        />
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-                    </div>
-                    <style jsx>{`
-                        @keyframes marquee-logos {
-                            0% {
-                                transform: translateX(0);
-                            }
-                            100% {
-                                transform: translateX(-50%);
-                            }
-                        }
-                        .animate-marquee-logos {
-                            animation: marquee-logos 25s linear infinite;
-                        }
-                    `}</style>
                 </div>
             </section>
         </>

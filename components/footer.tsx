@@ -5,6 +5,38 @@ import { usePathname } from "next/navigation";
 
 export default function Footer() {
   const pathname = usePathname();
+
+  // Define route-specific text and descriptions
+  const routeContent = {
+    '/': {
+      mainText: "Ready to secure your business and simplify operations?",
+      description: "",
+    },
+    '/about-us': {
+      mainText: "Ready to bring Bag n Dash to your store?",
+      description: "",
+    },
+    '/online-order-management': {
+      mainText: "Ready to streamline your online orders?",
+      description: "Discover how Bag n Dash can centralize your delivery platforms and simplify reporting.",
+    },
+    '/aibased-invoice-processing': {
+      mainText: "Ready to digitize all your invoices?",
+      description: "See how Bag n Dash uses AI to capture, organize, and reconcile invoices—saving you hours every week.",
+    },
+    '/surveillance-monitoring': {
+      mainText: "Ready for 24/7 peace of mind?",
+      description: "Learn how Bag n Dash provides real-time monitoring with instant alerts for theft, risks, and safety—wherever you are.",
+    },
+    '/video-transaction-analytics': {
+      mainText: "Ready to link every sale on-demand?",
+      description: "Find out how Bag n Dash can connect transactions to surveillance and alert you instantly about suspicious activity.",
+    },
+  };
+
+  // Get content based on pathname, fallback to default if route not found
+  const content = routeContent[pathname as keyof typeof routeContent] || routeContent['/'];
+
   return (
     <footer className="w-full relative overflow-x-clip text-sm pt-20 bg-gradient-to-b from-transparent via-black/50 to-[#0F5F4F]/40 md:bg-none md:bg-[#020D2D] flex flex-col items-center justify-center">
       <div
@@ -16,7 +48,7 @@ export default function Footer() {
         <div className="h-[20rem] min-w-5xl rounded-full bg-[radial-gradient(circle_at_center,_#033326_0%,_#064E3B_45%,_transparent_80%)] blur-[80px]" />
       </div>
       {pathname !== '/pricing' && (
-        <div className="relative max-w-[1200px] md:mx-auto px-4 pt-20 md:px-20 overflow-y-clip md:overflow-visible mb-20 w-[calc(100%-2rem)] md:w-full border border-[#434343] rounded-3xl md:rounded-[40px] flex flex-col md:flex-row items-center md:justify-start gap-8 md:gap-16 py-8">
+        <div className="relative max-w-[1200px] md:mx-auto px-4  md:px-20 overflow-y-clip md:overflow-visible mb-20 w-[calc(100%-2rem)] md:w-full border border-[#434343] rounded-3xl md:rounded-[40px] flex flex-col md:flex-row items-center md:justify-start gap-8 md:gap-16 py-12">
           {/* Background Gradient Blur */}
           <div className="absolute inset-0 overflow-hidden rounded-3xl md:rounded-[40px] pointer-events-none z-0">
             <div className="absolute inset-0 bg-gradient-to-r from-[#ED61F3] via-[#ED61F3] to-[#7C3AED] pointer-events-none blur-[80px]" />
@@ -29,7 +61,7 @@ export default function Footer() {
               alt="App Preview"
               width={244}
               height={527}
-              className="absolute top-4 pointer-events-none md:-top-22 left-1/2 md:left-[19px] -translate-x-1/2 md:translate-x-0 w-[270px] md:w-full h-[431px] md:scale-[1] scale-[1.1] md:h-[450px]"
+              className="absolute top-4 pointer-events-none md:-top-18 left-1/2 md:left-[19px] -translate-x-1/2 md:translate-x-0 w-[270px] md:w-full h-[431px] md:scale-[1] scale-[1.1] md:h-[450px]"
               priority
             />
             <Image
@@ -37,22 +69,25 @@ export default function Footer() {
               alt="iPhone Background"
               width={280}
               height={560}
-              className="absolute top-14 md:-top-12 left-1/2 md:left-35 -translate-x-1/2 md:-translate-x-1/2 md:ml-5 border-4 w-[12rem] md:w-[12rem] h-[14rem] md:h-[14rem] border-orange-400 rounded-2xl pointer-events-none object-cover"
+              className="absolute top-14 md:-top-8 left-1/2 md:left-35 -translate-x-1/2 md:-translate-x-1/2 md:ml-5 border-4 w-[12rem] md:w-[13rem] h-[14rem] md:h-[16rem] border-orange-400 rounded-2xl pointer-events-none object-cover"
             />
             <Image
               src="/images/logo.png"
               alt="iPhone Frame"
               width={280}
               height={560}
-              className="absolute scale-[0.6] top-24 md:-top-10 left-1/2 md:left-0 -translate-x-1/2 md:translate-x-0 md:ml-5 w-[230px] md:w-[280px] h-[470px] md:h-[560px] pointer-events-none object-contain"
+              className="absolute scale-[0.6] top-24 md:-top-6 left-1/2 md:left-0 -translate-x-1/2 md:translate-x-0 md:ml-5 w-[230px] md:w-[280px] h-[470px] md:h-[560px] pointer-events-none object-contain"
             />
           </div>
 
           {/* Text Column */}
-          <div className="relative flex flex-col z-50 items-start justify-start text-left max-w-[500px] w-full order-1 md:order-2 px-4 md:px-0">
-            <h2 className="font-bold text-2xl md:text-[42px] leading-[1.4] text-white mb-6">
-              Ready to secure your business and simplify operations?
+          <div className="relative flex flex-col gap-4 z-50 items-start justify-start text-left max-w-[500px] w-full order-1 md:order-2 px-4 md:px-0">
+            <h2 className="font-bold text-2xl md:text-[42px] leading-[1.4] text-white mb-2">
+              {content.mainText}
             </h2>
+            <p className="text-[#E0E0E0] text-base mb-6">
+              {content.description}
+            </p>
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 w-full">
               <button className="px-6 py-3 rounded-md bg-[#333333] text-white font-semibold flex-1 sm:flex-none z-50 pointer-events-auto">
                 Book a Demo
@@ -180,7 +215,6 @@ export default function Footer() {
               </div>
             </div>
           </div>
-
 
           <div className="hidden md:flex md:flex-wrap md:justify-between md:gap-12">
             <div className="md:max-w-[300px] flex flex-col items-start gap-4 z-50">
